@@ -22,6 +22,8 @@ namespace MES
         OracleDataAdapter adapt = new OracleDataAdapter();
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private Form currentChildForm;
+
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +39,23 @@ namespace MES
             public static Color color4=Color.FromArgb(  95,77,221  );
             public static Color color5=Color.FromArgb(  249,88,155 );
             public static Color color6 = Color.FromArgb(24, 161, 251);          
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+           
+            childForm.BringToFront();
+            childForm.Show();
+            
         }
         private void ActivateButton(object senderBtn, Color color)
         {
@@ -74,6 +93,7 @@ namespace MES
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new Form2());
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
