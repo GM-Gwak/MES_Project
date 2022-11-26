@@ -103,6 +103,7 @@ namespace MES
         {
             conn.Open();
             cmd.Connection = conn;
+            //hello world;
         }
 
         private void button1_Click(object sender, EventArgs e)
