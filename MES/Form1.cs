@@ -115,7 +115,7 @@ namespace MES
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            int n = 1234567;
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
