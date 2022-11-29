@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MES
 {
-    public partial class Form2 : Form
+    public partial class Stock_ViewDetail : Form
     {
 
         OracleCommand cmd = new OracleCommand();
@@ -22,12 +22,12 @@ namespace MES
         OracleDataAdapter adapt = new OracleDataAdapter();
         static string main_query = "select S.StId as 재고아이디, PD.PMName as 재고명, S.StQty as 수량, PD.PMUnit as 단위, S.StDate as 입고날짜 " +
                                    "from PdMaster PD join Stock S on PD.PMId = S.PMId ";
-        public Form2()
+        public Stock_ViewDetail()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Stock_ViewDetail_Load(object sender, EventArgs e)
         {
             conn.Open();
             cmd.Connection = conn;

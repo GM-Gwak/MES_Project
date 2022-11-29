@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MES
 {
-    public partial class Form3 : Form
+    public partial class Stock_Receiving : Form
     {
         OracleCommand cmd = new OracleCommand();
         OracleDataReader rdr;
@@ -20,12 +20,12 @@ namespace MES
                                 "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr ;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
         DataSet ds = new DataSet();
-        public Form3()
+        public Stock_Receiving()
         {
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Stock_Receiving_Load(object sender, EventArgs e)
         {
             conn.Open();
             cmd.Connection = conn;

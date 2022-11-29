@@ -1,6 +1,6 @@
 ﻿namespace MES
 {
-    partial class Form2
+    partial class Stock_ViewDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -146,7 +146,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
