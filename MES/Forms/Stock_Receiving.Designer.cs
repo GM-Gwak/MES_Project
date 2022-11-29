@@ -135,7 +135,7 @@
             this.label4.Text = "Kg";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // Form3
+            // Stock_Receiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,9 +148,9 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "Form3";
-            this.Text = "Form3";
-            
+            this.Name = "Stock_Receiving";
+            this.Text = "Stock_Receiving";
+            this.Load += new System.EventHandler(this.Stock_Receiving_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

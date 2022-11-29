@@ -25,11 +25,6 @@ namespace MES
             InitializeComponent();
         }
 
-        private void Stock_Receiving_Load(object sender, EventArgs e)
-        {
-            conn.Open();
-            cmd.Connection = conn;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -59,11 +54,17 @@ namespace MES
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmd.CommandText = $"select PMUnit from PdMaster where PMName = '{comboBox1.SelectedItem}'";
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            string unit = rdr["PMUnit"].ToString();
-            label4.Text = unit;
+            //cmd.CommandText = $"select PMUnit from PdMaster where PMName = '{comboBox1.SelectedItem}'";
+            //rdr = cmd.ExecuteReader();
+            //rdr.Read();
+            //string unit = rdr["PMUnit"].ToString();
+            //label4.Text = unit;
+        }
+
+        private void Stock_Receiving_Load_1(object sender, EventArgs e)
+        {
+            conn.Open();
+            cmd.Connection = conn;
         }
     }
 }
