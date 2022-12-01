@@ -95,12 +95,6 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="seungmin_Forms\MES_Server_client.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="seungmin_Forms\MES_Server_client.Designer.cs">
-      <DependentUpon>MES_Server_client.cs</DependentUpon>
-    </Compile>
     <Compile Include="seungmin_Forms\StockManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,9 +141,6 @@
     </Compile>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="seungmin_Forms\MES_Server_client.resx">
-      <DependentUpon>MES_Server_client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\StockManagement.resx">
       <DependentUpon>StockManagement.cs</DependentUpon>

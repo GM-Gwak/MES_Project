@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MES.seungmin_Forms;
 using FontAwesome.Sharp;
+using System.Net.Sockets;
+using System.Threading;
+using System.Net;
 
 namespace MES
 {
@@ -21,6 +24,10 @@ namespace MES
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
+
+        private Socket socket;
+        private Thread receiveThread;
+        private Thread waitThread;
 
         private Form currentChildForm;
         private int borderSize = 2;
@@ -47,8 +54,47 @@ namespace MES
             timer1.Start();
             conn.Open();
             cmd.Connection = conn;
+            waitThread = new Thread(wait);
+            waitThread.IsBackground = true;
+            waitThread.Start();
         }
+        private void Receive()
+        {
+            while (true)
+            {
+                byte[] recvBytes = new byte[1024];
+                socket.Receive(recvBytes);
+                string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
+                string[] str = txt.Split(',');
+                label6.Text = str[0];
+                label7.Text = str[1];
 
+            }
+        }
+        private void wait()
+        {
+            try
+            {
+                //1.소켓만들기
+                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                //2.연결
+                IPAddress address = IPAddress.Parse("192.168.0.17");
+                EndPoint serverEP = new IPEndPoint(address, 9001);
+
+                socket.Connect(serverEP);
+                MessageBox.Show("연결됨");
+                socket.Send(Encoding.UTF8.GetBytes("2"));
+                receiveThread = new Thread(Receive);
+                receiveThread.IsBackground = true;
+                receiveThread.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
+
+        }
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -185,8 +231,23 @@ namespace MES
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new MES_Server_client());
+            
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            byte[] sendBytes = Encoding.UTF8.GetBytes("1");
+            socket.Send(sendBytes);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            currentChildForm.Close();
         }
     }
 }
