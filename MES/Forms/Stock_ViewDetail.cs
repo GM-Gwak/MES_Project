@@ -29,9 +29,7 @@ namespace MES
 
         private void Stock_ViewDetail_Load(object sender, EventArgs e)
         {
-            conn.Open();
-            cmd.Connection = conn;
-            ViewDetail();
+            
             
         }
         public void ViewDetail()
@@ -50,6 +48,7 @@ namespace MES
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //조회
             string[] col_value = new string[] { comboBox1.Text, dateTimePicker1.Text, dateTimePicker2.Text };
             string[] col_name = new string[] { "PMName", "StDate"};
             view(main_query,col_name, col_value);
@@ -82,6 +81,13 @@ namespace MES
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            ViewDetail();
+        }
+
+        private void Stock_ViewDetail_Load_1(object sender, EventArgs e)
+        {
+            conn.Open();
+            cmd.Connection = conn;
             ViewDetail();
         }
     }

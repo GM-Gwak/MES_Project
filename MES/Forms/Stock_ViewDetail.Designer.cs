@@ -69,7 +69,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 2;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 11, 24, 13, 27, 52, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2022, 12, 1, 0, 0, 0, 0);
             // 
             // dateTimePicker2
             // 
@@ -80,7 +80,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker2.TabIndex = 3;
-            this.dateTimePicker2.Value = new System.DateTime(2022, 11, 24, 13, 28, 1, 0);
+            this.dateTimePicker2.Value = new System.DateTime(2022, 12, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -146,6 +146,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Stock_ViewDetail";
             this.Text = "Stock_ViewDetail";
+            this.Load += new System.EventHandler(this.Stock_ViewDetail_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
