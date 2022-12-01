@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MES.seungmin_Forms;
+
 namespace MES
 {
     public partial class mainform : Form
@@ -22,13 +23,19 @@ namespace MES
 
         private Form currentChildForm;
         private int borderSize = 2;
-
+        static string mes;
         public mainform()
         {
             InitializeComponent();
             CollapseMenu();
             this.Padding = new Padding(borderSize); //border size
             this.BackColor = Color.FromArgb(98, 102, 244); //border color
+        }
+        public mainform(string data)
+        {
+            InitializeComponent();
+
+            mes = data;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -40,6 +47,13 @@ namespace MES
             timer1.Start();
             conn.Open();
             cmd.Connection = conn;
+
+            cmd.CommandText = $"SELECT user_name FROM login WHERE id = '{mes}'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_name = rdr["user_name"].ToString();
+            name_label.Text = work_name.ToString(); 
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -54,7 +68,7 @@ namespace MES
                 pictureBox1.Visible = false;
                 label1.Visible = false;
                 time_label.Visible = false;
-                label4.Visible = false;
+                name_label.Visible = false;
                 label3.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
@@ -70,7 +84,7 @@ namespace MES
                 pictureBox1.Visible = true;
                 label1.Visible = true;
                 label3.Visible = true;
-                label4.Visible = true;
+                name_label.Visible = true;
                 time_label.Visible = true;
                 btnMenu.Dock = DockStyle.None;
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
@@ -130,6 +144,10 @@ namespace MES
         private void iconButton3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new StockManagement());
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
         }
     }
 }
