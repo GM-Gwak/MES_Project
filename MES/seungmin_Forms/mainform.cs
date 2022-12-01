@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MES
 {
-    public partial class seungmin : Form
+    public partial class mainform : Form
     {
-        public seungmin()
+        public mainform()
         {
             InitializeComponent();
         }
