@@ -27,12 +27,7 @@ namespace MES
             
         }
 
-        private void StockManagement_Load(object sender, EventArgs e)
-        {
-            conn.Open();
-            cmd.Connection = conn;
-           
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -57,6 +52,21 @@ namespace MES
             DataSet ds = new DataSet();
             adapt.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
+        }
+
+        private void StockManagement_Load_1(object sender, EventArgs e)
+        {
+            conn.Open();
+            cmd.Connection = conn;
+            string A = "select PD.PMName as 재고명, SUM(s.StQty) as 수량, PD.PMUnit as 단위 from PdMaster PD join Stock S on PD.PMid = S.PMId " +
+                       "GROUP BY PD.PMName, PD.PMUnit order by PMUnit desc";
+
+            OracleDataAdapter adapt = new OracleDataAdapter();
+            adapt.SelectCommand = new OracleCommand(A, conn);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0].DefaultView;
+
         }
     }
 }
