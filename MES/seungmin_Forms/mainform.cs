@@ -126,5 +126,10 @@ namespace MES
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new StockManagement());
+        }
     }
 }

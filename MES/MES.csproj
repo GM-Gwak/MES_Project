@@ -95,10 +95,10 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockManagement.cs">
+    <Compile Include="seungmin_Forms\StockManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockManagement.Designer.cs">
+    <Compile Include="seungmin_Forms\StockManagement.Designer.cs">
       <DependentUpon>StockManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Stock_ViewDetail.cs">
@@ -142,7 +142,7 @@
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockManagement.resx">
+    <EmbeddedResource Include="seungmin_Forms\StockManagement.resx">
       <DependentUpon>StockManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Stock_ViewDetail.resx">
