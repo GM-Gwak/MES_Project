@@ -62,10 +62,17 @@
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
+            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -249,6 +256,7 @@
             this.iconButton6.Text = "   iconButton2";
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // iconButton5
             // 
@@ -449,6 +457,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.White;
+            this.panelTitleBar.Controls.Add(this.iconButton1);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnClose);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -496,6 +505,11 @@
             // 
             this.panelDesktop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panelDesktop.Controls.Add(this.label2);
+            this.panelDesktop.Controls.Add(this.label5);
+            this.panelDesktop.Controls.Add(this.label6);
+            this.panelDesktop.Controls.Add(this.label7);
+            this.panelDesktop.Controls.Add(this.button4);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(230, 60);
             this.panelDesktop.Name = "panelDesktop";
@@ -505,6 +519,80 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(504, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 40);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "습도 :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(246, 225);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 40);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "온도 :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(343, 225);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 40);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(601, 225);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 40);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "label7";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Location = new System.Drawing.Point(285, 94);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(122, 46);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "새로고침";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(56, 60);
+            this.iconButton1.TabIndex = 21;
+            this.iconButton1.Tag = "Button6";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // mainform
             // 
@@ -523,6 +611,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
+            this.panelDesktop.ResumeLayout(false);
+            this.panelDesktop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -549,5 +639,11 @@
         private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button4;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
