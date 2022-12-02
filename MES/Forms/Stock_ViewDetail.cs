@@ -51,7 +51,7 @@ namespace MES
             //조회
             string[] col_value = new string[] { comboBox1.Text, dateTimePicker1.Text, dateTimePicker2.Text };
             string[] col_name = new string[] { "PMName", "StDate"};
-            view(main_query,col_name, col_value);
+            view(main_query, col_name, col_value);
 
         }
        

@@ -14,6 +14,7 @@ using FontAwesome.Sharp;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net;
+using MES.Workorder_Form;
 
 namespace MES
 {
@@ -250,10 +251,8 @@ namespace MES
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-
-            ActivateButton(sender, RGBColors.color3);
-            
-            
+            //ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new WorkOrder());
         }
 
         private void iconButton6_Click(object sender, EventArgs e)

@@ -139,6 +139,24 @@
     <Compile Include="seungmin_Forms\mainform.Designer.cs">
       <DependentUpon>mainform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Workorder_Form\WorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workorder_Form\WorkOrder.Designer.cs">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workorder_Form\WorkOrder_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workorder_Form\WorkOrder_Create.Designer.cs">
+      <DependentUpon>WorkOrder_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workorder_Form\WorkOrder_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workorder_Form\WorkOrder_Detail.Designer.cs">
+      <DependentUpon>WorkOrder_Detail.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +191,15 @@
     <EmbeddedResource Include="seungmin_Forms\mainform.resx">
       <DependentUpon>mainform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Workorder_Form\WorkOrder.resx">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workorder_Form\WorkOrder_Create.resx">
+      <DependentUpon>WorkOrder_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workorder_Form\WorkOrder_Detail.resx">
+      <DependentUpon>WorkOrder_Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -199,6 +226,7 @@
   <ItemGroup>
     <None Include="Resources\chart-diagram.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
