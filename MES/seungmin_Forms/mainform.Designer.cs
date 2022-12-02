@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
+
             this.panel1 = new System.Windows.Forms.Panel();
             this.name_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,8 +41,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
-=======
->>>>>>> 2cd42afbc3c49532a30be464c8d9683ab9a019cf
+
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -50,24 +49,24 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.품질관리 = new FontAwesome.Sharp.IconButton();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.name_label = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.time_label = new System.Windows.Forms.Label();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
+            
+            
+            
+            
+            
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.panelDesktop = new System.Windows.Forms.Panel();
+            
+            
+            
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +91,7 @@
             this.panelMenu.Size = new System.Drawing.Size(230, 861);
             this.panelMenu.TabIndex = 7;
             // 
-<<<<<<< HEAD
+
             // panel1
             // 
             this.panel1.Controls.Add(this.btnMenu);
@@ -211,8 +210,7 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-=======
->>>>>>> 2cd42afbc3c49532a30be464c8d9683ab9a019cf
+
             // iconButton7
             // 
             this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -371,20 +369,7 @@
             this.iconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton8.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.name_label);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.time_label);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 100);
-            this.panel1.TabIndex = 0;
-            // 
+            
             // btnMenu
             // 
             this.btnMenu.FlatAppearance.BorderSize = 0;
@@ -421,27 +406,9 @@
             this.name_label.TabIndex = 5;
             this.name_label.Text = "사용자명";
             // 
-            // label3
+            
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕 Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(93, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "현재시간 :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(92, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "관리자";
+           
             // 
             // time_label
             // 
@@ -590,9 +557,7 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            
             // 
             // mainform
             // 

@@ -33,7 +33,7 @@ namespace MES
 
         private Form currentChildForm;
         private int borderSize = 2;
-        static string mes;
+        
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
@@ -74,12 +74,7 @@ namespace MES
             waitThread.IsBackground = true;
             waitThread.Start();
 
-            cmd.CommandText = $"SELECT user_name FROM login WHERE id = '{mes}'";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            string work_name = rdr["user_name"].ToString();
-            name_label.Text = work_name.ToString();
+            
         }
         private void Receive()
         {
@@ -218,12 +213,7 @@ namespace MES
             childForm.Show();
             //lblTitleChildForm.Text = childForm.Text;
         }
-        public mainform(string data)
-        {
-            InitializeComponent();
-
-            mes = data;
-        }
+        
 
         private void 품질관리_Click(object sender, EventArgs e)
         {
