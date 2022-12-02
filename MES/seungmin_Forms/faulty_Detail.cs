@@ -22,9 +22,9 @@ namespace MES.seungmin_Forms
         OracleDataAdapter adapt = new OracleDataAdapter();
 
         // 각 폼 그리드 뷰 쿼리
-        string main_query = "select f.faid, f.lotid, w.pmid,w.wcid,f.faqty, m.faname, lotendtime, w.mbno" +
+        string main_query = "select f.faid, f.lotid, w.pmid, l.wcid, f.faqty, m.faname, l.lotendtime, l.mbno" +
                             " from faulty f, faultymaster m, lot l, workorder w" +
-                            " where f.faid = m.faid and f.lotid = l.lotid and l.wcid = w.wcid";
+                            " where f.faid = m.faid and f.lotid = l.lotid and l.woid = w.woid";
         public faulty_Detail()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace MES.seungmin_Forms
             string[] col_value = new string[] { PMName.Text, Wofact.Text, StartTime.Text, EndTime.Text };
 
             // 조회할 컬럼명 (제품명 컬럼, 작업장 컬럼, 작업시작시간 컬럼)
-            string[] col_name = new string[] { "pmid", "w.wcid", "lotendtime" };
+            string[] col_name = new string[] { "w.pmid", "l.wcid", "l.lotendtime" };
 
             // 조회 함수
             view(main_query, col_name, col_value);

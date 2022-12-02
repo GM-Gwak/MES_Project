@@ -43,25 +43,25 @@ namespace MES.seungmin_Forms
                 chart1.Series["갈비만두"].Points.Clear();
                 chart1.Series["총 합"].Points.Clear();
 
-                cmd.CommandText = $"select sum(faqty), lotendtime, pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.wcid = w.wcid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}' group by lotendtime,pmid";
+                cmd.CommandText = $"select sum(faqty),lotendtime, w.pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.woid = w.woid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}' group by lotendtime, w.pmid";
                 OracleDataReader sum1 = cmd.ExecuteReader();
                 while (sum1.Read())
                 {
                     chart1.Series["총 합"].Points.AddXY(sum1["lotendtime"].ToString(), Int32.Parse(sum1["sum(faqty)"].ToString()));
                 }
-                cmd.CommandText = $"select sum(faqty), lotendtime, pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.wcid = w.wcid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}'and pmid = 'PMe01' group by lotendtime,pmid";
+                cmd.CommandText = $"select sum(faqty),lotendtime, w.pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.woid = w.woid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}' and pmid = 'pme01' group by lotendtime, w.pmid";
                 OracleDataReader sum2 = cmd.ExecuteReader();
                 while (sum2.Read())
                 {
                     chart1.Series["고기만두"].Points.Add(Int32.Parse(sum2["sum(faqty)"].ToString()));
                 }
-                cmd.CommandText = $"select sum(faqty), lotendtime, pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.wcid = w.wcid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}'and pmid = 'PMe02' group by lotendtime,pmid";
+                cmd.CommandText = $"select sum(faqty),lotendtime, w.pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.woid = w.woid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}' and pmid = 'pki01' group by lotendtime, w.pmid";
                 OracleDataReader sum3 = cmd.ExecuteReader();
                 while (sum3.Read())
                 {
                     chart1.Series["김치만두"].Points.Add(Int32.Parse(sum3["sum(faqty)"].ToString()));
                 }
-                cmd.CommandText = $"select sum(faqty), lotendtime, pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.wcid = w.wcid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}'and pmid = 'PMe03' group by lotendtime,pmid";
+                cmd.CommandText = $"select sum(faqty),lotendtime, w.pmid from faulty f, lot l, workorder w where f.lotid = l.lotid and l.woid = w.woid and lotendtime between '{date_1.Value.ToString("yyyy-MM-dd")}' and '{date_2.Value.ToString("yyyy-MM-dd")}' and pmid = 'hri01' group by lotendtime, w.pmid";
                 OracleDataReader sum4 = cmd.ExecuteReader();
                 while (sum4.Read())
                 {

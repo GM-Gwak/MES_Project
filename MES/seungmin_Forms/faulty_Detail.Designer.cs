@@ -49,9 +49,9 @@
             // 
             this.Wofact.FormattingEnabled = true;
             this.Wofact.Items.AddRange(new object[] {
-            "Wc001",
-            "Wc002",
-            "Wc003"});
+            "wc001",
+            "wc002",
+            "wc003"});
             this.Wofact.Location = new System.Drawing.Point(507, 66);
             this.Wofact.Name = "Wofact";
             this.Wofact.Size = new System.Drawing.Size(121, 20);
@@ -61,9 +61,9 @@
             // 
             this.PMName.FormattingEnabled = true;
             this.PMName.Items.AddRange(new object[] {
-            "PMe01",
-            "PKi01",
-            "HRi01"});
+            "pme01",
+            "pki01",
+            "hri01"});
             this.PMName.Location = new System.Drawing.Point(363, 66);
             this.PMName.Name = "PMName";
             this.PMName.Size = new System.Drawing.Size(121, 20);
