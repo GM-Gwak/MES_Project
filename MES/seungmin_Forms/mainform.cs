@@ -64,11 +64,11 @@ namespace MES
             conn.Open();
             cmd.Connection = conn;
 
-            cmd.CommandText = $"SELECT user_name FROM login WHERE id = '{mes}'";
+            cmd.CommandText = $"SELECT mbname FROM member WHERE mbId = '{mes}'";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             rdr.Read();
-            string work_name = rdr["user_name"].ToString();
+            string work_name = rdr["mbname"].ToString();
             name_label.Text = work_name.ToString(); 
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;

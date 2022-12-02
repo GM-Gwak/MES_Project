@@ -40,14 +40,14 @@ namespace MES.seungmin_Forms
         {
             try
             {
-                cmd.CommandText = $"SELECT id,password,grade FROM login WHERE id = '{txtuser.Text}' and password = '{txtPassworld.Text}'";
+                cmd.CommandText = $"SELECT mbId,mbpw,mbgrade FROM member WHERE mbId = '{txtuser.Text}' and mbpw = '{txtPassworld.Text}'";
                 cmd.ExecuteNonQuery();
                 rdr = cmd.ExecuteReader();
                 rdr.Read();
 
-                string grade = rdr["grade"].ToString();
-                string id_text = rdr["id"].ToString();
-                if (grade == "manager")   // 관리자 페이지 전환
+                string grade = rdr["mbgrade"].ToString();
+                string id_text = rdr["mbId"].ToString();
+                if (grade == "m")   // 관리자 페이지 전환
                 {
                     this.Visible = false;   // 현재 폼 보이지 않게 하기
                     mainform mainform = new mainform(id_text);
