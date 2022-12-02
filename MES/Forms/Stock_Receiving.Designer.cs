@@ -116,7 +116,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.CustomFormat = "yy-MM-dd";
             this.dateTimePicker1.Font = new System.Drawing.Font("굴림", 16F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(412, 103);
