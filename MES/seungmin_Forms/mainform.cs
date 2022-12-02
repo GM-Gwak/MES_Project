@@ -271,5 +271,12 @@ namespace MES
         {
             currentChildForm.Close();
         }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
     }
 }
