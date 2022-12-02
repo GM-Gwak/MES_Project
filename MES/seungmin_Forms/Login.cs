@@ -21,6 +21,7 @@ namespace MES.seungmin_Forms
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr ;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
+        static string id_text;
         public Login()
         {
             InitializeComponent();
@@ -45,11 +46,11 @@ namespace MES.seungmin_Forms
                 rdr.Read();
 
                 string grade = rdr["grade"].ToString();
-
+                string id_text = rdr["id"].ToString();
                 if (grade == "manager")   // 관리자 페이지 전환
                 {
                     this.Visible = false;   // 현재 폼 보이지 않게 하기
-                    mainform mainform = new mainform();
+                    mainform mainform = new mainform(id_text);
                     mainform.ShowDialog(); // 폼 전환
                 }
             }

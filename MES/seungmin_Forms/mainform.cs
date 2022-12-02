@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MES.seungmin_Forms;
 using FontAwesome.Sharp;
+using System.Net.Sockets;
+using System.Threading;
+using System.Net;
 
 namespace MES
 {
@@ -22,8 +25,15 @@ namespace MES
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
 
+        static string mes;
+
+        private Socket socket;
+        private Thread receiveThread;
+        private Thread waitThread;
+
         private Form currentChildForm;
         private int borderSize = 2;
+        static string mes;
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
@@ -37,6 +47,12 @@ namespace MES
             leftBorderBtn.Size = new Size(7, 45);
             panelMenu.Controls.Add(leftBorderBtn);
         }
+        public mainform(string data)
+        {
+            InitializeComponent();
+
+            mes = data;
+        }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -47,8 +63,61 @@ namespace MES
             timer1.Start();
             conn.Open();
             cmd.Connection = conn;
-        }
 
+            cmd.CommandText = $"SELECT user_name FROM login WHERE id = '{mes}'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_name = rdr["user_name"].ToString();
+            name_label.Text = work_name.ToString(); 
+            waitThread = new Thread(wait);
+            waitThread.IsBackground = true;
+            waitThread.Start();
+
+            cmd.CommandText = $"SELECT user_name FROM login WHERE id = '{mes}'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_name = rdr["user_name"].ToString();
+            name_label.Text = work_name.ToString();
+        }
+        private void Receive()
+        {
+            while (true)
+            {
+                byte[] recvBytes = new byte[1024];
+                socket.Receive(recvBytes);
+                string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
+                string[] str = txt.Split(',');
+                label6.Text = str[0];
+                label7.Text = str[1];
+
+            }
+        }
+        private void wait()
+        {
+            try
+            {
+                //1.소켓만들기
+                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                //2.연결
+                IPAddress address = IPAddress.Parse("192.168.0.17");
+                EndPoint serverEP = new IPEndPoint(address, 9001);
+
+                socket.Connect(serverEP);
+                MessageBox.Show("연결됨");
+                socket.Send(Encoding.UTF8.GetBytes("2"));
+                receiveThread = new Thread(Receive);
+                receiveThread.IsBackground = true;
+                receiveThread.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
+
+        }
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -71,7 +140,7 @@ namespace MES
                 pictureBox1.Visible = false;
                 label1.Visible = false;
                 time_label.Visible = false;
-                label4.Visible = false;
+                name_label.Visible = false;
                 label3.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
@@ -87,7 +156,7 @@ namespace MES
                 pictureBox1.Visible = true;
                 label1.Visible = true;
                 label3.Visible = true;
-                label4.Visible = true;
+                name_label.Visible = true;
                 time_label.Visible = true;
                 btnMenu.Dock = DockStyle.None;
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
@@ -149,10 +218,16 @@ namespace MES
             childForm.Show();
             //lblTitleChildForm.Text = childForm.Text;
         }
+        public mainform(string data)
+        {
+            InitializeComponent();
+
+            mes = data;
+        }
 
         private void 품질관리_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            //ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new faulty());
         }
 
@@ -179,14 +254,32 @@ namespace MES
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            //ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new StockManagement());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
+
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new MES_Server_client());
+            
+            
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            byte[] sendBytes = Encoding.UTF8.GetBytes("1");
+            socket.Send(sendBytes);
+        }
+        //11111
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            currentChildForm.Close();
         }
     }
 }
