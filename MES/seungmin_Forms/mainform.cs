@@ -25,6 +25,8 @@ namespace MES
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
 
+        static string mes;
+
         private Socket socket;
         private Thread receiveThread;
         private Thread waitThread;
@@ -71,6 +73,13 @@ namespace MES
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;
             waitThread.Start();
+
+            cmd.CommandText = $"SELECT user_name FROM login WHERE id = '{mes}'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_name = rdr["user_name"].ToString();
+            name_label.Text = work_name.ToString();
         }
         private void Receive()
         {
@@ -209,10 +218,16 @@ namespace MES
             childForm.Show();
             //lblTitleChildForm.Text = childForm.Text;
         }
+        public mainform(string data)
+        {
+            InitializeComponent();
+
+            mes = data;
+        }
 
         private void 품질관리_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            //ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new faulty());
         }
 
@@ -239,7 +254,7 @@ namespace MES
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            //ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new StockManagement());
         }
 
@@ -261,7 +276,7 @@ namespace MES
             byte[] sendBytes = Encoding.UTF8.GetBytes("1");
             socket.Send(sendBytes);
         }
-
+        //11111
         private void iconButton1_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
