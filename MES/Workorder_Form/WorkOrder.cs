@@ -42,7 +42,7 @@ namespace MES.Workorder_Form
 
         private void WorkOrder_Load(object sender, EventArgs e)
         {
-            WoStartTime.Text = DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd");
+            WoStartTime.Text = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
             WoEndTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
             adapt.SelectCommand = new OracleCommand(main_query, conn);
@@ -127,6 +127,5 @@ namespace MES.Workorder_Form
             WorkOrder_Detail.wo_num = woid;
             WorkOrder_Detail.wo_pmname = pmname;
         }
-
     }
 }
