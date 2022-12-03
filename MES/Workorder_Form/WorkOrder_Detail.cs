@@ -20,6 +20,7 @@ namespace MES.Workorder_Form
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
+
         public WorkOrder_Detail()
         {
             InitializeComponent();
@@ -42,7 +43,6 @@ namespace MES.Workorder_Form
             while (rdr.Read())
             {
                 pmid[i] = rdr["pmid"] as string;
-                textBox1.AppendText(pmid[i]);
                 i++;
             }
 
@@ -53,7 +53,6 @@ namespace MES.Workorder_Form
             while (rdr.Read())
             {
                 lot[i] = rdr["lotid"] as string;
-                textBox1.AppendText(lot[i]);
                 i++;
             }
 

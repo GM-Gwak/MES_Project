@@ -59,7 +59,7 @@ namespace MES.Workorder_Form
             {
                 if (col_value[1] == "")
                 {
-                    query += $" and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]}-23:59:59'";
+                    query += $" and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
@@ -67,7 +67,7 @@ namespace MES.Workorder_Form
                 }
                 else
                 {
-                    query += $" and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]}-23:59:59'";
+                    query += $" and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
@@ -78,7 +78,7 @@ namespace MES.Workorder_Form
             {
                 if (col_value[1] == "")
                 {
-                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]}-23:59:59'";
+                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
@@ -86,7 +86,7 @@ namespace MES.Workorder_Form
                 }
                 else
                 {
-                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]}-23:59:59'";
+                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);

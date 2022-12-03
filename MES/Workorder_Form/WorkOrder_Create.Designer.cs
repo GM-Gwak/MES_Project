@@ -53,10 +53,12 @@
             // 
             this.EA.Font = new System.Drawing.Font("굴림", 15F);
             this.EA.Location = new System.Drawing.Point(167, 212);
+            this.EA.MaxLength = 5;
             this.EA.Multiline = true;
             this.EA.Name = "EA";
             this.EA.Size = new System.Drawing.Size(190, 28);
             this.EA.TabIndex = 29;
+            this.EA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // EA_N
             // 
@@ -100,7 +102,7 @@
             this.ok.UseVisualStyleBackColor = true;
             this.ok.Click += new System.EventHandler(this.ok_Click);
             // 
-            // Workorder_Create
+            // WorkOrder_Create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,7 +113,7 @@
             this.Controls.Add(this.PD_N);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.ok);
-            this.Name = "Workorder_Create";
+            this.Name = "WorkOrder_Create";
             this.Text = "Workorder_Create";
             this.Load += new System.EventHandler(this.Workorder_Create_Load);
             this.ResumeLayout(false);

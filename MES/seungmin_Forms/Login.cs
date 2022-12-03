@@ -36,7 +36,7 @@ namespace MES.seungmin_Forms
             cmd.Connection = conn;
         }
 
-        private void btnlogin_Click(object sender, EventArgs e)
+        public void btnlogin_Click(object sender, EventArgs e)
         {
             try
             {
@@ -111,6 +111,23 @@ namespace MES.seungmin_Forms
                 txtPassworld.Text = "UserPassworld";
                 txtPassworld.ForeColor = Color.LightGray;
                 txtPassworld.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void txtuser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPassworld.Focus();
+                txtPassworld.SelectAll();
+            }
+        }
+
+        private void txtPassworld_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnlogin_Click(sender, e);
             }
         }
     }

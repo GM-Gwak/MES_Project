@@ -134,7 +134,7 @@
             this.btnlogin.Location = new System.Drawing.Point(266, 247);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(408, 40);
-            this.btnlogin.TabIndex = 21;
+            this.btnlogin.TabIndex = 3;
             this.btnlogin.Text = "ACCEDER";
             this.btnlogin.UseVisualStyleBackColor = false;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
@@ -159,9 +159,10 @@
             this.txtPassworld.Location = new System.Drawing.Point(266, 183);
             this.txtPassworld.Name = "txtPassworld";
             this.txtPassworld.Size = new System.Drawing.Size(387, 22);
-            this.txtPassworld.TabIndex = 18;
+            this.txtPassworld.TabIndex = 2;
             this.txtPassworld.Text = "UserPassworld";
             this.txtPassworld.Enter += new System.EventHandler(this.txtPassworld_Enter);
+            this.txtPassworld.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassworld_KeyDown);
             this.txtPassworld.Leave += new System.EventHandler(this.txtPassworld_Leave);
             // 
             // txtuser
@@ -173,9 +174,10 @@
             this.txtuser.Location = new System.Drawing.Point(266, 87);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(387, 22);
-            this.txtuser.TabIndex = 19;
+            this.txtuser.TabIndex = 1;
             this.txtuser.Text = "UserId";
             this.txtuser.Enter += new System.EventHandler(this.txtuser_Enter);
+            this.txtuser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtuser_KeyDown);
             this.txtuser.Leave += new System.EventHandler(this.txtuser_Leave);
             // 
             // Login
