@@ -89,12 +89,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="seungmin_Forms\StockManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +151,6 @@
     <Compile Include="Workorder_Form\WorkOrder_Detail.Designer.cs">
       <DependentUpon>WorkOrder_Detail.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\StockManagement.resx">
       <DependentUpon>StockManagement.cs</DependentUpon>
     </EmbeddedResource>
