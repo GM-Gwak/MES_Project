@@ -272,7 +272,7 @@ namespace MES
             {
                 currentChildForm.Close();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 
             }
