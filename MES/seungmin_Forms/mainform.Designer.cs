@@ -410,7 +410,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(504, 225);
+            this.label2.Location = new System.Drawing.Point(248, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 40);
             this.label2.TabIndex = 22;
@@ -420,7 +420,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(246, 225);
+            this.label5.Location = new System.Drawing.Point(29, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 40);
             this.label5.TabIndex = 21;
@@ -430,28 +430,28 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(343, 225);
+            this.label6.Location = new System.Drawing.Point(126, 109);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 40);
+            this.label6.Size = new System.Drawing.Size(87, 40);
             this.label6.TabIndex = 20;
-            this.label6.Text = "label6";
+            this.label6.Text = "NULL";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(601, 225);
+            this.label7.Location = new System.Drawing.Point(345, 109);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 40);
+            this.label7.Size = new System.Drawing.Size(87, 40);
             this.label7.TabIndex = 19;
-            this.label7.Text = "label7";
+            this.label7.Text = "NULL";
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(285, 94);
+            this.button4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Location = new System.Drawing.Point(36, 49);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 46);
+            this.button4.Size = new System.Drawing.Size(80, 36);
             this.button4.TabIndex = 18;
             this.button4.Text = "새로고침";
             this.button4.UseVisualStyleBackColor = true;
