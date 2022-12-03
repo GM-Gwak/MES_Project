@@ -102,7 +102,7 @@ namespace MES
                 EndPoint serverEP = new IPEndPoint(address, 9001);
 
                 socket.Connect(serverEP);
-                MessageBox.Show("연결됨");
+                MessageBox.Show("연결되었습니다.");
                 socket.Send(Encoding.UTF8.GetBytes("2"));
                 receiveThread = new Thread(Receive);
                 receiveThread.IsBackground = true;
@@ -110,7 +110,7 @@ namespace MES
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{ex}");
+                MessageBox.Show("서버와 연결되지 못하였습니다.");
             }
 
         }
@@ -268,7 +268,14 @@ namespace MES
         //11111
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            try
+            {
+                currentChildForm.Close();
+            }
+            catch(Exception ex)
+            {
+                
+            }
         }
 
         private void iconButton8_Click(object sender, EventArgs e)
