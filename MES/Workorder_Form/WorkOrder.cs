@@ -94,7 +94,28 @@ namespace MES.Workorder_Form
                 }
             }
         }
-        private void WO_VIEW_Click(object sender, EventArgs e)
+        private void WO_GRID_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            woid = WO_GRID.SelectedRows[0].Cells[0].Value.ToString();
+            pmname = WO_GRID.SelectedRows[0].Cells[1].Value.ToString().Substring(0, 4);
+
+            WorkOrder_Detail.wo_num = woid;
+            WorkOrder_Detail.wo_pmname = pmname;
+        }
+
+        private void WO_Detail_Click_1(object sender, EventArgs e)
+        {
+            WorkOrder_Detail wo_detail_view = new WorkOrder_Detail();
+            wo_detail_view.ShowDialog();
+        }
+
+        private void WO_CREATE_Click_1(object sender, EventArgs e)
+        {
+            WorkOrder_Create Wo_Create_view = new WorkOrder_Create();
+            Wo_Create_view.ShowDialog();
+        }
+
+        private void WO_VIEW_Click_1(object sender, EventArgs e)
         {
             // 제품명(콤보박스1), 작업상태(콤보박스2), 최소날짜, 최대날짜
             // 조건이 추가되지 않는 이상 고정
@@ -105,27 +126,6 @@ namespace MES.Workorder_Form
 
             // 조회 함수
             view_workorder(main_query, col_name, col_value);
-        }
-
-        private void WO_CREATE_Click(object sender, EventArgs e)
-        {
-            WorkOrder_Create Wo_Create_view = new WorkOrder_Create();
-            Wo_Create_view.ShowDialog();
-        }
-
-        private void WO_Detail_Click(object sender, EventArgs e)
-        {
-            WorkOrder_Detail wo_detail_view = new WorkOrder_Detail();
-            wo_detail_view.ShowDialog();
-        }
-
-        private void WO_GRID_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            woid = WO_GRID.SelectedRows[0].Cells[0].Value.ToString();
-            pmname = WO_GRID.SelectedRows[0].Cells[1].Value.ToString().Substring(0, 4);
-
-            WorkOrder_Detail.wo_num = woid;
-            WorkOrder_Detail.wo_pmname = pmname;
         }
     }
 }
