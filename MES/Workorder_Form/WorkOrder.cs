@@ -34,6 +34,7 @@ namespace MES.Workorder_Form
 
         string woid;
         string pmname;
+
         public WorkOrder()
         {
             InitializeComponent();
