@@ -25,8 +25,6 @@ namespace MES.Workorder_Form
 
         private void Workorder_Create_Load(object sender, EventArgs e)
         {
-            conn.Open();
-            cmd.Connection = conn;
         }
         private void ok_Click(object sender, EventArgs e)
         {
@@ -74,8 +72,6 @@ namespace MES.Workorder_Form
                     EA.SelectAll();
                     return;
                 }
-
-
 
                 conn.Open();
                 cmd.Connection = conn;

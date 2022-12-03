@@ -38,6 +38,7 @@
             // 
             // PD
             // 
+            this.PD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PD.Font = new System.Drawing.Font("굴림", 15F);
             this.PD.FormattingEnabled = true;
             this.PD.Items.AddRange(new object[] {
@@ -87,7 +88,7 @@
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(188, 49);
             this.exit.TabIndex = 26;
-            this.exit.Text = "취소";
+            this.exit.Text = "닫기";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -113,6 +114,7 @@
             this.Controls.Add(this.PD_N);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.ok);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WorkOrder_Create";
             this.Text = "Workorder_Create";
             this.Load += new System.EventHandler(this.Workorder_Create_Load);
