@@ -433,18 +433,18 @@
             // 
             this.panelDesktop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelDesktop.BackColor = System.Drawing.SystemColors.Menu;
-<<<<<<< HEAD
+
             this.panelDesktop.Controls.Add(this.groupBox4);
             this.panelDesktop.Controls.Add(this.groupBox3);
             this.panelDesktop.Controls.Add(this.groupBox2);
             this.panelDesktop.Controls.Add(this.groupBox1);
-=======
+
             this.panelDesktop.Controls.Add(this.label2);
             this.panelDesktop.Controls.Add(this.label5);
             this.panelDesktop.Controls.Add(this.label6);
             this.panelDesktop.Controls.Add(this.label7);
             this.panelDesktop.Controls.Add(this.button4);
->>>>>>> 8d79a98acf3c48eaaea5ffcd2518051e5da31858
+
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(230, 57);
             this.panelDesktop.Name = "panelDesktop";
