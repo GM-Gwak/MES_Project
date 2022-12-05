@@ -34,6 +34,7 @@ namespace MES.Workorder_Form
 
         string woid;
         string pmname;
+        string woid_del;
 
         public WorkOrder()
         {
@@ -126,6 +127,22 @@ namespace MES.Workorder_Form
 
             // 조회 함수
             view_workorder(main_query, col_name, col_value);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            cmd.Connection = conn;
+
+            woid_del = WO_GRID.SelectedRows[0].Cells[0].Value.ToString();
+            cmd.CommandText = $"delete lot where woid = '{woid_del}'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = $"delete workorder where woid = '{woid_del}'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = $"commit";
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
         }
     }
 }
