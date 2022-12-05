@@ -99,7 +99,7 @@ namespace MES.seungmin_Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

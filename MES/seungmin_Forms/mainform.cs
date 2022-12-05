@@ -85,8 +85,8 @@ namespace MES
                 socket.Receive(recvBytes);
                 string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
                 string[] str = txt.Split(',');
-                label6.Text = str[0];
-                label7.Text = str[1];
+                //label6.Text = str[0];
+                //label7.Text = str[1];
 
             }
         }
