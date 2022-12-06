@@ -86,6 +86,8 @@ namespace MES.Workorder_Form
             DataSet ds = new DataSet();
             adapt.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
+
+            conn.Close();
         }
     }
 }
