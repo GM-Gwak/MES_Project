@@ -68,7 +68,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
             this.panel1.Controls.Add(this.iconPictureBox1);
             this.panel1.Controls.Add(this.WO_DT_Label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -79,11 +79,10 @@
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
             this.iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlassPlus;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 58;
             this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -95,6 +94,7 @@
             // WO_DT_Label1
             // 
             this.WO_DT_Label1.Font = new System.Drawing.Font("나눔고딕코딩", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.WO_DT_Label1.ForeColor = System.Drawing.Color.White;
             this.WO_DT_Label1.Location = new System.Drawing.Point(93, 9);
             this.WO_DT_Label1.Name = "WO_DT_Label1";
             this.WO_DT_Label1.Size = new System.Drawing.Size(617, 41);
