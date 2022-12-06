@@ -36,12 +36,12 @@
             this.WO_DT_Label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.WO_VIEW = new FontAwesome.Sharp.IconButton();
             this.WO_STAT_N = new System.Windows.Forms.Label();
             this.EndTime = new System.Windows.Forms.DateTimePicker();
             this.WO_ITEMS_N = new System.Windows.Forms.Label();
             this.WO_DATE_N = new System.Windows.Forms.Label();
             this.StartTime = new System.Windows.Forms.DateTimePicker();
-            this.WO_VIEW = new FontAwesome.Sharp.IconButton();
             this.Wo_detail_close = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.WO_GRID)).BeginInit();
             this.panelTitleBar.SuspendLayout();
@@ -136,10 +136,9 @@
             this.panel1.Controls.Add(this.WO_ITEMS_N);
             this.panel1.Controls.Add(this.WO_DATE_N);
             this.panel1.Controls.Add(this.StartTime);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 58);
+            this.panel1.Location = new System.Drawing.Point(-1, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1118, 46);
+            this.panel1.Size = new System.Drawing.Size(1120, 46);
             this.panel1.TabIndex = 48;
             // 
             // label1
@@ -152,14 +151,36 @@
             this.label1.Text = "-";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // WO_VIEW
+            // 
+            this.WO_VIEW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.WO_VIEW.FlatAppearance.BorderSize = 0;
+            this.WO_VIEW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WO_VIEW.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.WO_VIEW.ForeColor = System.Drawing.Color.White;
+            this.WO_VIEW.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.WO_VIEW.IconColor = System.Drawing.Color.White;
+            this.WO_VIEW.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.WO_VIEW.IconSize = 30;
+            this.WO_VIEW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.WO_VIEW.Location = new System.Drawing.Point(987, 7);
+            this.WO_VIEW.Name = "WO_VIEW";
+            this.WO_VIEW.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.WO_VIEW.Size = new System.Drawing.Size(106, 36);
+            this.WO_VIEW.TabIndex = 50;
+            this.WO_VIEW.Tag = "Button4";
+            this.WO_VIEW.Text = "   조회";
+            this.WO_VIEW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.WO_VIEW.UseVisualStyleBackColor = false;
+            this.WO_VIEW.Click += new System.EventHandler(this.WO_VIEW_Click_1);
+            // 
             // WO_STAT_N
             // 
             this.WO_STAT_N.BackColor = System.Drawing.SystemColors.Menu;
-            this.WO_STAT_N.Dock = System.Windows.Forms.DockStyle.Left;
             this.WO_STAT_N.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.WO_STAT_N.Location = new System.Drawing.Point(0, 0);
+            this.WO_STAT_N.Location = new System.Drawing.Point(-1, 0);
             this.WO_STAT_N.Name = "WO_STAT_N";
-            this.WO_STAT_N.Size = new System.Drawing.Size(86, 44);
+            this.WO_STAT_N.Size = new System.Drawing.Size(87, 44);
             this.WO_STAT_N.TabIndex = 40;
             this.WO_STAT_N.Tag = "품목";
             this.WO_STAT_N.Text = "품목";
@@ -213,29 +234,6 @@
             this.StartTime.Size = new System.Drawing.Size(163, 30);
             this.StartTime.TabIndex = 32;
             this.StartTime.Value = new System.DateTime(2022, 11, 23, 15, 33, 25, 0);
-            // 
-            // WO_VIEW
-            // 
-            this.WO_VIEW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.WO_VIEW.FlatAppearance.BorderSize = 0;
-            this.WO_VIEW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WO_VIEW.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.WO_VIEW.ForeColor = System.Drawing.Color.White;
-            this.WO_VIEW.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.WO_VIEW.IconColor = System.Drawing.Color.White;
-            this.WO_VIEW.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.WO_VIEW.IconSize = 30;
-            this.WO_VIEW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.WO_VIEW.Location = new System.Drawing.Point(987, 7);
-            this.WO_VIEW.Name = "WO_VIEW";
-            this.WO_VIEW.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.WO_VIEW.Size = new System.Drawing.Size(106, 36);
-            this.WO_VIEW.TabIndex = 50;
-            this.WO_VIEW.Tag = "Button4";
-            this.WO_VIEW.Text = "   조회";
-            this.WO_VIEW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.WO_VIEW.UseVisualStyleBackColor = false;
-            this.WO_VIEW.Click += new System.EventHandler(this.WO_VIEW_Click_1);
             // 
             // Wo_detail_close
             // 

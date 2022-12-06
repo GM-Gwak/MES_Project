@@ -30,13 +30,14 @@ namespace MES.seungmin_Forms
             date_2.Text = DateTime.Now.ToString("yyyy-MM-dd");
             conn.Open();
             cmd.Connection = conn;
+            faulty_chart();
         }
 
-        
-
-       
-
         private void faulty_search_Click(object sender, EventArgs e)
+        {
+            faulty_chart();
+        }
+        public void faulty_chart()
         {
             try
             {
@@ -80,7 +81,6 @@ namespace MES.seungmin_Forms
                 MessageBox.Show("Date 설정 똑바로해요~!");
             }
         }
-
         private void btn_faulty_detail_Click(object sender, EventArgs e)
         {
             faulty_Detail faulty_detail = new faulty_Detail();
