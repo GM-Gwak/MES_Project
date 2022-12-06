@@ -49,7 +49,7 @@
             this.WO_VIEW = new FontAwesome.Sharp.IconButton();
             this.WO_CREATE = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.Wo_del = new FontAwesome.Sharp.IconButton();
             this.WO_LABEL = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.WO_GRID)).BeginInit();
@@ -331,7 +331,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.iconButton1);
+            this.panel2.Controls.Add(this.Wo_del);
             this.panel2.Controls.Add(this.WO_LABEL);
             this.panel2.Controls.Add(this.WO_VIEW);
             this.panel2.Controls.Add(this.WO_CREATE);
@@ -342,28 +342,28 @@
             this.panel2.Size = new System.Drawing.Size(1356, 66);
             this.panel2.TabIndex = 51;
             // 
-            // iconButton1
+            // Wo_del
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(914, 16);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(153, 36);
-            this.iconButton1.TabIndex = 53;
-            this.iconButton1.Tag = "Button4";
-            this.iconButton1.Text = "   지시서 삭제";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.Wo_del.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.Wo_del.FlatAppearance.BorderSize = 0;
+            this.Wo_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Wo_del.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Wo_del.ForeColor = System.Drawing.Color.White;
+            this.Wo_del.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
+            this.Wo_del.IconColor = System.Drawing.Color.White;
+            this.Wo_del.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Wo_del.IconSize = 30;
+            this.Wo_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Wo_del.Location = new System.Drawing.Point(914, 16);
+            this.Wo_del.Name = "Wo_del";
+            this.Wo_del.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Wo_del.Size = new System.Drawing.Size(153, 36);
+            this.Wo_del.TabIndex = 53;
+            this.Wo_del.Tag = "Button4";
+            this.Wo_del.Text = "   지시서 삭제";
+            this.Wo_del.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Wo_del.UseVisualStyleBackColor = false;
+            this.Wo_del.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // WO_LABEL
             // 
@@ -430,6 +430,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label WO_LABEL;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton Wo_del;
     }
 }

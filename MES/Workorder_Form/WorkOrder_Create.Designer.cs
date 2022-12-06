@@ -35,8 +35,8 @@
             this.ok = new FontAwesome.Sharp.IconButton();
             this.exit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.WO_LABEL = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.WO_CT_Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,23 +136,12 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.iconPictureBox1);
-            this.panel1.Controls.Add(this.WO_LABEL);
+            this.panel1.Controls.Add(this.WO_CT_Label);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(490, 58);
             this.panel1.TabIndex = 53;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // WO_LABEL
-            // 
-            this.WO_LABEL.Font = new System.Drawing.Font("나눔고딕코딩", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.WO_LABEL.Location = new System.Drawing.Point(162, 10);
-            this.WO_LABEL.Name = "WO_LABEL";
-            this.WO_LABEL.Size = new System.Drawing.Size(169, 41);
-            this.WO_LABEL.TabIndex = 32;
-            this.WO_LABEL.Text = "지시서 등록";
-            this.WO_LABEL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.WO_LABEL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WO_LABEL_MouseDown);
             // 
             // iconPictureBox1
             // 
@@ -168,6 +157,17 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(74, 58);
             this.iconPictureBox1.TabIndex = 53;
             this.iconPictureBox1.TabStop = false;
+            // 
+            // WO_CT_Label
+            // 
+            this.WO_CT_Label.Font = new System.Drawing.Font("나눔고딕코딩", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.WO_CT_Label.Location = new System.Drawing.Point(162, 10);
+            this.WO_CT_Label.Name = "WO_CT_Label";
+            this.WO_CT_Label.Size = new System.Drawing.Size(169, 41);
+            this.WO_CT_Label.TabIndex = 32;
+            this.WO_CT_Label.Text = "지시서 등록";
+            this.WO_CT_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WO_CT_Label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WO_LABEL_MouseDown);
             // 
             // WorkOrder_Create
             // 
@@ -203,7 +203,7 @@
         private FontAwesome.Sharp.IconButton ok;
         private FontAwesome.Sharp.IconButton exit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label WO_LABEL;
+        private System.Windows.Forms.Label WO_CT_Label;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
