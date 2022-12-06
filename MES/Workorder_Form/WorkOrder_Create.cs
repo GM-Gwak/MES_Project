@@ -124,9 +124,9 @@ namespace MES.Workorder_Form
                 conn.Close();
                 
             }
-            catch (Exception ex1)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex1.Message);
+                MessageBox.Show(ex.Message);
                 
             }
         }

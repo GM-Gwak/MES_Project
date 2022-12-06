@@ -106,8 +106,20 @@ namespace MES.Workorder_Form
 
         private void WO_Detail_Click_1(object sender, EventArgs e)
         {
-            WorkOrder_Detail wo_detail_view = new WorkOrder_Detail();
-            wo_detail_view.ShowDialog();
+            try
+            {
+                if (woid == null || woid == "")
+                {
+                    MessageBox.Show("조회할 지시서를 선택해주십시오.");
+                    return;
+                }
+                    WorkOrder_Detail wo_detail_view = new WorkOrder_Detail();
+                    wo_detail_view.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void WO_CREATE_Click_1(object sender, EventArgs e)
@@ -118,9 +130,24 @@ namespace MES.Workorder_Form
 
         private void WO_VIEW_Click_1(object sender, EventArgs e)
         {
+            string stat = string.Empty;
+
+            if (WoStat.Text == "가동")
+            {
+                stat = "S";
+            }
+            else if (WoStat.Text == "완료")
+            {
+                stat = "E";
+            }
+            else
+            {
+                stat = "P";
+            }
+
             // 제품명(콤보박스1), 작업상태(콤보박스2), 최소날짜, 최대날짜
             // 조건이 추가되지 않는 이상 고정
-            string[] col_value = new string[] { PMName.Text, WoStat.Text, WoStartTime.Text, WoEndTime.Text };
+            string[] col_value = new string[] { PMName.Text, stat, WoStartTime.Text, WoEndTime.Text };
 
             // 조회할 컬럼명 (제품명 컬럼, 작업상태 컬럼, 작업시작시간 컬럼)
             string[] col_name = new string[] { "PMName", "WoStat", "LotCreateTime" };
