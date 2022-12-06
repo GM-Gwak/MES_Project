@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_faulty_detail = new FontAwesome.Sharp.IconButton();
+            this.faulty_search = new FontAwesome.Sharp.IconButton();
             this.WO_LABEL = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.faulty_search = new FontAwesome.Sharp.IconButton();
             this.date_1 = new System.Windows.Forms.DateTimePicker();
             this.date_2 = new System.Windows.Forms.DateTimePicker();
             this.WO_DATE_N = new System.Windows.Forms.Label();
@@ -53,40 +53,40 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(49, 141);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "고기만두";
-            series1.ShadowColor = System.Drawing.Color.White;
-            series1.ShadowOffset = 10;
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "김치만두";
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.Salmon;
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "갈비만두";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Blue;
-            series4.IsValueShownAsLabel = true;
-            series4.Legend = "Legend1";
-            series4.Name = "총 합";
-            series4.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "고기만두";
+            series5.ShadowColor = System.Drawing.Color.White;
+            series5.ShadowOffset = 10;
+            series6.ChartArea = "ChartArea1";
+            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series6.IsValueShownAsLabel = true;
+            series6.Legend = "Legend1";
+            series6.Name = "김치만두";
+            series7.ChartArea = "ChartArea1";
+            series7.Color = System.Drawing.Color.Salmon;
+            series7.IsValueShownAsLabel = true;
+            series7.Legend = "Legend1";
+            series7.Name = "갈비만두";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Color = System.Drawing.Color.Blue;
+            series8.IsValueShownAsLabel = true;
+            series8.Legend = "Legend1";
+            series8.Name = "총 합";
+            series8.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(1320, 579);
             this.chart1.TabIndex = 34;
             this.chart1.Text = "chart1";
@@ -127,6 +127,29 @@
             this.btn_faulty_detail.UseVisualStyleBackColor = false;
             this.btn_faulty_detail.Click += new System.EventHandler(this.btn_faulty_detail_Click);
             // 
+            // faulty_search
+            // 
+            this.faulty_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.faulty_search.FlatAppearance.BorderSize = 0;
+            this.faulty_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.faulty_search.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.faulty_search.ForeColor = System.Drawing.Color.White;
+            this.faulty_search.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.faulty_search.IconColor = System.Drawing.Color.White;
+            this.faulty_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.faulty_search.IconSize = 30;
+            this.faulty_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.faulty_search.Location = new System.Drawing.Point(1223, 18);
+            this.faulty_search.Name = "faulty_search";
+            this.faulty_search.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.faulty_search.Size = new System.Drawing.Size(106, 36);
+            this.faulty_search.TabIndex = 49;
+            this.faulty_search.Tag = "조회";
+            this.faulty_search.Text = "조회";
+            this.faulty_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.faulty_search.UseVisualStyleBackColor = false;
+            this.faulty_search.Click += new System.EventHandler(this.faulty_search_Click);
+            // 
             // WO_LABEL
             // 
             this.WO_LABEL.Font = new System.Drawing.Font("나눔고딕코딩", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -160,8 +183,7 @@
             this.panel1.Controls.Add(this.date_1);
             this.panel1.Controls.Add(this.date_2);
             this.panel1.Controls.Add(this.WO_DATE_N);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 66);
+            this.panel1.Location = new System.Drawing.Point(-1, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1553, 46);
             this.panel1.TabIndex = 53;
@@ -175,29 +197,6 @@
             this.label2.TabIndex = 48;
             this.label2.Text = "-";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // faulty_search
-            // 
-            this.faulty_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.faulty_search.FlatAppearance.BorderSize = 0;
-            this.faulty_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.faulty_search.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.faulty_search.ForeColor = System.Drawing.Color.White;
-            this.faulty_search.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.faulty_search.IconColor = System.Drawing.Color.White;
-            this.faulty_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.faulty_search.IconSize = 30;
-            this.faulty_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.faulty_search.Location = new System.Drawing.Point(1223, 18);
-            this.faulty_search.Name = "faulty_search";
-            this.faulty_search.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.faulty_search.Size = new System.Drawing.Size(106, 36);
-            this.faulty_search.TabIndex = 49;
-            this.faulty_search.Tag = "Button4";
-            this.faulty_search.Text = "검색";
-            this.faulty_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.faulty_search.UseVisualStyleBackColor = false;
-            this.faulty_search.Click += new System.EventHandler(this.faulty_search_Click);
             // 
             // date_1
             // 
