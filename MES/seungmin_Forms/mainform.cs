@@ -87,10 +87,29 @@ namespace MES
             Kimchi.Text = stqty[1];
             Galbi.Text = stqty[2];
 
+            cmd.CommandText = $"SELECT lotstat FROM lot WHERE wcid = 'wc001'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_cd = rdr["lotstat"].ToString();
+            if(work_cd == "P"||work_cd=="E")
+            {
+                process1.Style = ProgressBarStyle.Blocks;
+                process1.ProgressColor = Color.Red;
+                process1.Text = "중단";
+            }
+            else if(work_cd == "S")
+            {
+                process1.Style = ProgressBarStyle.Marquee;
+                process1.ProgressColor = Color.Green;
+                process1.Text = "가동중";
+            }
+
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;
             waitThread.Start();
 
+            
             
         }
         private void Receive()
@@ -101,8 +120,17 @@ namespace MES
                 socket.Receive(recvBytes);
                 string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
                 string[] str = txt.Split(',');
-                Temp.Text = str[0];
-                Hum.Text = str[1];
+                if (Temp.InvokeRequired == true)
+                {
+                    Temp.Invoke(new MethodInvoker(delegate { Temp.Text = str[0]; }));
+                    Hum.Invoke(new MethodInvoker(delegate { Hum.Text = str[1]; }));
+                }
+                else
+                {
+                    Temp.Text = str[0];
+                    Hum.Text = str[1];
+                }
+                
 
             }
         }
@@ -311,5 +339,7 @@ namespace MES
             byte[] sendBytes = Encoding.UTF8.GetBytes("1");
             socket.Send(sendBytes);
         }
+
+        
     }
 }
