@@ -41,18 +41,6 @@ namespace MES.seungmin_Forms
             WO_GRID.DataSource = ds.Tables[0].DefaultView;
         }
 
-        private void WO_VIEW_Click(object sender, EventArgs e)
-        {
-            // 제품명(콤보박스1), 작업상태(콤보박스2), 최소날짜, 최대날짜
-            // 조건이 추가되지 않는 이상 고정
-            string[] col_value = new string[] { PMName.Text, Wofact.Text, StartTime.Text, EndTime.Text };
-
-            // 조회할 컬럼명 (제품명 컬럼, 작업장 컬럼, 작업시작시간 컬럼)
-            string[] col_name = new string[] { "w.pmid", "l.wcid", "l.lotendtime" };
-
-            // 조회 함수
-            view(main_query, col_name, col_value);
-        }
         public void view(string query, string[] col_name, string[] col_value)
         {
             if (col_value[0] == "")
@@ -95,17 +83,31 @@ namespace MES.seungmin_Forms
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void WO_VIEW_Click_1(object sender, EventArgs e)
+        {
+            // 제품명(콤보박스1), 작업상태(콤보박스2), 최소날짜, 최대날짜
+            // 조건이 추가되지 않는 이상 고정
+            string[] col_value = new string[] { PMName.Text, Wofact.Text, StartTime.Text, EndTime.Text };
+
+            // 조회할 컬럼명 (제품명 컬럼, 작업장 컬럼, 작업시작시간 컬럼)
+            string[] col_name = new string[] { "w.pmid", "l.wcid", "l.lotendtime" };
+
+            // 조회 함수
+            view(main_query, col_name, col_value);
+        }
+
+        private void Wo_detail_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        private void WO_DT_Label1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

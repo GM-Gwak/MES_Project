@@ -28,186 +28,242 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.date_2 = new System.Windows.Forms.DateTimePicker();
-            this.date_1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_faulty_detail = new FontAwesome.Sharp.IconButton();
+            this.WO_LABEL = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.faulty_search = new FontAwesome.Sharp.IconButton();
+            this.date_1 = new System.Windows.Forms.DateTimePicker();
+            this.date_2 = new System.Windows.Forms.DateTimePicker();
+            this.WO_DATE_N = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(924, 591);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 41);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "상세보기";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(924, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 41);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "검색";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1354, 1);
-            this.panel2.TabIndex = 29;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(0, 104);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1354, 1);
-            this.panel1.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(278, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 12);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "~";
-            // 
-            // date_2
-            // 
-            this.date_2.Location = new System.Drawing.Point(298, 77);
-            this.date_2.Name = "date_2";
-            this.date_2.Size = new System.Drawing.Size(113, 21);
-            this.date_2.TabIndex = 26;
-            // 
-            // date_1
-            // 
-            this.date_1.Location = new System.Drawing.Point(159, 77);
-            this.date_1.Name = "date_1";
-            this.date_1.Size = new System.Drawing.Size(113, 21);
-            this.date_1.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(83, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "품질관리";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(84, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(746, 34);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "차트";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(88, 153);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(49, 141);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "고기만두";
-            series5.ShadowColor = System.Drawing.Color.White;
-            series5.ShadowOffset = 10;
-            series6.ChartArea = "ChartArea1";
-            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series6.IsValueShownAsLabel = true;
-            series6.Legend = "Legend1";
-            series6.Name = "김치만두";
-            series7.ChartArea = "ChartArea1";
-            series7.Color = System.Drawing.Color.Salmon;
-            series7.IsValueShownAsLabel = true;
-            series7.Legend = "Legend1";
-            series7.Name = "갈비만두";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Color = System.Drawing.Color.Blue;
-            series8.IsValueShownAsLabel = true;
-            series8.Legend = "Legend1";
-            series8.Name = "총 합";
-            series8.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
-            this.chart1.Size = new System.Drawing.Size(931, 432);
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "고기만두";
+            series1.ShadowColor = System.Drawing.Color.White;
+            series1.ShadowOffset = 10;
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "김치만두";
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.Salmon;
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "갈비만두";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Color = System.Drawing.Color.Blue;
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "총 합";
+            series4.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(1320, 579);
             this.chart1.TabIndex = 34;
             this.chart1.Text = "chart1";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.btn_faulty_detail);
+            this.panel2.Controls.Add(this.faulty_search);
+            this.panel2.Controls.Add(this.WO_LABEL);
+            this.panel2.Controls.Add(this.iconPictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1553, 66);
+            this.panel2.TabIndex = 52;
+            // 
+            // btn_faulty_detail
+            // 
+            this.btn_faulty_detail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.btn_faulty_detail.FlatAppearance.BorderSize = 0;
+            this.btn_faulty_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_faulty_detail.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_faulty_detail.ForeColor = System.Drawing.Color.White;
+            this.btn_faulty_detail.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlassPlus;
+            this.btn_faulty_detail.IconColor = System.Drawing.Color.White;
+            this.btn_faulty_detail.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_faulty_detail.IconSize = 30;
+            this.btn_faulty_detail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_faulty_detail.Location = new System.Drawing.Point(1091, 18);
+            this.btn_faulty_detail.Name = "btn_faulty_detail";
+            this.btn_faulty_detail.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_faulty_detail.Size = new System.Drawing.Size(126, 36);
+            this.btn_faulty_detail.TabIndex = 53;
+            this.btn_faulty_detail.Tag = "상세보기";
+            this.btn_faulty_detail.Text = "상세보기";
+            this.btn_faulty_detail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_faulty_detail.UseVisualStyleBackColor = false;
+            this.btn_faulty_detail.Click += new System.EventHandler(this.btn_faulty_detail_Click);
+            // 
+            // WO_LABEL
+            // 
+            this.WO_LABEL.Font = new System.Drawing.Font("나눔고딕코딩", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.WO_LABEL.Location = new System.Drawing.Point(80, 11);
+            this.WO_LABEL.Name = "WO_LABEL";
+            this.WO_LABEL.Size = new System.Drawing.Size(169, 41);
+            this.WO_LABEL.TabIndex = 31;
+            this.WO_LABEL.Text = "품질관리";
+            this.WO_LABEL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 66;
+            this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(74, 66);
+            this.iconPictureBox1.TabIndex = 52;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.date_1);
+            this.panel1.Controls.Add(this.date_2);
+            this.panel1.Controls.Add(this.WO_DATE_N);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1553, 46);
+            this.panel1.TabIndex = 53;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(280, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 42);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "-";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // faulty_search
+            // 
+            this.faulty_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.faulty_search.FlatAppearance.BorderSize = 0;
+            this.faulty_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.faulty_search.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.faulty_search.ForeColor = System.Drawing.Color.White;
+            this.faulty_search.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.faulty_search.IconColor = System.Drawing.Color.White;
+            this.faulty_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.faulty_search.IconSize = 30;
+            this.faulty_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.faulty_search.Location = new System.Drawing.Point(1223, 18);
+            this.faulty_search.Name = "faulty_search";
+            this.faulty_search.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.faulty_search.Size = new System.Drawing.Size(106, 36);
+            this.faulty_search.TabIndex = 49;
+            this.faulty_search.Tag = "Button4";
+            this.faulty_search.Text = "검색";
+            this.faulty_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.faulty_search.UseVisualStyleBackColor = false;
+            this.faulty_search.Click += new System.EventHandler(this.faulty_search_Click);
+            // 
+            // date_1
+            // 
+            this.date_1.CustomFormat = "";
+            this.date_1.Font = new System.Drawing.Font("굴림", 15F);
+            this.date_1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date_1.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+            this.date_1.Location = new System.Drawing.Point(113, 7);
+            this.date_1.Name = "date_1";
+            this.date_1.Size = new System.Drawing.Size(161, 30);
+            this.date_1.TabIndex = 34;
+            // 
+            // date_2
+            // 
+            this.date_2.CustomFormat = "";
+            this.date_2.Font = new System.Drawing.Font("굴림", 15F);
+            this.date_2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date_2.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+            this.date_2.Location = new System.Drawing.Point(324, 7);
+            this.date_2.Name = "date_2";
+            this.date_2.Size = new System.Drawing.Size(161, 30);
+            this.date_2.TabIndex = 34;
+            // 
+            // WO_DATE_N
+            // 
+            this.WO_DATE_N.BackColor = System.Drawing.SystemColors.Menu;
+            this.WO_DATE_N.Dock = System.Windows.Forms.DockStyle.Left;
+            this.WO_DATE_N.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.WO_DATE_N.Location = new System.Drawing.Point(0, 0);
+            this.WO_DATE_N.Name = "WO_DATE_N";
+            this.WO_DATE_N.Size = new System.Drawing.Size(107, 44);
+            this.WO_DATE_N.TabIndex = 41;
+            this.WO_DATE_N.Text = "기간";
+            this.WO_DATE_N.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // faulty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1338, 765);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1553, 824);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.date_2);
-            this.Controls.Add(this.date_1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.chart1);
             this.Name = "faulty";
             this.Text = "faulty";
             this.Load += new System.EventHandler(this.faulty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker date_2;
-        private System.Windows.Forms.DateTimePicker date_1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label WO_LABEL;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker date_1;
+        private System.Windows.Forms.DateTimePicker date_2;
+        private System.Windows.Forms.Label WO_DATE_N;
+        private FontAwesome.Sharp.IconButton faulty_search;
+        private FontAwesome.Sharp.IconButton btn_faulty_detail;
     }
 }

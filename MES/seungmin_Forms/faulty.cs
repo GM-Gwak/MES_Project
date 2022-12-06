@@ -32,7 +32,11 @@ namespace MES.seungmin_Forms
             cmd.Connection = conn;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+       
+
+        private void faulty_search_Click(object sender, EventArgs e)
         {
             try
             {
@@ -77,7 +81,7 @@ namespace MES.seungmin_Forms
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_faulty_detail_Click(object sender, EventArgs e)
         {
             faulty_Detail faulty_detail = new faulty_Detail();
             faulty_detail.Show();
