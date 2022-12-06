@@ -139,15 +139,12 @@
     <Compile Include="seungmin_Forms\mainform.Designer.cs">
       <DependentUpon>mainform.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
-=======
     <Compile Include="seungmin_Forms\Monitoring.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="seungmin_Forms\Monitoring.Designer.cs">
       <DependentUpon>Monitoring.cs</DependentUpon>
     </Compile>
->>>>>>> Stashed changes
     <Compile Include="Workorder_Form\WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,12 +194,9 @@
     <EmbeddedResource Include="seungmin_Forms\mainform.resx">
       <DependentUpon>mainform.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
-=======
     <EmbeddedResource Include="seungmin_Forms\Monitoring.resx">
       <DependentUpon>Monitoring.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> Stashed changes
     <EmbeddedResource Include="Workorder_Form\WorkOrder.resx">
       <DependentUpon>WorkOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,9 +233,6 @@
     <None Include="Resources\chart-diagram.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Folder Include="UI\" />
-=======
     <None Include="Resources\냉각2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -297,7 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\재료2.png" />
->>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
