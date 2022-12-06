@@ -33,24 +33,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.품질관리 = new FontAwesome.Sharp.IconButton();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.name_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.time_label = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -96,9 +84,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.품질관리 = new FontAwesome.Sharp.IconButton();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.panelDesktop.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -106,6 +105,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -125,165 +125,6 @@
             this.panelMenu.Size = new System.Drawing.Size(230, 861);
             this.panelMenu.TabIndex = 7;
             // 
-            // iconButton7
-            // 
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton7.ForeColor = System.Drawing.Color.White;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton7.IconColor = System.Drawing.Color.White;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 30;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 325);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton7.Size = new System.Drawing.Size(230, 45);
-            this.iconButton7.TabIndex = 20;
-            this.iconButton7.Tag = "Button6";
-            this.iconButton7.Text = "   iconButton2";
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton6.ForeColor = System.Drawing.Color.White;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton6.IconColor = System.Drawing.Color.White;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 30;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.Location = new System.Drawing.Point(0, 280);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton6.Size = new System.Drawing.Size(230, 45);
-            this.iconButton6.TabIndex = 19;
-            this.iconButton6.Tag = "Button5";
-            this.iconButton6.Text = "   iconButton2";
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton5.ForeColor = System.Drawing.Color.White;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 30;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 235);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(230, 45);
-            this.iconButton5.TabIndex = 18;
-            this.iconButton5.Tag = "Button4";
-            this.iconButton5.Text = "   iconButton2";
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 190);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton4.Size = new System.Drawing.Size(230, 45);
-            this.iconButton4.TabIndex = 17;
-            this.iconButton4.Tag = "작업지시";
-            this.iconButton4.Text = "작업지시";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 30;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 145);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton3.Size = new System.Drawing.Size(230, 45);
-            this.iconButton3.TabIndex = 16;
-            this.iconButton3.Tag = "재고관리";
-            this.iconButton3.Text = "재고관리";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
-            // 
-            // 품질관리
-            // 
-            this.품질관리.Dock = System.Windows.Forms.DockStyle.Top;
-            this.품질관리.FlatAppearance.BorderSize = 0;
-            this.품질관리.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.품질관리.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.품질관리.ForeColor = System.Drawing.Color.White;
-            this.품질관리.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.품질관리.IconColor = System.Drawing.Color.White;
-            this.품질관리.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.품질관리.IconSize = 30;
-            this.품질관리.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.품질관리.Location = new System.Drawing.Point(0, 100);
-            this.품질관리.Name = "품질관리";
-            this.품질관리.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.품질관리.Size = new System.Drawing.Size(230, 45);
-            this.품질관리.TabIndex = 15;
-            this.품질관리.Tag = "품질관리";
-            this.품질관리.Text = "품질관리";
-            this.품질관리.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.품질관리.UseVisualStyleBackColor = true;
-            this.품질관리.Click += new System.EventHandler(this.품질관리_Click);
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton8.ForeColor = System.Drawing.Color.White;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            this.iconButton8.IconColor = System.Drawing.Color.White;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 30;
-            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(0, 821);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton8.Size = new System.Drawing.Size(230, 40);
-            this.iconButton8.TabIndex = 14;
-            this.iconButton8.Tag = "로그아웃";
-            this.iconButton8.Text = "로그아웃";
-            this.iconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton8.UseVisualStyleBackColor = true;
-            this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnMenu);
@@ -297,31 +138,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(230, 100);
             this.panel1.TabIndex = 0;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
-            this.btnMenu.IconColor = System.Drawing.Color.White;
-            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMenu.IconSize = 30;
-            this.btnMenu.Location = new System.Drawing.Point(150, 3);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(84, 60);
-            this.btnMenu.TabIndex = 7;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MES.Properties.Resources.Untitled_11;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // name_label
             // 
@@ -379,62 +195,6 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1354, 57);
             this.panelTitleBar.TabIndex = 8;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(55, 57);
-            this.iconButton1.TabIndex = 21;
-            this.iconButton1.Tag = "Button6";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 20;
-            this.btnMinimize.Location = new System.Drawing.Point(1244, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(55, 57);
-            this.btnMinimize.TabIndex = 3;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 20;
-            this.btnClose.Location = new System.Drawing.Point(1299, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(55, 57);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panelDesktop
             // 
@@ -1113,6 +873,247 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(55, 57);
+            this.iconButton1.TabIndex = 21;
+            this.iconButton1.Tag = "Button6";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 20;
+            this.btnMinimize.Location = new System.Drawing.Point(1244, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(55, 57);
+            this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.btnClose.IconColor = System.Drawing.Color.White;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 20;
+            this.btnClose.Location = new System.Drawing.Point(1299, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(55, 57);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // iconButton7
+            // 
+            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton7.ForeColor = System.Drawing.Color.White;
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton7.IconColor = System.Drawing.Color.White;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.IconSize = 30;
+            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton7.Location = new System.Drawing.Point(0, 325);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton7.Size = new System.Drawing.Size(230, 45);
+            this.iconButton7.TabIndex = 20;
+            this.iconButton7.Tag = "Button6";
+            this.iconButton7.Text = "   iconButton2";
+            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton7.UseVisualStyleBackColor = true;
+            // 
+            // iconButton6
+            // 
+            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton6.ForeColor = System.Drawing.Color.White;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton6.IconColor = System.Drawing.Color.White;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 30;
+            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton6.Location = new System.Drawing.Point(0, 280);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton6.Size = new System.Drawing.Size(230, 45);
+            this.iconButton6.TabIndex = 19;
+            this.iconButton6.Tag = "Button5";
+            this.iconButton6.Text = "   iconButton2";
+            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton5.ForeColor = System.Drawing.Color.White;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton5.IconColor = System.Drawing.Color.White;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 30;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(0, 235);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton5.Size = new System.Drawing.Size(230, 45);
+            this.iconButton5.TabIndex = 18;
+            this.iconButton5.Tag = "Button4";
+            this.iconButton5.Text = "Monitoring";
+            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton4.ForeColor = System.Drawing.Color.White;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 30;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(0, 190);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton4.Size = new System.Drawing.Size(230, 45);
+            this.iconButton4.TabIndex = 17;
+            this.iconButton4.Tag = "작업지시";
+            this.iconButton4.Text = "작업지시";
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton3.ForeColor = System.Drawing.Color.White;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 30;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(0, 145);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton3.Size = new System.Drawing.Size(230, 45);
+            this.iconButton3.TabIndex = 16;
+            this.iconButton3.Tag = "재고관리";
+            this.iconButton3.Text = "재고관리";
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            // 
+            // 품질관리
+            // 
+            this.품질관리.Dock = System.Windows.Forms.DockStyle.Top;
+            this.품질관리.FlatAppearance.BorderSize = 0;
+            this.품질관리.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.품질관리.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.품질관리.ForeColor = System.Drawing.Color.White;
+            this.품질관리.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.품질관리.IconColor = System.Drawing.Color.White;
+            this.품질관리.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.품질관리.IconSize = 30;
+            this.품질관리.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.품질관리.Location = new System.Drawing.Point(0, 100);
+            this.품질관리.Name = "품질관리";
+            this.품질관리.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.품질관리.Size = new System.Drawing.Size(230, 45);
+            this.품질관리.TabIndex = 15;
+            this.품질관리.Tag = "품질관리";
+            this.품질관리.Text = "품질관리";
+            this.품질관리.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.품질관리.UseVisualStyleBackColor = true;
+            this.품질관리.Click += new System.EventHandler(this.품질관리_Click);
+            // 
+            // iconButton8
+            // 
+            this.iconButton8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton8.ForeColor = System.Drawing.Color.White;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.iconButton8.IconColor = System.Drawing.Color.White;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.IconSize = 30;
+            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton8.Location = new System.Drawing.Point(0, 821);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton8.Size = new System.Drawing.Size(230, 40);
+            this.iconButton8.TabIndex = 14;
+            this.iconButton8.Tag = "로그아웃";
+            this.iconButton8.Text = "로그아웃";
+            this.iconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton8.UseVisualStyleBackColor = true;
+            this.iconButton8.Click += new System.EventHandler(this.iconButton8_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
+            this.btnMenu.IconColor = System.Drawing.Color.White;
+            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenu.IconSize = 30;
+            this.btnMenu.Location = new System.Drawing.Point(150, 3);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(84, 60);
+            this.btnMenu.TabIndex = 7;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MES.Properties.Resources.Untitled_11;
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1129,7 +1130,6 @@
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -1141,6 +1141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

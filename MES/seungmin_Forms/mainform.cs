@@ -15,6 +15,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Net;
 using MES.Workorder_Form;
+using MES.UI;
 
 namespace MES
 {
@@ -283,6 +284,11 @@ namespace MES
             Login login = new Login();
             login.Show();
             this.Close();
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Monitoring());
         }
     }
 }

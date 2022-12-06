@@ -139,6 +139,15 @@
     <Compile Include="seungmin_Forms\mainform.Designer.cs">
       <DependentUpon>mainform.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
+=======
+    <Compile Include="seungmin_Forms\Monitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\Monitoring.Designer.cs">
+      <DependentUpon>Monitoring.cs</DependentUpon>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="Workorder_Form\WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +197,12 @@
     <EmbeddedResource Include="seungmin_Forms\mainform.resx">
       <DependentUpon>mainform.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
+=======
+    <EmbeddedResource Include="seungmin_Forms\Monitoring.resx">
+      <DependentUpon>Monitoring.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Stashed changes
     <EmbeddedResource Include="Workorder_Form\WorkOrder.resx">
       <DependentUpon>WorkOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,7 +239,65 @@
     <None Include="Resources\chart-diagram.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Folder Include="UI\" />
+=======
+    <None Include="Resources\냉각2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\냉각11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\바탕51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\분쇄2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\분쇄11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\자숙2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\자숙11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\재료11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\틀02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\틀012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\틀11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\틀101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\포장11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\포장21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\혼합02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\혼합011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\혼합11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\혼합101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\재료2.png" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
