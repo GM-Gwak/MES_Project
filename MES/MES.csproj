@@ -139,6 +139,12 @@
     <Compile Include="seungmin_Forms\mainform.Designer.cs">
       <DependentUpon>mainform.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UI.Designer.cs">
+      <DependentUpon>UI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Workorder_Form\WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\mainform.resx">
       <DependentUpon>mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UI.resx">
+      <DependentUpon>UI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Workorder_Form\WorkOrder.resx">
       <DependentUpon>WorkOrder.cs</DependentUpon>
