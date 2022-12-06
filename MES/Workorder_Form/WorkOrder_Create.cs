@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,12 @@ namespace MES.Workorder_Form
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int Msg, int wParam, int lParam);
+
+
 
         public WorkOrder_Create()
         {
@@ -26,16 +33,6 @@ namespace MES.Workorder_Form
         private void Workorder_Create_Load(object sender, EventArgs e)
         {
         }
-        private void ok_Click(object sender, EventArgs e)
-        {
-            OK_Func();
-        }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         public void OK_Func()
         {
             try
@@ -133,12 +130,27 @@ namespace MES.Workorder_Form
                 
             }
         }
+
+        private void ok_Click_1(object sender, EventArgs e)
+        {
+            OK_Func();
+        }
+
+        private void exit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void WO_LABEL_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
-
-
-
-//else if (Int32.Parse(EA.Text) < Int32.Parse("0") || Int32.Parse(EA.Text) > Int32.Parse("10001"))
-//{
-//    MessageBox.Show("수량이 너무 크거나 작습니다.");
-//}

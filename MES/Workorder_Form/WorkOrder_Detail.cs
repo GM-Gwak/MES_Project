@@ -87,6 +87,8 @@ namespace MES.Workorder_Form
             adapt.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
 
+            dataGridView1.Columns[2].Width = 130;
+
             conn.Close();
         }
     }
