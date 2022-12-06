@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -53,8 +53,10 @@
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Hum = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Temp = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,6 +74,10 @@
             this.label29 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.process4 = new CircularProgressBar.CircularProgressBar();
+            this.process3 = new CircularProgressBar.CircularProgressBar();
+            this.process2 = new CircularProgressBar.CircularProgressBar();
+            this.process1 = new CircularProgressBar.CircularProgressBar();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -90,12 +96,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.Temp = new System.Windows.Forms.Label();
-            this.Hum = new System.Windows.Forms.Label();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar2 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar3 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar4 = new CircularProgressBar.CircularProgressBar();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -465,6 +465,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "작업장별 온습도 현황";
             // 
+            // Hum
+            // 
+            this.Hum.AutoSize = true;
+            this.Hum.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Hum.Location = new System.Drawing.Point(245, 87);
+            this.Hum.Name = "Hum";
+            this.Hum.Size = new System.Drawing.Size(46, 25);
+            this.Hum.TabIndex = 36;
+            this.Hum.Text = "null";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -484,6 +494,16 @@
             this.label2.Size = new System.Drawing.Size(105, 25);
             this.label2.TabIndex = 33;
             this.label2.Text = "제1 작업장";
+            // 
+            // Temp
+            // 
+            this.Temp.AutoSize = true;
+            this.Temp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Temp.Location = new System.Drawing.Point(73, 88);
+            this.Temp.Name = "Temp";
+            this.Temp.Size = new System.Drawing.Size(46, 25);
+            this.Temp.TabIndex = 35;
+            this.Temp.Text = "null";
             // 
             // label16
             // 
@@ -642,26 +662,26 @@
             // 
             // chart1
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(452, 21);
             this.chart1.Name = "chart1";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart1.Series.Add(series6);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(810, 259);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.circularProgressBar4);
-            this.groupBox3.Controls.Add(this.circularProgressBar3);
-            this.groupBox3.Controls.Add(this.circularProgressBar2);
-            this.groupBox3.Controls.Add(this.circularProgressBar1);
+            this.groupBox3.Controls.Add(this.process4);
+            this.groupBox3.Controls.Add(this.process3);
+            this.groupBox3.Controls.Add(this.process2);
+            this.groupBox3.Controls.Add(this.process1);
             this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label25);
@@ -673,6 +693,138 @@
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "생산현황";
+            // 
+            // process4
+            // 
+            this.process4.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.process4.AnimationSpeed = 500;
+            this.process4.BackColor = System.Drawing.Color.Transparent;
+            this.process4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.process4.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.process4.InnerMargin = 2;
+            this.process4.InnerWidth = -1;
+            this.process4.Location = new System.Drawing.Point(387, 155);
+            this.process4.MarqueeAnimationSpeed = 2000;
+            this.process4.Name = "process4";
+            this.process4.OuterColor = System.Drawing.Color.Gray;
+            this.process4.OuterMargin = -25;
+            this.process4.OuterWidth = 26;
+            this.process4.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process4.ProgressWidth = 15;
+            this.process4.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process4.Size = new System.Drawing.Size(116, 143);
+            this.process4.StartAngle = 270;
+            this.process4.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.process4.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process4.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.process4.SubscriptText = "";
+            this.process4.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process4.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.process4.SuperscriptText = "";
+            this.process4.TabIndex = 37;
+            this.process4.Text = "가동중";
+            this.process4.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
+            this.process4.Value = 80;
+            // 
+            // process3
+            // 
+            this.process3.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.process3.AnimationSpeed = 500;
+            this.process3.BackColor = System.Drawing.Color.Transparent;
+            this.process3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.process3.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.process3.InnerMargin = 2;
+            this.process3.InnerWidth = -1;
+            this.process3.Location = new System.Drawing.Point(258, 155);
+            this.process3.MarqueeAnimationSpeed = 2000;
+            this.process3.Name = "process3";
+            this.process3.OuterColor = System.Drawing.Color.Gray;
+            this.process3.OuterMargin = -25;
+            this.process3.OuterWidth = 26;
+            this.process3.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process3.ProgressWidth = 15;
+            this.process3.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process3.Size = new System.Drawing.Size(116, 143);
+            this.process3.StartAngle = 270;
+            this.process3.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.process3.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process3.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.process3.SubscriptText = "";
+            this.process3.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process3.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.process3.SuperscriptText = "";
+            this.process3.TabIndex = 36;
+            this.process3.Text = "가동중";
+            this.process3.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
+            this.process3.Value = 80;
+            // 
+            // process2
+            // 
+            this.process2.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.process2.AnimationSpeed = 500;
+            this.process2.BackColor = System.Drawing.Color.Transparent;
+            this.process2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.process2.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.process2.InnerMargin = 2;
+            this.process2.InnerWidth = -1;
+            this.process2.Location = new System.Drawing.Point(136, 155);
+            this.process2.MarqueeAnimationSpeed = 2000;
+            this.process2.Name = "process2";
+            this.process2.OuterColor = System.Drawing.Color.Gray;
+            this.process2.OuterMargin = -25;
+            this.process2.OuterWidth = 26;
+            this.process2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process2.ProgressWidth = 15;
+            this.process2.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process2.Size = new System.Drawing.Size(116, 143);
+            this.process2.StartAngle = 270;
+            this.process2.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.process2.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process2.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.process2.SubscriptText = "";
+            this.process2.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process2.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.process2.SuperscriptText = "";
+            this.process2.TabIndex = 35;
+            this.process2.Text = "가동중";
+            this.process2.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
+            this.process2.Value = 80;
+            // 
+            // process1
+            // 
+            this.process1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.process1.AnimationSpeed = 500;
+            this.process1.BackColor = System.Drawing.Color.Transparent;
+            this.process1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.process1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.process1.InnerMargin = 2;
+            this.process1.InnerWidth = -1;
+            this.process1.Location = new System.Drawing.Point(6, 155);
+            this.process1.MarqueeAnimationSpeed = 2000;
+            this.process1.Name = "process1";
+            this.process1.OuterColor = System.Drawing.Color.Gray;
+            this.process1.OuterMargin = -25;
+            this.process1.OuterWidth = 26;
+            this.process1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process1.ProgressWidth = 15;
+            this.process1.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.process1.Size = new System.Drawing.Size(116, 143);
+            this.process1.StartAngle = 270;
+            this.process1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.process1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.process1.SubscriptText = "";
+            this.process1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.process1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.process1.SuperscriptText = "";
+            this.process1.TabIndex = 34;
+            this.process1.Text = "가동중";
+            this.process1.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
+            this.process1.Value = 80;
             // 
             // label23
             // 
@@ -882,158 +1034,6 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // Temp
-            // 
-            this.Temp.AutoSize = true;
-            this.Temp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Temp.Location = new System.Drawing.Point(73, 88);
-            this.Temp.Name = "Temp";
-            this.Temp.Size = new System.Drawing.Size(46, 25);
-            this.Temp.TabIndex = 35;
-            this.Temp.Text = "null";
-            // 
-            // Hum
-            // 
-            this.Hum.AutoSize = true;
-            this.Hum.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Hum.Location = new System.Drawing.Point(245, 87);
-            this.Hum.Name = "Hum";
-            this.Hum.Size = new System.Drawing.Size(46, 25);
-            this.Hum.TabIndex = 36;
-            this.Hum.Text = "null";
-            // 
-            // circularProgressBar1
-            // 
-            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar1.InnerMargin = 2;
-            this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(6, 155);
-            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar1.Name = "circularProgressBar1";
-            this.circularProgressBar1.OuterColor = System.Drawing.Color.Gray;
-            this.circularProgressBar1.OuterMargin = -25;
-            this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.circularProgressBar1.ProgressWidth = 15;
-            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar1.Size = new System.Drawing.Size(116, 143);
-            this.circularProgressBar1.StartAngle = 270;
-            this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar1.SubscriptText = "";
-            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar1.SuperscriptText = "";
-            this.circularProgressBar1.TabIndex = 34;
-            this.circularProgressBar1.Text = "가동중";
-            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
-            this.circularProgressBar1.Value = 80;
-            // 
-            // circularProgressBar2
-            // 
-            this.circularProgressBar2.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar2.AnimationSpeed = 500;
-            this.circularProgressBar2.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar2.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar2.InnerMargin = 2;
-            this.circularProgressBar2.InnerWidth = -1;
-            this.circularProgressBar2.Location = new System.Drawing.Point(136, 155);
-            this.circularProgressBar2.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar2.Name = "circularProgressBar2";
-            this.circularProgressBar2.OuterColor = System.Drawing.Color.Gray;
-            this.circularProgressBar2.OuterMargin = -25;
-            this.circularProgressBar2.OuterWidth = 26;
-            this.circularProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.circularProgressBar2.ProgressWidth = 15;
-            this.circularProgressBar2.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar2.Size = new System.Drawing.Size(116, 143);
-            this.circularProgressBar2.StartAngle = 270;
-            this.circularProgressBar2.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.circularProgressBar2.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar2.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar2.SubscriptText = "";
-            this.circularProgressBar2.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar2.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar2.SuperscriptText = "";
-            this.circularProgressBar2.TabIndex = 35;
-            this.circularProgressBar2.Text = "가동중";
-            this.circularProgressBar2.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
-            this.circularProgressBar2.Value = 80;
-            // 
-            // circularProgressBar3
-            // 
-            this.circularProgressBar3.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar3.AnimationSpeed = 500;
-            this.circularProgressBar3.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar3.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar3.InnerMargin = 2;
-            this.circularProgressBar3.InnerWidth = -1;
-            this.circularProgressBar3.Location = new System.Drawing.Point(258, 155);
-            this.circularProgressBar3.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar3.Name = "circularProgressBar3";
-            this.circularProgressBar3.OuterColor = System.Drawing.Color.Gray;
-            this.circularProgressBar3.OuterMargin = -25;
-            this.circularProgressBar3.OuterWidth = 26;
-            this.circularProgressBar3.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.circularProgressBar3.ProgressWidth = 15;
-            this.circularProgressBar3.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar3.Size = new System.Drawing.Size(116, 143);
-            this.circularProgressBar3.StartAngle = 270;
-            this.circularProgressBar3.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.circularProgressBar3.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar3.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar3.SubscriptText = "";
-            this.circularProgressBar3.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar3.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar3.SuperscriptText = "";
-            this.circularProgressBar3.TabIndex = 36;
-            this.circularProgressBar3.Text = "가동중";
-            this.circularProgressBar3.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
-            this.circularProgressBar3.Value = 80;
-            // 
-            // circularProgressBar4
-            // 
-            this.circularProgressBar4.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar4.AnimationSpeed = 500;
-            this.circularProgressBar4.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar4.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar4.InnerMargin = 2;
-            this.circularProgressBar4.InnerWidth = -1;
-            this.circularProgressBar4.Location = new System.Drawing.Point(387, 155);
-            this.circularProgressBar4.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar4.Name = "circularProgressBar4";
-            this.circularProgressBar4.OuterColor = System.Drawing.Color.Gray;
-            this.circularProgressBar4.OuterMargin = -25;
-            this.circularProgressBar4.OuterWidth = 26;
-            this.circularProgressBar4.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.circularProgressBar4.ProgressWidth = 15;
-            this.circularProgressBar4.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.circularProgressBar4.Size = new System.Drawing.Size(116, 143);
-            this.circularProgressBar4.StartAngle = 270;
-            this.circularProgressBar4.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.circularProgressBar4.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar4.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar4.SubscriptText = "";
-            this.circularProgressBar4.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar4.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar4.SuperscriptText = "";
-            this.circularProgressBar4.TabIndex = 37;
-            this.circularProgressBar4.Text = "가동중";
-            this.circularProgressBar4.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
-            this.circularProgressBar4.Value = 80;
-            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1128,9 +1128,9 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Label Hum;
         private System.Windows.Forms.Label Temp;
-        private CircularProgressBar.CircularProgressBar circularProgressBar4;
-        private CircularProgressBar.CircularProgressBar circularProgressBar3;
-        private CircularProgressBar.CircularProgressBar circularProgressBar2;
-        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private CircularProgressBar.CircularProgressBar process4;
+        private CircularProgressBar.CircularProgressBar process3;
+        private CircularProgressBar.CircularProgressBar process2;
+        private CircularProgressBar.CircularProgressBar process1;
     }
 }
