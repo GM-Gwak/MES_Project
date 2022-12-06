@@ -28,6 +28,8 @@ namespace MES.Workorder_Form
 
         private void WorkOrder_Detail_Load(object sender, EventArgs e)
         {
+            WO_DT_Label1.Text = $"{wo_num} 지시서 상세 정보";
+
             conn.Open();
             cmd.Connection = conn;
 
@@ -90,6 +92,11 @@ namespace MES.Workorder_Form
             dataGridView1.Columns[2].Width = 130;
 
             conn.Close();
+        }
+
+        private void Wo_detail_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
