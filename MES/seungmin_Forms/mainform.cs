@@ -101,8 +101,17 @@ namespace MES
                 socket.Receive(recvBytes);
                 string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
                 string[] str = txt.Split(',');
-                Temp.Text = str[0];
-                Hum.Text = str[1];
+                if (Temp.InvokeRequired == true)
+                {
+                    Temp.Invoke(new MethodInvoker(delegate { Temp.Text = str[0]; }));
+                    Hum.Invoke(new MethodInvoker(delegate { Hum.Text = str[1]; }));
+                }
+                else
+                {
+                    Temp.Text = str[0];
+                    Hum.Text = str[1];
+                }
+                
 
             }
         }
