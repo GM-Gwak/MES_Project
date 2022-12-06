@@ -93,7 +93,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1167, 58);
+            this.panelTitleBar.Size = new System.Drawing.Size(1118, 58);
             this.panelTitleBar.TabIndex = 28;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -139,7 +139,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1167, 46);
+            this.panel1.Size = new System.Drawing.Size(1118, 46);
             this.panel1.TabIndex = 48;
             // 
             // label1
@@ -265,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1167, 562);
+            this.ClientSize = new System.Drawing.Size(1118, 562);
             this.Controls.Add(this.Wo_detail_close);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitleBar);
