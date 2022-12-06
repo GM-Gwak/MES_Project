@@ -71,7 +71,22 @@ namespace MES
             rdr = cmd.ExecuteReader();
             rdr.Read();
             string work_name = rdr["mbname"].ToString();
-            name_label.Text = work_name.ToString(); 
+            name_label.Text = work_name.ToString();
+
+            string[] stqty = new string[3];
+            cmd.CommandText = $"SELECT sum(stqty) FROM stock s join pdmaster pd on s.pmid = pd.pmid WHERE s.pmid like 'p%' group by pmname";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            int i = 0;
+            while (rdr.Read())
+            {
+                stqty[i] = rdr["sum(stqty)"].ToString();
+                i++;
+            }
+            Meat.Text = stqty[0];
+            Kimchi.Text = stqty[1];
+            Galbi.Text = stqty[2];
+
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;
             waitThread.Start();
@@ -99,7 +114,7 @@ namespace MES
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 //2.연결
-                IPAddress address = IPAddress.Parse("192.168.0.17");
+                IPAddress address = IPAddress.Parse("192.168.0.4");
                 EndPoint serverEP = new IPEndPoint(address, 9001);
 
                 socket.Connect(serverEP);
@@ -289,6 +304,12 @@ namespace MES
         private void iconButton5_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Monitoring());
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            byte[] sendBytes = Encoding.UTF8.GetBytes("1");
+            socket.Send(sendBytes);
         }
     }
 }
