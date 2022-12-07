@@ -32,9 +32,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+<<<<<<< Updated upstream
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+=======
+>>>>>>> Stashed changes
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -75,7 +78,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.process4 = new CircularProgressBar.CircularProgressBar();
             this.process3 = new CircularProgressBar.CircularProgressBar();
@@ -99,21 +101,27 @@
             this.label20 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+<<<<<<< Updated upstream
             this.label6 = new System.Windows.Forms.Label();
             this.foundation_label = new System.Windows.Forms.Label();
             this.cook_label = new System.Windows.Forms.Label();
             this.metal_label = new System.Windows.Forms.Label();
             this.weight_label = new System.Windows.Forms.Label();
+=======
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+>>>>>>> Stashed changes
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panelDesktop.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -623,11 +631,10 @@
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Controls.Add(this.label30);
             this.groupBox2.Controls.Add(this.label29);
-            this.groupBox2.Controls.Add(this.chart1);
             this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox2.Location = new System.Drawing.Point(40, 481);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1268, 286);
+            this.groupBox2.Size = new System.Drawing.Size(344, 286);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "불량현황";
@@ -672,6 +679,7 @@
             this.label29.TabIndex = 31;
             this.label29.Text = "재단 불량";
             // 
+<<<<<<< Updated upstream
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
@@ -704,6 +712,8 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
+=======
+>>>>>>> Stashed changes
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.process4);
@@ -1029,6 +1039,7 @@
             // 
             this.panelDesktop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelDesktop.BackColor = System.Drawing.SystemColors.Menu;
+            this.panelDesktop.Controls.Add(this.groupBox5);
             this.panelDesktop.Controls.Add(this.iconButton2);
             this.panelDesktop.Controls.Add(this.groupBox4);
             this.panelDesktop.Controls.Add(this.groupBox3);
@@ -1062,6 +1073,7 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
+<<<<<<< Updated upstream
             // label6
             // 
             this.label6.AutoSize = true;
@@ -1106,6 +1118,34 @@
             this.weight_label.Size = new System.Drawing.Size(51, 30);
             this.weight_label.TabIndex = 35;
             this.weight_label.Text = "null";
+=======
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chart1);
+            this.groupBox5.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox5.Location = new System.Drawing.Point(412, 481);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(896, 286);
+            this.groupBox5.TabIndex = 35;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "일일 실적 현황";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(11, 43);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(876, 231);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+>>>>>>> Stashed changes
             // 
             // mainform
             // 
@@ -1130,12 +1170,13 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1181,7 +1222,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
@@ -1207,10 +1247,15 @@
         private CircularProgressBar.CircularProgressBar process3;
         private CircularProgressBar.CircularProgressBar process2;
         private CircularProgressBar.CircularProgressBar process1;
+<<<<<<< Updated upstream
         private System.Windows.Forms.Label weight_label;
         private System.Windows.Forms.Label metal_label;
         private System.Windows.Forms.Label cook_label;
         private System.Windows.Forms.Label foundation_label;
         private System.Windows.Forms.Label label6;
+=======
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+>>>>>>> Stashed changes
     }
 }
