@@ -89,52 +89,6 @@ namespace MES.UI
         }
 
 
-        /*
-        public void picBoxColor(int _inch)
-        {
-            try
-            {
-                var picBox = Controls
-                   .OfType<PictureBox>()
-                   .Where(pib => pib.Name == "pictureBox" + _inch.ToString())
-                   .First();
-
-                picBox.BackColor = Color.Transparent;
-                picBox.Parent = pictureMain;
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-        */
-        /*
-        // 폼 불러오기
-        private void workplace1_Click(object sender, EventArgs e)
-        {
-            Workplace1 workplace1 = new Workplace1();
-            workplace1.Show();
-        }
-
-        private void workplace2_Click(object sender, EventArgs e)
-        {
-            Workplace2 workplace2 = new Workplace2();
-            workplace2.Show();
-        }
-
-        private void workplace3_Click(object sender, EventArgs e)
-        {
-            Workplace3 workplace3 = new Workplace3();
-            workplace3.Show();
-        }
-
-        private void workplace4_Click(object sender, EventArgs e)
-        {
-            Workplace4 workplace4 = new Workplace4();
-            workplace4.Show();
-        }
-        */
-
         // 프로그레스바
         public void btn1()
         {
@@ -180,17 +134,17 @@ namespace MES.UI
                 timer4.Start();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             btn1();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             btn2();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             btn3();
         }
@@ -200,75 +154,9 @@ namespace MES.UI
             btn4();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (progressBar1.Value == 100)
-            {
-                timer1.Stop();
-                MessageBox.Show("제1공정 완료");
-                progressBar1.Value = 0;
-                btn2();
-            }
-            else
-            {
-                progressBar1.Value += 2;
-                ps_2.Text = progressBar1.Value.ToString() + " %";
-                if (progressBar1.Value == 100)
-                {
-                    //ps_2.Text ="0%";
-                }
-            }
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (progressBar2.Value == 100)
-            {
-                timer2.Stop();
-                MessageBox.Show("제2공정 완료");
-                progressBar2.Value = 0;
-                btn3();
-            }
-            else
-            {
-                progressBar2.Value += 2;
-                ps_4.Text = progressBar2.Value.ToString() + " %";
-            }
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            if (progressBar3.Value == 100)
-            {
-                timer3.Stop();
-                MessageBox.Show("제3공정 완료");
-                progressBar3.Value = 0;
-                btn4();
-            }
-            else
-            {
-                progressBar3.Value += 2;
-                ps_6.Text = progressBar3.Value.ToString() + " %";
-            }
-        }
-
-        private void timer4_Tick(object sender, EventArgs e)
-        {
-            if (progressBar4.Value == 100)
-            {
-                timer4.Stop();
-                MessageBox.Show("제4공정 완료");
-                progressBar4.Value = 0;
-            }
-            else
-            {
-                progressBar4.Value += 2;
-                ps_8.Text = progressBar4.Value.ToString() + " %";
-            }
-        }
 
         // 전체 실행
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             if (progressBar1.Value == 0)
             {
@@ -282,8 +170,6 @@ namespace MES.UI
                 }
             }
         }
-
-        // 생산자 입장
         private void button6_Click(object sender, EventArgs e)
         {
             if (timer5.Enabled)
@@ -328,8 +214,74 @@ namespace MES.UI
                 timer8.Start();
             }
         }
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (progressBar1.Value == 100)
+            {
+                timer1.Stop();
+                MessageBox.Show("제1공정 완료");
+                progressBar1.Value = 0;
+                btn2();
+            }
+            else
+            {
+                progressBar1.Value += 2;
+                ps_2.Text = progressBar1.Value.ToString() + " %";
+                if (progressBar1.Value == 100)
+                {
+                    //ps_2.Text ="0%";
+                }
+            }
+        }
 
-        private void timer5_Tick(object sender, EventArgs e)
+        private void timer2_Tick_1(object sender, EventArgs e)
+        {
+            if (progressBar2.Value == 100)
+            {
+                timer2.Stop();
+                MessageBox.Show("제2공정 완료");
+                progressBar2.Value = 0;
+                btn3();
+            }
+            else
+            {
+                progressBar2.Value += 2;
+                ps_4.Text = progressBar2.Value.ToString() + " %";
+            }
+        }
+
+        private void timer3_Tick_1(object sender, EventArgs e)
+        {
+            if (progressBar3.Value == 100)
+            {
+                timer3.Stop();
+                MessageBox.Show("제3공정 완료");
+                progressBar3.Value = 0;
+                btn4();
+            }
+            else
+            {
+                progressBar3.Value += 2;
+                ps_6.Text = progressBar3.Value.ToString() + " %";
+            }
+        }
+
+        private void timer4_Tick_1(object sender, EventArgs e)
+        {
+            if (progressBar4.Value == 100)
+            {
+                timer4.Stop();
+                MessageBox.Show("제4공정 완료");
+                progressBar4.Value = 0;
+            }
+            else
+            {
+                progressBar4.Value += 2;
+                ps_8.Text = progressBar4.Value.ToString() + " %";
+            }
+        }
+
+        private void timer5_Tick_1(object sender, EventArgs e)
         {
             if (progressBar1.Value == 100)
             {
@@ -347,7 +299,8 @@ namespace MES.UI
                 }
             }
         }
-        private void timer6_Tick_1(object sender, EventArgs e)
+
+        private void timer6_Tick(object sender, EventArgs e)
         {
             if (progressBar2.Value == 100)
             {
@@ -364,7 +317,8 @@ namespace MES.UI
                 }
             }
         }
-        private void timer7_Tick_1(object sender, EventArgs e)
+
+        private void timer7_Tick(object sender, EventArgs e)
         {
             if (progressBar3.Value == 100)
             {
@@ -381,7 +335,8 @@ namespace MES.UI
                 }
             }
         }
-        private void timer8_Tick_1(object sender, EventArgs e)
+
+        private void timer8_Tick(object sender, EventArgs e)
         {
             if (progressBar4.Value == 100)
             {
@@ -398,6 +353,7 @@ namespace MES.UI
                 }
             }
         }
+
 
         // 마우스 이벤트
 
@@ -713,13 +669,6 @@ namespace MES.UI
         }
 
 
-
-
-
-
-
-
-
         /* delay 함수
          Delay 합수
         private static DateTime Delay(int MS)
@@ -736,7 +685,6 @@ namespace MES.UI
             return DateTime.Now;
         }
         */
-
     }
 
 

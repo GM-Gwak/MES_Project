@@ -164,6 +164,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "공정 시작";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button3
             // 
@@ -174,6 +175,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "제3공정";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button4
             // 
@@ -184,6 +186,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "제4공정";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -194,6 +197,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "제2공정";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -204,6 +208,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "제1공정";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel1
             // 
@@ -253,7 +258,7 @@
             this.panel4.Controls.Add(this.progressBar2);
             this.panel4.Controls.Add(this.workplace2);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(883, 31);
+            this.panel4.Location = new System.Drawing.Point(913, 32);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(284, 117);
             this.panel4.TabIndex = 18;
@@ -326,7 +331,7 @@
             // pictureBox21
             // 
             this.pictureBox21.Image = global::MES.Properties.Resources.틀1;
-            this.pictureBox21.Location = new System.Drawing.Point(921, 190);
+            this.pictureBox21.Location = new System.Drawing.Point(902, 189);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(109, 105);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -336,7 +341,7 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = global::MES.Properties.Resources.틀10;
-            this.pictureBox22.Location = new System.Drawing.Point(889, 135);
+            this.pictureBox22.Location = new System.Drawing.Point(870, 134);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(207, 199);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -347,7 +352,7 @@
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox19.Image = global::MES.Properties.Resources.틀0;
-            this.pictureBox19.Location = new System.Drawing.Point(615, 203);
+            this.pictureBox19.Location = new System.Drawing.Point(596, 202);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(111, 107);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -357,7 +362,7 @@
             // pictureBox20
             // 
             this.pictureBox20.Image = global::MES.Properties.Resources.틀01;
-            this.pictureBox20.Location = new System.Drawing.Point(566, 170);
+            this.pictureBox20.Location = new System.Drawing.Point(547, 169);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(185, 178);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -367,7 +372,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::MES.Properties.Resources.혼합1;
-            this.pictureBox3.Location = new System.Drawing.Point(467, 104);
+            this.pictureBox3.Location = new System.Drawing.Point(448, 103);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(113, 98);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -377,7 +382,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = global::MES.Properties.Resources.혼합10;
-            this.pictureBox12.Location = new System.Drawing.Point(421, 76);
+            this.pictureBox12.Location = new System.Drawing.Point(402, 75);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(188, 164);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -387,7 +392,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::MES.Properties.Resources.포장1;
-            this.pictureBox9.Location = new System.Drawing.Point(601, 573);
+            this.pictureBox9.Location = new System.Drawing.Point(582, 572);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(127, 103);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -398,7 +403,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::MES.Properties.Resources.냉각;
-            this.pictureBox8.Location = new System.Drawing.Point(358, 426);
+            this.pictureBox8.Location = new System.Drawing.Point(339, 425);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(113, 112);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -409,7 +414,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::MES.Properties.Resources.자숙;
-            this.pictureBox7.Location = new System.Drawing.Point(533, 326);
+            this.pictureBox7.Location = new System.Drawing.Point(514, 325);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(114, 107);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -420,7 +425,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::MES.Properties.Resources.틀0;
-            this.pictureBox6.Location = new System.Drawing.Point(786, 292);
+            this.pictureBox6.Location = new System.Drawing.Point(767, 291);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(111, 107);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -430,7 +435,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::MES.Properties.Resources.틀1;
-            this.pictureBox5.Location = new System.Drawing.Point(752, 110);
+            this.pictureBox5.Location = new System.Drawing.Point(733, 109);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(109, 105);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -440,7 +445,7 @@
             // pictureBox18
             // 
             this.pictureBox18.Image = global::MES.Properties.Resources.포장2;
-            this.pictureBox18.Location = new System.Drawing.Point(527, 527);
+            this.pictureBox18.Location = new System.Drawing.Point(508, 526);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(232, 181);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -450,7 +455,7 @@
             // pictureBox17
             // 
             this.pictureBox17.Image = global::MES.Properties.Resources.냉각1;
-            this.pictureBox17.Location = new System.Drawing.Point(276, 386);
+            this.pictureBox17.Location = new System.Drawing.Point(257, 385);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(225, 168);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -460,7 +465,7 @@
             // pictureBox16
             // 
             this.pictureBox16.Image = global::MES.Properties.Resources.자숙1;
-            this.pictureBox16.Location = new System.Drawing.Point(477, 272);
+            this.pictureBox16.Location = new System.Drawing.Point(458, 271);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(200, 215);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -470,7 +475,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::MES.Properties.Resources.틀10;
-            this.pictureBox14.Location = new System.Drawing.Point(714, 49);
+            this.pictureBox14.Location = new System.Drawing.Point(695, 48);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(207, 199);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -480,7 +485,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = global::MES.Properties.Resources.틀01;
-            this.pictureBox15.Location = new System.Drawing.Point(737, 259);
+            this.pictureBox15.Location = new System.Drawing.Point(718, 258);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(185, 178);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -490,7 +495,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::MES.Properties.Resources.혼합0;
-            this.pictureBox4.Location = new System.Drawing.Point(601, 15);
+            this.pictureBox4.Location = new System.Drawing.Point(582, 14);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(107, 96);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -500,7 +505,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::MES.Properties.Resources.혼합01;
-            this.pictureBox13.Location = new System.Drawing.Point(569, -19);
+            this.pictureBox13.Location = new System.Drawing.Point(550, -20);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(201, 181);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -510,7 +515,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MES.Properties.Resources.재료;
-            this.pictureBox1.Location = new System.Drawing.Point(120, 299);
+            this.pictureBox1.Location = new System.Drawing.Point(101, 298);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -520,7 +525,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MES.Properties.Resources.분쇄;
-            this.pictureBox2.Location = new System.Drawing.Point(309, 193);
+            this.pictureBox2.Location = new System.Drawing.Point(290, 192);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(106, 108);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -530,7 +535,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = global::MES.Properties.Resources.분쇄1;
-            this.pictureBox11.Location = new System.Drawing.Point(265, 160);
+            this.pictureBox11.Location = new System.Drawing.Point(246, 159);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(190, 175);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -541,7 +546,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.Image = global::MES.Properties.Resources.재료1;
-            this.pictureBox10.Location = new System.Drawing.Point(72, 265);
+            this.pictureBox10.Location = new System.Drawing.Point(53, 264);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(223, 189);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -813,7 +818,7 @@
             this.pictureMain.Image = global::MES.Properties.Resources.바탕5;
             this.pictureMain.Location = new System.Drawing.Point(4, 3);
             this.pictureMain.Name = "pictureMain";
-            this.pictureMain.Size = new System.Drawing.Size(1266, 734);
+            this.pictureMain.Size = new System.Drawing.Size(1226, 734);
             this.pictureMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureMain.TabIndex = 6;
             this.pictureMain.TabStop = false;
@@ -858,11 +863,43 @@
             this.button6.Text = "Start/Stop";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick_1);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick_1);
+            // 
+            // timer4
+            // 
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick_1);
+            // 
+            // timer5
+            // 
+            this.timer5.Tick += new System.EventHandler(this.timer5_Tick_1);
+            // 
+            // timer6
+            // 
+            this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
+            // 
+            // timer7
+            // 
+            this.timer7.Tick += new System.EventHandler(this.timer7_Tick);
+            // 
+            // timer8
+            // 
+            this.timer8.Tick += new System.EventHandler(this.timer8_Tick);
+            // 
             // Monitoring
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 765);
+            this.ClientSize = new System.Drawing.Size(1455, 765);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Monitoring";
