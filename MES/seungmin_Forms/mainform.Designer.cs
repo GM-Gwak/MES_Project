@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -96,6 +99,11 @@
             this.label20 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.foundation_label = new System.Windows.Forms.Label();
+            this.cook_label = new System.Windows.Forms.Label();
+            this.metal_label = new System.Windows.Forms.Label();
+            this.weight_label = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -607,6 +615,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.weight_label);
+            this.groupBox2.Controls.Add(this.metal_label);
+            this.groupBox2.Controls.Add(this.cook_label);
+            this.groupBox2.Controls.Add(this.foundation_label);
             this.groupBox2.Controls.Add(this.label32);
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Controls.Add(this.label30);
@@ -662,16 +674,32 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(452, 21);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "재단 불량";
+            series2.ChartArea = "ChartArea1";
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "익힘 불량";
+            series3.ChartArea = "ChartArea1";
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "중금속 불량";
+            series4.ChartArea = "ChartArea1";
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "무게 불량";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(810, 259);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1034,11 +1062,57 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 12);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "label6";
+            // 
+            // foundation_label
+            // 
+            this.foundation_label.AutoSize = true;
+            this.foundation_label.Location = new System.Drawing.Point(178, 60);
+            this.foundation_label.Name = "foundation_label";
+            this.foundation_label.Size = new System.Drawing.Size(51, 30);
+            this.foundation_label.TabIndex = 35;
+            this.foundation_label.Text = "null";
+            // 
+            // cook_label
+            // 
+            this.cook_label.AutoSize = true;
+            this.cook_label.Location = new System.Drawing.Point(178, 115);
+            this.cook_label.Name = "cook_label";
+            this.cook_label.Size = new System.Drawing.Size(51, 30);
+            this.cook_label.TabIndex = 35;
+            this.cook_label.Text = "null";
+            // 
+            // metal_label
+            // 
+            this.metal_label.AutoSize = true;
+            this.metal_label.Location = new System.Drawing.Point(178, 165);
+            this.metal_label.Name = "metal_label";
+            this.metal_label.Size = new System.Drawing.Size(51, 30);
+            this.metal_label.TabIndex = 35;
+            this.metal_label.Text = "null";
+            // 
+            // weight_label
+            // 
+            this.weight_label.AutoSize = true;
+            this.weight_label.Location = new System.Drawing.Point(178, 220);
+            this.weight_label.Name = "weight_label";
+            this.weight_label.Size = new System.Drawing.Size(51, 30);
+            this.weight_label.TabIndex = 35;
+            this.weight_label.Text = "null";
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -1063,6 +1137,7 @@
             this.groupBox4.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1132,5 +1207,10 @@
         private CircularProgressBar.CircularProgressBar process3;
         private CircularProgressBar.CircularProgressBar process2;
         private CircularProgressBar.CircularProgressBar process1;
+        private System.Windows.Forms.Label weight_label;
+        private System.Windows.Forms.Label metal_label;
+        private System.Windows.Forms.Label cook_label;
+        private System.Windows.Forms.Label foundation_label;
+        private System.Windows.Forms.Label label6;
     }
 }

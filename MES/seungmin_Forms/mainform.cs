@@ -105,13 +105,74 @@ namespace MES
                 process1.Text = "가동중";
             }
 
+            // 불량수량 라벨
+            cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr["faname"].ToString() == "재단 상태 불량")
+                {
+                    foundation_label.Text = rdr["sum(faqty)"].ToString();
+                }
+                else if (rdr["faname"].ToString() == "익힘 상태 불량")
+                {
+                    cook_label.Text = rdr["sum(faqty)"].ToString();
+                }
+                else if (rdr["faname"].ToString() == "중금속 불량")
+                {
+                    metal_label.Text = rdr["sum(faqty)"].ToString();
+                }
+                else if (rdr["faname"].ToString() == "무게 불량")
+                {
+                    weight_label.Text = rdr["sum(faqty)"].ToString();
+                }
+            }
+
+
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;
             waitThread.Start();
-
-            
-            
+            // 불량 차트 호출
+            mainfaulty_chart();
         }
+        public void mainfaulty_chart()
+        {
+            // 차트
+            chart1.Series["재단 불량"].Points.Clear();
+            chart1.Series["익힘 불량"].Points.Clear();
+            chart1.Series["중금속 불량"].Points.Clear();
+            chart1.Series["무게 불량"].Points.Clear();
+
+            cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) where faname like '재단%' group by faname";
+            OracleDataReader sum1 = cmd.ExecuteReader();
+            while (sum1.Read())
+            {
+                chart1.Series["재단 불량"].Points.Add(Int32.Parse(sum1["sum(faqty)"].ToString()));
+            }
+            cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) where faname like '익힘%' group by faname";
+            OracleDataReader sum2 = cmd.ExecuteReader();
+            while (sum2.Read())
+            {
+                chart1.Series["익힘 불량"].Points.Add(Int32.Parse(sum2["sum(faqty)"].ToString()));
+            }
+            cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) where faname like '중금속%' group by faname";
+            OracleDataReader sum3 = cmd.ExecuteReader();
+            while (sum3.Read())
+            {
+                chart1.Series["중금속 불량"].Points.Add(Int32.Parse(sum3["sum(faqty)"].ToString()));
+            }
+            cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) where faname like '무게%' group by faname";
+            OracleDataReader sum4 = cmd.ExecuteReader();
+            while (sum4.Read())
+            {
+                chart1.Series["무게 불량"].Points.Add(Int32.Parse(sum4["sum(faqty)"].ToString()));
+            }
+
+            cmd.CommandText = "commit";
+            cmd.ExecuteNonQuery();
+        }
+
         private void Receive()
         {
             while (true)
