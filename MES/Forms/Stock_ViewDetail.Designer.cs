@@ -41,10 +41,10 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.ST_DT_Label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ST_DT_View = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.ST_DT = new System.Windows.Forms.Label();
             this.ST_DT_DATE = new System.Windows.Forms.Label();
-            this.ST_DT_View = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ST_Re_Exit = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
@@ -177,6 +177,29 @@
             this.panel2.Size = new System.Drawing.Size(1356, 46);
             this.panel2.TabIndex = 56;
             // 
+            // ST_DT_View
+            // 
+            this.ST_DT_View.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.ST_DT_View.FlatAppearance.BorderSize = 0;
+            this.ST_DT_View.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ST_DT_View.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ST_DT_View.ForeColor = System.Drawing.Color.White;
+            this.ST_DT_View.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.ST_DT_View.IconColor = System.Drawing.Color.White;
+            this.ST_DT_View.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ST_DT_View.IconSize = 30;
+            this.ST_DT_View.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ST_DT_View.Location = new System.Drawing.Point(817, 5);
+            this.ST_DT_View.Name = "ST_DT_View";
+            this.ST_DT_View.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ST_DT_View.Size = new System.Drawing.Size(106, 36);
+            this.ST_DT_View.TabIndex = 57;
+            this.ST_DT_View.Tag = "Button4";
+            this.ST_DT_View.Text = "   조회";
+            this.ST_DT_View.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ST_DT_View.UseVisualStyleBackColor = false;
+            this.ST_DT_View.Click += new System.EventHandler(this.ST_DT_View_Click);
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold);
@@ -209,29 +232,6 @@
             this.ST_DT_DATE.TabIndex = 39;
             this.ST_DT_DATE.Text = "기간";
             this.ST_DT_DATE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ST_DT_View
-            // 
-            this.ST_DT_View.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.ST_DT_View.FlatAppearance.BorderSize = 0;
-            this.ST_DT_View.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ST_DT_View.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ST_DT_View.ForeColor = System.Drawing.Color.White;
-            this.ST_DT_View.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.ST_DT_View.IconColor = System.Drawing.Color.White;
-            this.ST_DT_View.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ST_DT_View.IconSize = 30;
-            this.ST_DT_View.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ST_DT_View.Location = new System.Drawing.Point(817, 5);
-            this.ST_DT_View.Name = "ST_DT_View";
-            this.ST_DT_View.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ST_DT_View.Size = new System.Drawing.Size(106, 36);
-            this.ST_DT_View.TabIndex = 57;
-            this.ST_DT_View.Tag = "Button4";
-            this.ST_DT_View.Text = "   조회";
-            this.ST_DT_View.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ST_DT_View.UseVisualStyleBackColor = false;
-            this.ST_DT_View.Click += new System.EventHandler(this.ST_DT_View_Click);
             // 
             // dataGridView1
             // 
@@ -315,11 +315,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(935, 595);
+            this.ControlBox = false;
             this.Controls.Add(this.ST_Re_Exit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Stock_ViewDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

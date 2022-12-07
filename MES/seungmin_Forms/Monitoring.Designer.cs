@@ -899,12 +899,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1338, 765);
-=======
+
             this.ClientSize = new System.Drawing.Size(1455, 765);
->>>>>>> c372e2cd1d8bf43ac73dea9cfd183f562c83abd4
+
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Monitoring";

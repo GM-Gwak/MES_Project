@@ -89,11 +89,7 @@ namespace MES
             Kimchi.Text = stqty[1];
             Galbi.Text = stqty[2];
 
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> c372e2cd1d8bf43ac73dea9cfd183f562c83abd4
             cmd.CommandText = $"SELECT lotstat FROM lot WHERE wcid = 'wc001'";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
@@ -112,10 +108,6 @@ namespace MES
                 process1.ProgressColor = Color.Green;
                 process1.Text = "가동중";
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> c372e2cd1d8bf43ac73dea9cfd183f562c83abd4
 
             // 불량수량 라벨
             cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";
@@ -141,10 +133,6 @@ namespace MES
                 }
             }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c372e2cd1d8bf43ac73dea9cfd183f562c83abd4
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;
             waitThread.Start();
