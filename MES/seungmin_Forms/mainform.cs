@@ -35,9 +35,11 @@ namespace MES
 
         private Form currentChildForm;
         private int borderSize = 2;
-        
+       
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private string start_time = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
+        private string now_time = DateTime.Now.ToString("yyyy-MM-dd");
 
         public mainform()
         {
@@ -87,26 +89,25 @@ namespace MES
             Kimchi.Text = stqty[1];
             Galbi.Text = stqty[2];
 
-            /*
+
             cmd.CommandText = $"SELECT lotstat FROM lot WHERE wcid = 'wc001'";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             rdr.Read();
             string work_cd = rdr["lotstat"].ToString();
 
-            if(work_cd == "P"||work_cd=="E")
+            if (work_cd == "P" || work_cd == "E")
             {
                 process1.Style = ProgressBarStyle.Blocks;
                 process1.ProgressColor = Color.Red;
                 process1.Text = "중단";
             }
-            else if(work_cd == "S")
+            else if (work_cd == "S")
             {
                 process1.Style = ProgressBarStyle.Marquee;
                 process1.ProgressColor = Color.Green;
                 process1.Text = "가동중";
             }
-<<<<<<< Updated upstream
 
             // 불량수량 라벨
             cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";
@@ -133,15 +134,48 @@ namespace MES
             }
 
 
-=======
-            */
->>>>>>> Stashed changes
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;
             waitThread.Start();
+
+            main_faulty_chart();
+        }
+        public void main_faulty_chart()
+        {
+            string faulty_query = "select sum(woprodqty), woendtime,pmname from workorder w join pdmaster pd on(w.pmid= pd.pmid) where pmname like";
+            // 차트
+            chart1.Series["고기만두"].Points.Clear();
+            chart1.Series["김치만두"].Points.Clear();
+            chart1.Series["갈비만두"].Points.Clear();
+            chart1.Series["예측치"].Points.Clear();
+
+            cmd.CommandText = $"select woendtime, sum(woplanqty), pmname from workorder w join pdmaster pd on(w.pmid = pd.pmid) group by woendtime, pmname";
+            OracleDataReader sum1 = cmd.ExecuteReader();
+            while (sum1.Read())
+            {
+                chart1.Series["예측치"].Points.AddXY(sum1["woendtime"].ToString(), Int32.Parse(sum1["sum(woplanqty)"].ToString()));
+            }
+            cmd.CommandText = faulty_query + $" '고기%' and woendtime between '{start_time}' and '{now_time}' group by woendtime,pmname";
+            OracleDataReader sum2 = cmd.ExecuteReader();
+            while (sum2.Read())
+            {
+                chart1.Series["고기만두"].Points.Add(Int32.Parse(sum2["sum(woprodqty)"].ToString()));
+            }
+            cmd.CommandText = faulty_query + $" '김치%' and woendtime between '{start_time}' and '{now_time}' group by woendtime,pmname";
+            OracleDataReader sum3 = cmd.ExecuteReader();
+            while (sum3.Read())
+            {
+                chart1.Series["김치만두"].Points.Add(Int32.Parse(sum3["sum(woprodqty)"].ToString()));
+            }
+            cmd.CommandText = faulty_query+$" '갈비%' and woendtime between '{start_time}' and '{now_time}' group by woendtime,pmname";
+            OracleDataReader sum4 = cmd.ExecuteReader();
+            while (sum4.Read())
+            {
+                chart1.Series["갈비만두"].Points.Add(Int32.Parse(sum4["sum(woprodqty)"].ToString()));
+            }
+            cmd.ExecuteNonQuery();
             
         }
-       
 
         private void Receive()
         {
