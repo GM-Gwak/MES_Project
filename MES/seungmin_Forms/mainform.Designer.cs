@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -99,7 +96,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
@@ -111,8 +107,6 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panelDesktop.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -1045,7 +1039,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.chart1);
             this.groupBox5.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox5.Location = new System.Drawing.Point(412, 481);
             this.groupBox5.Name = "groupBox5";
@@ -1053,22 +1046,6 @@
             this.groupBox5.TabIndex = 35;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "일일 실적 현황";
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(11, 43);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(876, 231);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
             // 
             // iconButton2
             // 
@@ -1129,8 +1106,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1209,7 +1184,6 @@
         private System.Windows.Forms.Label label6;
 
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 
     }
 }
