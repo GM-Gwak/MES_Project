@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.WO_DATE_N = new System.Windows.Forms.Label();
             this.WO_STAT_N = new System.Windows.Forms.Label();
@@ -41,10 +41,10 @@
             this.WO_GRID = new System.Windows.Forms.DataGridView();
             this.WoEndTime = new System.Windows.Forms.DateTimePicker();
             this.WoStat = new System.Windows.Forms.ComboBox();
-            this.WoStartTime = new System.Windows.Forms.DateTimePicker();
             this.oracleCommandBuilder1 = new Oracle.ManagedDataAccess.Client.OracleCommandBuilder();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.WoStartTime = new System.Windows.Forms.DateTimePicker();
             this.WO_Detail = new FontAwesome.Sharp.IconButton();
             this.WO_VIEW = new FontAwesome.Sharp.IconButton();
             this.WO_CREATE = new FontAwesome.Sharp.IconButton();
@@ -127,31 +127,31 @@
             // WO_GRID
             // 
             this.WO_GRID.AllowUserToAddRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WO_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WO_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.WO_GRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.WO_GRID.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.WO_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.WO_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.WO_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.WO_GRID.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.WO_GRID.DefaultCellStyle = dataGridViewCellStyle3;
             this.WO_GRID.EnableHeadersVisualStyles = false;
             this.WO_GRID.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
             this.WO_GRID.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -159,19 +159,19 @@
             this.WO_GRID.MultiSelect = false;
             this.WO_GRID.Name = "WO_GRID";
             this.WO_GRID.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.WO_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.WO_GRID.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.WO_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.WO_GRID.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.WO_GRID.RowTemplate.Height = 23;
             this.WO_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.WO_GRID.Size = new System.Drawing.Size(1320, 579);
@@ -212,21 +212,6 @@
             this.WoStat.Size = new System.Drawing.Size(163, 28);
             this.WoStat.TabIndex = 33;
             // 
-            // WoStartTime
-            // 
-            this.WoStartTime.CalendarFont = new System.Drawing.Font("굴림", 15F);
-            this.WoStartTime.CalendarMonthBackground = System.Drawing.SystemColors.Menu;
-            this.WoStartTime.CustomFormat = "";
-            this.WoStartTime.Font = new System.Drawing.Font("굴림", 15F);
-            this.WoStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.WoStartTime.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
-            this.WoStartTime.Location = new System.Drawing.Point(677, 7);
-            this.WoStartTime.Name = "WoStartTime";
-            this.WoStartTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.WoStartTime.Size = new System.Drawing.Size(163, 30);
-            this.WoStartTime.TabIndex = 32;
-            this.WoStartTime.Value = new System.DateTime(2022, 11, 23, 15, 33, 25, 0);
-            // 
             // oracleCommandBuilder1
             // 
             this.oracleCommandBuilder1.CatalogLocation = System.Data.Common.CatalogLocation.End;
@@ -258,6 +243,21 @@
             this.label2.TabIndex = 48;
             this.label2.Text = "-";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WoStartTime
+            // 
+            this.WoStartTime.CalendarFont = new System.Drawing.Font("굴림", 15F);
+            this.WoStartTime.CalendarMonthBackground = System.Drawing.SystemColors.Menu;
+            this.WoStartTime.CustomFormat = "";
+            this.WoStartTime.Font = new System.Drawing.Font("굴림", 15F);
+            this.WoStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.WoStartTime.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+            this.WoStartTime.Location = new System.Drawing.Point(677, 7);
+            this.WoStartTime.Name = "WoStartTime";
+            this.WoStartTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.WoStartTime.Size = new System.Drawing.Size(163, 30);
+            this.WoStartTime.TabIndex = 32;
+            this.WoStartTime.Value = new System.DateTime(2022, 11, 23, 15, 33, 25, 0);
             // 
             // WO_Detail
             // 
@@ -395,7 +395,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1553, 824);
+            this.ClientSize = new System.Drawing.Size(1434, 755);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -420,7 +420,6 @@
         private System.Windows.Forms.DataGridView WO_GRID;
         private System.Windows.Forms.DateTimePicker WoEndTime;
         private System.Windows.Forms.ComboBox WoStat;
-        private System.Windows.Forms.DateTimePicker WoStartTime;
         private Oracle.ManagedDataAccess.Client.OracleCommandBuilder oracleCommandBuilder1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
@@ -431,5 +430,6 @@
         private System.Windows.Forms.Label WO_LABEL;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton Wo_del;
+        private System.Windows.Forms.DateTimePicker WoStartTime;
     }
 }

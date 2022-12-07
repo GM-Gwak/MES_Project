@@ -45,15 +45,6 @@ namespace MES
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //조회
-            string[] col_value = new string[] { comboBox1.Text, dateTimePicker1.Text, dateTimePicker2.Text };
-            string[] col_name = new string[] { "PMName", "StDate"};
-            view(main_query, col_name, col_value);
-
-        }
        
         public void view(string query, string[] col_name, string[] col_value)
         {
@@ -89,6 +80,19 @@ namespace MES
             conn.Open();
             cmd.Connection = conn;
             ViewDetail();
+        }
+
+        private void ST_DT_View_Click(object sender, EventArgs e)
+        {
+            //조회
+            string[] col_value = new string[] { comboBox1.Text, dateTimePicker1.Text, dateTimePicker2.Text };
+            string[] col_name = new string[] { "PMName", "StDate" };
+            view(main_query, col_name, col_value);
+        }
+
+        private void ST_Re_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

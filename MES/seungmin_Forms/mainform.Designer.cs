@@ -189,7 +189,7 @@
             this.iconButton5.Size = new System.Drawing.Size(230, 45);
             this.iconButton5.TabIndex = 18;
             this.iconButton5.Tag = "Button4";
-            this.iconButton5.Text = "Monitoring";
+            this.iconButton5.Text = "모니터링";
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton5.UseVisualStyleBackColor = true;
             this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);

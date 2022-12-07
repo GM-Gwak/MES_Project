@@ -26,27 +26,6 @@ namespace MES
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cmd.CommandText = $"select PMId from PdMaster where PMName = '{comboBox1.SelectedItem}'";
-                rdr = cmd.ExecuteReader();
-                rdr.Read();
-                string id = rdr["PMId"].ToString();
-
-                cmd.CommandText = $"insert into Stock(StId, StDate, StQty, PMId) values('St'||trim(to_char(Stock_seq.nextval,'000')),'{dateTimePicker1.Text}',{textBox1.Text},'{id}')";
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("완료되었습니다.", "알림");
-            }
-            catch
-            {
-               // MessageBox.Show("","알림");
-            }
-            
-
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -65,6 +44,30 @@ namespace MES
         {
             conn.Open();
             cmd.Connection = conn;
+        }
+
+        private void ST_Rec_OK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cmd.CommandText = $"select PMId from PdMaster where PMName = '{comboBox1.SelectedItem}'";
+                rdr = cmd.ExecuteReader();
+                rdr.Read();
+                string id = rdr["PMId"].ToString();
+
+                cmd.CommandText = $"insert into Stock(StId, StDate, StQty, PMId) values('St'||trim(to_char(Stock_seq.nextval,'000')),'{dateTimePicker1.Text}',{textBox1.Text},'{id}')";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("완료되었습니다.", "알림");
+            }
+            catch
+            {
+                // MessageBox.Show("","알림");
+            }
+        }
+
+        private void ST_Re_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

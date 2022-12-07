@@ -277,7 +277,7 @@ namespace MES.UI
                 {
                     if (progressBar2.Value == 100)
                     {
-                        if (progressBar3.Value == 100) ;
+                        if (progressBar3.Value == 100);
                     }
                 }
             }
