@@ -87,11 +87,13 @@ namespace MES
             Kimchi.Text = stqty[1];
             Galbi.Text = stqty[2];
 
+            /*
             cmd.CommandText = $"SELECT lotstat FROM lot WHERE wcid = 'wc001'";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             rdr.Read();
             string work_cd = rdr["lotstat"].ToString();
+
             if(work_cd == "P"||work_cd=="E")
             {
                 process1.Style = ProgressBarStyle.Blocks;
@@ -104,6 +106,7 @@ namespace MES
                 process1.ProgressColor = Color.Green;
                 process1.Text = "가동중";
             }
+<<<<<<< Updated upstream
 
             // 불량수량 라벨
             cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";
@@ -130,6 +133,9 @@ namespace MES
             }
 
 
+=======
+            */
+>>>>>>> Stashed changes
             waitThread = new Thread(wait);
             waitThread.IsBackground = true;
             waitThread.Start();
