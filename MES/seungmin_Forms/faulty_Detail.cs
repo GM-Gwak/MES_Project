@@ -38,7 +38,7 @@ namespace MES.seungmin_Forms
             adapt.SelectCommand = new OracleCommand(main_query, conn);
             DataSet ds = new DataSet();
             adapt.Fill(ds);
-            WO_GRID.DataSource = ds.Tables[0].DefaultView;
+            FA_GRID.DataSource = ds.Tables[0].DefaultView;
         }
 
         public void view(string query, string[] col_name, string[] col_value)
@@ -51,7 +51,7 @@ namespace MES.seungmin_Forms
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
-                    WO_GRID.DataSource = ds.Tables[0].DefaultView;
+                    FA_GRID.DataSource = ds.Tables[0].DefaultView;
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace MES.seungmin_Forms
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
-                    WO_GRID.DataSource = ds.Tables[0].DefaultView;
+                    FA_GRID.DataSource = ds.Tables[0].DefaultView;
                 }
             }
             else
@@ -70,7 +70,7 @@ namespace MES.seungmin_Forms
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
-                    WO_GRID.DataSource = ds.Tables[0].DefaultView;
+                    FA_GRID.DataSource = ds.Tables[0].DefaultView;
                 }
                 else
                 {
@@ -78,7 +78,7 @@ namespace MES.seungmin_Forms
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
-                    WO_GRID.DataSource = ds.Tables[0].DefaultView;
+                    FA_GRID.DataSource = ds.Tables[0].DefaultView;
                 }
             }
         }

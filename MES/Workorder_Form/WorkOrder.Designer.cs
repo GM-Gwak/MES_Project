@@ -104,7 +104,6 @@
             // 
             // PMName
             // 
-            this.PMName.AllowDrop = true;
             this.PMName.BackColor = System.Drawing.SystemColors.Menu;
             this.PMName.DropDownHeight = 150;
             this.PMName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -191,7 +190,6 @@
             // 
             // WoStat
             // 
-            this.WoStat.AllowDrop = true;
             this.WoStat.BackColor = System.Drawing.SystemColors.Menu;
             this.WoStat.DropDownHeight = 150;
             this.WoStat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
