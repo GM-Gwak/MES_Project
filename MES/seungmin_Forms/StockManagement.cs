@@ -51,6 +51,7 @@ namespace MES
             DataSet ds = new DataSet();
             adapt.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
+            
         }
 
         private void ST_Add_Click(object sender, EventArgs e)
