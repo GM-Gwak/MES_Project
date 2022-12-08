@@ -104,11 +104,11 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-<<<<<<< Updated upstream
+
             this.label6 = new System.Windows.Forms.Label();
-=======
+
             this.label7 = new System.Windows.Forms.Label();
->>>>>>> Stashed changes
+
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1064,7 +1064,7 @@
             // 
             // chart1
             // 
-<<<<<<< Updated upstream
+
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -1095,7 +1095,7 @@
             this.chart1.Size = new System.Drawing.Size(775, 203);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
-=======
+
             chartArea2.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -1158,7 +1158,7 @@
             this.label7.Size = new System.Drawing.Size(90, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "원재료1 :";
->>>>>>> Stashed changes
+
             // 
             // iconButton2
             // 
