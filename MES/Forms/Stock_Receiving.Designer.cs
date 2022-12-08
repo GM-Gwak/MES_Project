@@ -182,7 +182,7 @@
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 58;
