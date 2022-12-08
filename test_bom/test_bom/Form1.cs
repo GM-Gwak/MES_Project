@@ -33,6 +33,7 @@ namespace test_bom
                             "mpe01", "msa01", "mga01", "mgs01", "mpu01"};
         static double stock_qty;
         static double stock_qty_in;
+
         public Form1()
         {
             InitializeComponent();
@@ -40,7 +41,6 @@ namespace test_bom
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             for (int i = 0; i < pme_bom.Length; i++)
             {
                 cmd.CommandText = $"select bomqty from bom where pmid = '{pme_bom[i]}' and bomname = '고기만두'";
@@ -58,7 +58,6 @@ namespace test_bom
             cmd.CommandText = $"select * from workorder " +
                 $" where woid = (select min(woid) from workorder where wostarttime is null)";
             cmd.ExecuteNonQuery();
-
 
             rdr = cmd.ExecuteReader();
             rdr.Read();
@@ -85,9 +84,6 @@ namespace test_bom
             MessageBox.Show(next_lotid[1]);
             MessageBox.Show(next_lotid[2]);
             MessageBox.Show(next_lotid[3]);
-
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -175,12 +171,12 @@ namespace test_bom
                             $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))) " +
                             $"and pmid = '{pme_bom[i]}'";
                         cmd.ExecuteNonQuery();
-
                     }
                     MessageBox.Show(pme_bom[i]);
                 }
             }
         }
+
 
         private void end_1_Click(object sender, EventArgs e)
         {
@@ -211,7 +207,6 @@ namespace test_bom
             MessageBox.Show("작업2이 종료되었습니다.");
         }
 
-
         private void start_3_Click(object sender, EventArgs e)
         {
             cmd.CommandText = $"update lot " +
@@ -239,7 +234,6 @@ namespace test_bom
             MessageBox.Show("작업4이 시작되었습니다.");
         }
 
-
         private void end_4_Click(object sender, EventArgs e)
         {
             cmd.CommandText = $"update lot " +
@@ -252,14 +246,7 @@ namespace test_bom
                 $"set woendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss') " +
                 $"where woid = '{next_order_woid}'";
             cmd.ExecuteNonQuery();
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+        }    
     }
 }
 
