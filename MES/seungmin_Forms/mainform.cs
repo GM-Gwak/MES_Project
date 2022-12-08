@@ -109,6 +109,7 @@ namespace MES
                 process1.Text = "가동중";
             }
 
+
             // 불량수량 라벨
             cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";
             cmd.ExecuteNonQuery();
@@ -138,7 +139,40 @@ namespace MES
             waitThread.Start();
 
             main_faulty_chart();
+            main_stock();
+
         }
+
+        public void main_stock()
+        {
+            string[] stock_stqty = new string[16];
+            cmd.CommandText = $"select pd.pmname,sum(stqty) from stock s join pdmaster pd on s.pmid = pd.pmid where s.pmid like 'm%' group by pd.pmname order by pd.pmname";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            int n = 0;
+            while (rdr.Read())
+            {
+                stock_stqty[n++] = rdr["sum(stqty)"].ToString();
+            }
+
+            string[] pmname = new string[17];
+            string[] bomqty = new string[17];
+            cmd.CommandText = $"select distinct pmname, bomqty from bom b join pdmaster pd on b.pmid = pd.pmid order by bomqty";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+
+            int k = 0;
+            while (rdr.Read())
+            {
+                pmname[k] = rdr["pmname"].ToString();
+                bomqty[k] = rdr["bomqty"].ToString();
+                MessageBox.Show(pmname[k], bomqty[k]);
+                k++;    
+            }
+            
+        }
+
         public void main_faulty_chart()
         {
             string faulty_query = "select sum(woprodqty), woendtime,pmname from workorder w join pdmaster pd on(w.pmid= pd.pmid) where pmname like";
