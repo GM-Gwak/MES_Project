@@ -82,7 +82,7 @@
             this.label1.Size = new System.Drawing.Size(51, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "작업장 1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // label2
             // 
