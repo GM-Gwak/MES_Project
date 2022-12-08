@@ -132,20 +132,7 @@ namespace MES
         public void work_cd1()
         {
 
-            cmd.CommandText = $"select woplanqty from workorder";
-            cmd.ExecuteNonQuery();
-            rdr2 = cmd.ExecuteReader();
-            rdr2.Read(); //null
-
-            string abc = rdr["WOPLANQTY"].ToString();
-            WoPlanQty = Int32.Parse(abc);
-            MessageBox.Show(WoPlanQty.ToString());
-            int cnt = 0;
-            
-                cnt++;
-                Thread.Sleep(1000);
-                label6.Text = cnt.ToString();
-            
+           
             
 
         }
