@@ -46,7 +46,6 @@ namespace MES
         public mainform()
         {
             InitializeComponent();
-            CollapseMenu();
             this.Padding = new Padding(borderSize); //border size
             this.BackColor = Color.FromArgb(98, 102, 244); //border color
             leftBorderBtn = new Panel();
@@ -264,46 +263,6 @@ namespace MES
             public static Color color6 = Color.FromArgb(24, 161, 251);
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            CollapseMenu(); // Sliding Menu
-        }
-        private void CollapseMenu()
-        {
-            if (this.panelMenu.Width > 200)  // Collapse menu
-            {
-                panelMenu.Width = 100;
-                pictureBox1.Visible = false;
-                label1.Visible = false;
-                time_label.Visible = false;
-                name_label.Visible = false;
-                label3.Visible = false;
-                btnMenu.Dock = DockStyle.Top;
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
-                {
-                    menuButton.Text = "";
-                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    menuButton.Padding = new Padding(0);
-                }
-            }
-            else // Expand menu
-            {
-                panelMenu.Width = 230;
-                pictureBox1.Visible = true;
-                label1.Visible = true;
-                label3.Visible = true;
-                name_label.Visible = true;
-                time_label.Visible = true;
-                btnMenu.Dock = DockStyle.None;
-                foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
-                {
-                    menuButton.Text = "    " + menuButton.Tag.ToString();
-                    menuButton.ImageAlign = ContentAlignment.MiddleLeft;
-                    menuButton.Padding = new Padding(10, 0, 0, 0);
-                }
-
-            }
-        }
         private void ActivateButton(object senderBtn, Color color)
         {
 

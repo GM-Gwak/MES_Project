@@ -145,6 +145,12 @@
     <Compile Include="seungmin_Forms\Monitoring.Designer.cs">
       <DependentUpon>Monitoring.cs</DependentUpon>
     </Compile>
+    <Compile Include="seungmin_Forms\work.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\work.Designer.cs">
+      <DependentUpon>work.cs</DependentUpon>
+    </Compile>
     <Compile Include="Workorder_Form\WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\Monitoring.resx">
       <DependentUpon>Monitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seungmin_Forms\work.resx">
+      <DependentUpon>work.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Workorder_Form\WorkOrder.resx">
       <DependentUpon>WorkOrder.cs</DependentUpon>
