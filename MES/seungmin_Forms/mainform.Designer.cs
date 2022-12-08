@@ -105,7 +105,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
 
-            this.label6 = new System.Windows.Forms.Label();
+            //this.label6 = new System.Windows.Forms.Label();
 
             this.label7 = new System.Windows.Forms.Label();
 
@@ -1065,36 +1065,36 @@
             // chart1
             // 
 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(58, 47);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "고기만두";
-            series2.ChartArea = "ChartArea1";
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "김치만두";
-            series3.ChartArea = "ChartArea1";
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "갈비만두";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.IsValueShownAsLabel = true;
-            series4.Legend = "Legend1";
-            series4.Name = "예측치";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(775, 203);
-            this.chart1.TabIndex = 36;
-            this.chart1.Text = "chart1";
+            //chartArea1.Name = "ChartArea1";
+            //this.chart1.ChartAreas.Add(chartArea1);
+            //legend1.Name = "Legend1";
+            //this.chart1.Legends.Add(legend1);
+            //this.chart1.Location = new System.Drawing.Point(58, 47);
+            //this.chart1.Name = "chart1";
+            //series1.ChartArea = "ChartArea1";
+            //series1.IsValueShownAsLabel = true;
+            //series1.Legend = "Legend1";
+            //series1.Name = "고기만두";
+            //series2.ChartArea = "ChartArea1";
+            //series2.IsValueShownAsLabel = true;
+            //series2.Legend = "Legend1";
+            //series2.Name = "김치만두";
+            //series3.ChartArea = "ChartArea1";
+            //series3.IsValueShownAsLabel = true;
+            //series3.Legend = "Legend1";
+            //series3.Name = "갈비만두";
+            //series4.ChartArea = "ChartArea1";
+            //series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            //series4.IsValueShownAsLabel = true;
+            //series4.Legend = "Legend1";
+            //series4.Name = "예측치";
+            //this.chart1.Series.Add(series1);
+            //this.chart1.Series.Add(series2);
+            //this.chart1.Series.Add(series3);
+            //this.chart1.Series.Add(series4);
+            //this.chart1.Size = new System.Drawing.Size(775, 203);
+            //this.chart1.TabIndex = 36;
+            //this.chart1.Text = "chart1";
 
             chartArea2.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea2);
@@ -1184,12 +1184,12 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 12);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "label6";
+            //this.label6.AutoSize = true;
+            //this.label6.Location = new System.Drawing.Point(0, 0);
+            //this.label6.Name = "label6";
+            //this.label6.Size = new System.Drawing.Size(38, 12);
+            //this.label6.TabIndex = 10;
+            //this.label6.Text = "label6";
             // 
             // mainform
             // 

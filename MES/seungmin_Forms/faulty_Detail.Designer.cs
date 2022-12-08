@@ -35,9 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Wofact = new System.Windows.Forms.ComboBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.WO_DT_Label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PMName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.WO_VIEW = new FontAwesome.Sharp.IconButton();
             this.WO_STAT_N = new System.Windows.Forms.Label();
@@ -46,14 +50,10 @@
             this.WO_DATE_N = new System.Windows.Forms.Label();
             this.StartTime = new System.Windows.Forms.DateTimePicker();
             this.Wo_detail_close = new FontAwesome.Sharp.IconButton();
-            this.PMName = new System.Windows.Forms.ComboBox();
             this.FA_GRID = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -90,6 +90,36 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1213, 58);
             this.panelTitleBar.TabIndex = 28;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Location = new System.Drawing.Point(2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(1209, 2);
+            this.label6.TabIndex = 67;
+            this.label6.Text = "label6";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(2, 58);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label2.Location = new System.Drawing.Point(1211, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(2, 58);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "label2";
             // 
             // iconPictureBox1
             // 
@@ -134,6 +164,23 @@
             this.panel1.Size = new System.Drawing.Size(1230, 46);
             this.panel1.TabIndex = 48;
             // 
+            // PMName
+            // 
+            this.PMName.BackColor = System.Drawing.SystemColors.Menu;
+            this.PMName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PMName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PMName.Font = new System.Drawing.Font("굴림", 15F);
+            this.PMName.FormattingEnabled = true;
+            this.PMName.IntegralHeight = false;
+            this.PMName.Items.AddRange(new object[] {
+            "pme01",
+            "pki01",
+            "hri01"});
+            this.PMName.Location = new System.Drawing.Point(113, 9);
+            this.PMName.Name = "PMName";
+            this.PMName.Size = new System.Drawing.Size(163, 28);
+            this.PMName.TabIndex = 56;
+            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Bold);
@@ -156,7 +203,7 @@
             this.WO_VIEW.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.WO_VIEW.IconSize = 30;
             this.WO_VIEW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.WO_VIEW.Location = new System.Drawing.Point(1097, 5);
+            this.WO_VIEW.Location = new System.Drawing.Point(1077, 4);
             this.WO_VIEW.Name = "WO_VIEW";
             this.WO_VIEW.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.WO_VIEW.Size = new System.Drawing.Size(106, 36);
@@ -251,23 +298,6 @@
             this.Wo_detail_close.UseVisualStyleBackColor = false;
             this.Wo_detail_close.Click += new System.EventHandler(this.Wo_detail_close_Click);
             // 
-            // PMName
-            // 
-            this.PMName.BackColor = System.Drawing.SystemColors.Menu;
-            this.PMName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PMName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PMName.Font = new System.Drawing.Font("굴림", 15F);
-            this.PMName.FormattingEnabled = true;
-            this.PMName.IntegralHeight = false;
-            this.PMName.Items.AddRange(new object[] {
-            "pme01",
-            "pki01",
-            "hri01"});
-            this.PMName.Location = new System.Drawing.Point(113, 9);
-            this.PMName.Name = "PMName";
-            this.PMName.Size = new System.Drawing.Size(163, 28);
-            this.PMName.TabIndex = 56;
-            // 
             // FA_GRID
             // 
             this.FA_GRID.AllowUserToAddRows = false;
@@ -299,7 +329,7 @@
             this.FA_GRID.EnableHeadersVisualStyles = false;
             this.FA_GRID.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
             this.FA_GRID.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.FA_GRID.Location = new System.Drawing.Point(38, 143);
+            this.FA_GRID.Location = new System.Drawing.Point(41, 143);
             this.FA_GRID.MultiSelect = false;
             this.FA_GRID.Name = "FA_GRID";
             this.FA_GRID.ReadOnly = true;
@@ -318,7 +348,7 @@
             this.FA_GRID.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.FA_GRID.RowTemplate.Height = 23;
             this.FA_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FA_GRID.Size = new System.Drawing.Size(1132, 350);
+            this.FA_GRID.Size = new System.Drawing.Size(1131, 350);
             this.FA_GRID.TabIndex = 60;
             // 
             // label7
@@ -327,7 +357,7 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Right;
             this.label7.Location = new System.Drawing.Point(1211, 58);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(2, 537);
+            this.label7.Size = new System.Drawing.Size(2, 534);
             this.label7.TabIndex = 62;
             this.label7.Text = "label7";
             // 
@@ -337,7 +367,7 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Left;
             this.label8.Location = new System.Drawing.Point(0, 58);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(2, 537);
+            this.label8.Size = new System.Drawing.Size(2, 534);
             this.label8.TabIndex = 65;
             this.label8.Text = "label8";
             // 
@@ -345,48 +375,18 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label5.Location = new System.Drawing.Point(2, 593);
+            this.label5.Location = new System.Drawing.Point(2, 590);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(1209, 2);
             this.label5.TabIndex = 66;
             this.label5.Text = "label5";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Location = new System.Drawing.Point(1211, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(2, 58);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(2, 58);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "label3";
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1209, 2);
-            this.label6.TabIndex = 67;
-            this.label6.Text = "label6";
             // 
             // faulty_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1213, 595);
+            this.ClientSize = new System.Drawing.Size(1213, 592);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
