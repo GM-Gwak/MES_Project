@@ -80,6 +80,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.process4 = new CircularProgressBar.CircularProgressBar();
             this.process3 = new CircularProgressBar.CircularProgressBar();
             this.process2 = new CircularProgressBar.CircularProgressBar();
@@ -105,10 +106,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-<<<<<<< Updated upstream
-=======
-            this.label6 = new System.Windows.Forms.Label();
->>>>>>> Stashed changes
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -732,6 +729,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "생산현황";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(51, 357);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 30);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "label6";
+            // 
             // process4
             // 
             this.process4.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
@@ -1075,7 +1081,6 @@
             // 
             // chart1
             // 
-<<<<<<< Updated upstream
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -1103,35 +1108,6 @@
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
             this.chart1.Series.Add(series4);
-=======
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(58, 47);
-            this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "고기만두";
-            series6.ChartArea = "ChartArea1";
-            series6.IsValueShownAsLabel = true;
-            series6.Legend = "Legend1";
-            series6.Name = "김치만두";
-            series7.ChartArea = "ChartArea1";
-            series7.IsValueShownAsLabel = true;
-            series7.Legend = "Legend1";
-            series7.Name = "갈비만두";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.IsValueShownAsLabel = true;
-            series8.Legend = "Legend1";
-            series8.Name = "예측치";
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
->>>>>>> Stashed changes
             this.chart1.Size = new System.Drawing.Size(775, 203);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
@@ -1158,18 +1134,6 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-<<<<<<< Updated upstream
-=======
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 357);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 30);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "label6";
-            // 
->>>>>>> Stashed changes
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
