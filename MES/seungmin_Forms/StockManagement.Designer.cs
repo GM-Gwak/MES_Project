@@ -34,9 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Label53 = new System.Windows.Forms.Label();
-            this.Label54 = new System.Windows.Forms.Label();
-            this.Label55 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ST_Add = new FontAwesome.Sharp.IconButton();
             this.WO_LABEL = new System.Windows.Forms.Label();
@@ -45,7 +42,6 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,47 +51,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.Label53);
-            this.panel1.Controls.Add(this.Label54);
-            this.panel1.Controls.Add(this.Label55);
             this.panel1.Location = new System.Drawing.Point(-1, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1356, 46);
+            this.panel1.Size = new System.Drawing.Size(1356, 1);
             this.panel1.TabIndex = 48;
-            // 
-            // Label53
-            // 
-            this.Label53.BackColor = System.Drawing.SystemColors.Menu;
-            this.Label53.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Label53.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Label53.Location = new System.Drawing.Point(0, 0);
-            this.Label53.Name = "Label53";
-            this.Label53.Size = new System.Drawing.Size(107, 44);
-            this.Label53.TabIndex = 40;
-            this.Label53.Text = "상태";
-            this.Label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Label54
-            // 
-            this.Label54.BackColor = System.Drawing.SystemColors.Menu;
-            this.Label54.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Label54.Location = new System.Drawing.Point(282, 0);
-            this.Label54.Name = "Label54";
-            this.Label54.Size = new System.Drawing.Size(107, 44);
-            this.Label54.TabIndex = 39;
-            this.Label54.Text = "품목";
-            this.Label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Label55
-            // 
-            this.Label55.BackColor = System.Drawing.SystemColors.Menu;
-            this.Label55.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Label55.Location = new System.Drawing.Point(564, 0);
-            this.Label55.Name = "Label55";
-            this.Label55.Size = new System.Drawing.Size(107, 44);
-            this.Label55.TabIndex = 41;
-            this.Label55.Text = "기간";
-            this.Label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -126,7 +85,7 @@
             this.ST_Add.Name = "ST_Add";
             this.ST_Add.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ST_Add.Size = new System.Drawing.Size(153, 36);
-            this.ST_Add.TabIndex = 53;
+            this.ST_Add.TabIndex = 2;
             this.ST_Add.Tag = "Button4";
             this.ST_Add.Text = "   입고 관리";
             this.ST_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,7 +118,7 @@
             this.ST_View.Name = "ST_View";
             this.ST_View.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ST_View.Size = new System.Drawing.Size(106, 36);
-            this.ST_View.TabIndex = 49;
+            this.ST_View.TabIndex = 3;
             this.ST_View.Tag = "Button4";
             this.ST_View.Text = "   조회";
             this.ST_View.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -182,7 +141,7 @@
             this.ST_Detail.Name = "ST_Detail";
             this.ST_Detail.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ST_Detail.Size = new System.Drawing.Size(153, 36);
-            this.ST_Detail.TabIndex = 48;
+            this.ST_Detail.TabIndex = 1;
             this.ST_Detail.Tag = "Button4";
             this.ST_Detail.Text = "   재고 상세";
             this.ST_Detail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -245,7 +204,7 @@
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 148);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 87);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -264,7 +223,7 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1320, 579);
+            this.dataGridView1.Size = new System.Drawing.Size(1320, 640);
             this.dataGridView1.TabIndex = 54;
             // 
             // StockManagement
@@ -272,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1553, 824);
+            this.ClientSize = new System.Drawing.Size(1354, 824);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -280,7 +239,6 @@
             this.Name = "StockManagement";
             this.Text = "StockManagement";
             this.Load += new System.EventHandler(this.StockManagement_Load_1);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -290,15 +248,12 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label Label53;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton ST_Add;
         private System.Windows.Forms.Label WO_LABEL;
         private FontAwesome.Sharp.IconButton ST_View;
         private FontAwesome.Sharp.IconButton ST_Detail;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.Label Label54;
-        private System.Windows.Forms.Label Label55;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
     }

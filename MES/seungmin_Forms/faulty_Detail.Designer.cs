@@ -74,7 +74,7 @@
             this.Wofact.Location = new System.Drawing.Point(395, 9);
             this.Wofact.Name = "Wofact";
             this.Wofact.Size = new System.Drawing.Size(163, 28);
-            this.Wofact.TabIndex = 26;
+            this.Wofact.TabIndex = 2;
             // 
             // panelTitleBar
             // 
@@ -179,7 +179,7 @@
             this.PMName.Location = new System.Drawing.Point(113, 9);
             this.PMName.Name = "PMName";
             this.PMName.Size = new System.Drawing.Size(163, 28);
-            this.PMName.TabIndex = 56;
+            this.PMName.TabIndex = 1;
             // 
             // label1
             // 
@@ -207,7 +207,7 @@
             this.WO_VIEW.Name = "WO_VIEW";
             this.WO_VIEW.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.WO_VIEW.Size = new System.Drawing.Size(106, 36);
-            this.WO_VIEW.TabIndex = 50;
+            this.WO_VIEW.TabIndex = 5;
             this.WO_VIEW.Tag = "Button4";
             this.WO_VIEW.Text = "   조회";
             this.WO_VIEW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -235,7 +235,7 @@
             this.EndTime.Location = new System.Drawing.Point(888, 7);
             this.EndTime.Name = "EndTime";
             this.EndTime.Size = new System.Drawing.Size(161, 30);
-            this.EndTime.TabIndex = 34;
+            this.EndTime.TabIndex = 4;
             // 
             // WO_ITEMS_N
             // 
@@ -272,7 +272,7 @@
             this.StartTime.Name = "StartTime";
             this.StartTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartTime.Size = new System.Drawing.Size(163, 30);
-            this.StartTime.TabIndex = 32;
+            this.StartTime.TabIndex = 3;
             this.StartTime.Value = new System.DateTime(2022, 11, 23, 15, 33, 25, 0);
             // 
             // Wo_detail_close
@@ -291,7 +291,7 @@
             this.Wo_detail_close.Name = "Wo_detail_close";
             this.Wo_detail_close.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Wo_detail_close.Size = new System.Drawing.Size(103, 36);
-            this.Wo_detail_close.TabIndex = 53;
+            this.Wo_detail_close.TabIndex = 6;
             this.Wo_detail_close.Tag = "Button4";
             this.Wo_detail_close.Text = "  닫기";
             this.Wo_detail_close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -349,7 +349,7 @@
             this.FA_GRID.RowTemplate.Height = 23;
             this.FA_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FA_GRID.Size = new System.Drawing.Size(1131, 350);
-            this.FA_GRID.TabIndex = 60;
+            this.FA_GRID.TabIndex = 7;
             // 
             // label7
             // 

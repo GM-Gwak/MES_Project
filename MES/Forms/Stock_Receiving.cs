@@ -38,12 +38,17 @@ namespace MES
             //rdr.Read();
             //string unit = rdr["PMUnit"].ToString();
             //label4.Text = unit;
+
+            textBox1.Focus();
+
         }
 
         private void Stock_Receiving_Load_1(object sender, EventArgs e)
         {
             conn.Open();
             cmd.Connection = conn;
+            comboBox1.Focus();
+            comboBox1.SelectedIndex = 0;
         }
 
         private void ST_Rec_OK_Click(object sender, EventArgs e)
@@ -59,15 +64,30 @@ namespace MES
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("완료되었습니다.", "알림");
             }
-            catch
+            catch(Exception ex)
             {
-                // MessageBox.Show("","알림");
+                 MessageBox.Show(ex.Message,"알림");
             }
         }
 
         private void ST_Re_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dateTimePicker1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ST_Rec_OK.Focus();
+            }
+        }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                dateTimePicker1.Focus();
+            }
         }
     }
 }

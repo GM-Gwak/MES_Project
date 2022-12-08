@@ -70,10 +70,6 @@ namespace MES
                 dataGridView1.DataSource = ds.Tables[0].DefaultView;
             }
         }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ViewDetail();
-        }
 
         private void Stock_ViewDetail_Load_1(object sender, EventArgs e)
         {
@@ -88,6 +84,8 @@ namespace MES
             string[] col_value = new string[] { comboBox1.Text, dateTimePicker1.Text, dateTimePicker2.Text };
             string[] col_name = new string[] { "PMName", "StDate" };
             view(main_query, col_name, col_value);
+
+            comboBox1.SelectedIndex = -1;
         }
 
         private void ST_Re_Exit_Click(object sender, EventArgs e)

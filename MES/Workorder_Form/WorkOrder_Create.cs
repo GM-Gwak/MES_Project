@@ -152,5 +152,18 @@ namespace MES.Workorder_Form
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void PD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EA.Focus();
+        }
+
+        private void EA_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ok.Focus();
+            }
+        }
     }
 }
