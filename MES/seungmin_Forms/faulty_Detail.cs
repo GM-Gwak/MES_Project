@@ -100,6 +100,9 @@ namespace MES.seungmin_Forms
 
             // 조회 함수
             view(main_query, col_name, col_value);
+
+            Wofact.SelectedIndex = -1;
+            PMName.SelectedIndex = -1;
         }
 
         private void Wo_detail_close_Click(object sender, EventArgs e)

@@ -23,6 +23,7 @@ namespace MES
     {
         OracleCommand cmd = new OracleCommand();
         OracleDataReader rdr;
+        OracleDataReader rdr2;
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
@@ -32,7 +33,7 @@ namespace MES
         private Socket socket;
         private Thread receiveThread;
         private Thread waitThread;
-
+        private Thread pdThread;
         private Form currentChildForm;
         private int borderSize = 2;
        
@@ -40,6 +41,7 @@ namespace MES
         private Panel leftBorderBtn;
         private string start_time = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
         private string now_time = DateTime.Now.ToString("yyyy-MM-dd");
+        private int WoPlanQty = 0;
 
         public mainform()
         {
@@ -90,26 +92,6 @@ namespace MES
             Galbi.Text = stqty[2];
 
 
-            cmd.CommandText = $"SELECT lotstat FROM lot WHERE wcid = 'wc001'";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            string work_cd = rdr["lotstat"].ToString();
-
-            if (work_cd == "P" || work_cd == "E")
-            {
-                process1.Style = ProgressBarStyle.Blocks;
-                process1.ProgressColor = Color.Red;
-                process1.Text = "중단";
-            }
-            else if (work_cd == "S")
-            {
-                process1.Style = ProgressBarStyle.Marquee;
-                process1.ProgressColor = Color.Green;
-                process1.Text = "가동중";
-            }
-
-
             // 불량수량 라벨
             cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";
             cmd.ExecuteNonQuery();
@@ -138,11 +120,35 @@ namespace MES
             waitThread.IsBackground = true;
             waitThread.Start();
 
+            pdThread = new Thread(work_cd1);
+            pdThread.IsBackground = true;
+            pdThread.Start();
+
             main_faulty_chart();
             main_stock();
+            //work_cd1();
+            
+        }
+        public void work_cd1()
+        {
+
+            cmd.CommandText = $"select woplanqty from workorder";
+            cmd.ExecuteNonQuery();
+            rdr2 = cmd.ExecuteReader();
+            rdr2.Read(); //null
+
+            string abc = rdr["WOPLANQTY"].ToString();
+            WoPlanQty = Int32.Parse(abc);
+            MessageBox.Show(WoPlanQty.ToString());
+            int cnt = 0;
+            
+                cnt++;
+                Thread.Sleep(1000);
+                label6.Text = cnt.ToString();
+            
+            
 
         }
-
         public void main_stock()
         {
             string[] stock_stqty = new string[16];
@@ -155,8 +161,8 @@ namespace MES
                 stock_stqty[n++] = rdr["sum(stqty)"].ToString();
             }
 
-            string[] pmname = new string[17];
-            string[] bomqty = new string[17];
+            string[] pmname = new string[16];
+            string[] bomqty = new string[16];
             cmd.CommandText = $"select distinct pmname, bomqty from bom b join pdmaster pd on b.pmid = pd.pmid order by bomqty";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
@@ -167,8 +173,13 @@ namespace MES
             {
                 pmname[k] = rdr["pmname"].ToString();
                 bomqty[k] = rdr["bomqty"].ToString();
-                MessageBox.Show(pmname[k], bomqty[k]);
+                //MessageBox.Show(pmname[k], bomqty[k]);
                 k++;    
+            }
+            
+            for(int i = 0; i < 16; i++)
+            {
+                
             }
             
         }

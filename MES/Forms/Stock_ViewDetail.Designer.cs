@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,17 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("굴림", 14F);
-            this.button3.Location = new System.Drawing.Point(665, 522);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 38);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "초기화";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -276,7 +264,7 @@
             this.ST_DT_View.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ST_DT_View.IconSize = 30;
             this.ST_DT_View.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ST_DT_View.Location = new System.Drawing.Point(795, 5);
+            this.ST_DT_View.Location = new System.Drawing.Point(798, 5);
             this.ST_DT_View.Name = "ST_DT_View";
             this.ST_DT_View.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ST_DT_View.Size = new System.Drawing.Size(106, 36);
@@ -489,7 +477,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Stock_ViewDetail";
@@ -505,7 +492,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label ST_DT_Label1;

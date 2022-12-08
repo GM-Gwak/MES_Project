@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -80,6 +80,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.process4 = new CircularProgressBar.CircularProgressBar();
             this.process3 = new CircularProgressBar.CircularProgressBar();
             this.process2 = new CircularProgressBar.CircularProgressBar();
@@ -89,6 +90,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Galbi = new System.Windows.Forms.Label();
             this.Kimchi = new System.Windows.Forms.Label();
             this.Meat = new System.Windows.Forms.Label();
@@ -104,11 +106,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-
-            //this.label6 = new System.Windows.Forms.Label();
-
-            this.label7 = new System.Windows.Forms.Label();
-
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -237,7 +234,7 @@
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.iconButton3.IconColor = System.Drawing.Color.White;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 30;
@@ -715,6 +712,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.process4);
             this.groupBox3.Controls.Add(this.process3);
             this.groupBox3.Controls.Add(this.process2);
@@ -730,6 +728,15 @@
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "생산현황";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(51, 357);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 30);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "label6";
             // 
             // process4
             // 
@@ -925,6 +932,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "재고현황";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(6, 373);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 25);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "원재료1 :";
+            // 
             // Galbi
             // 
             this.Galbi.AutoSize = true;
@@ -1064,65 +1081,33 @@
             // 
             // chart1
             // 
-
-            //chartArea1.Name = "ChartArea1";
-            //this.chart1.ChartAreas.Add(chartArea1);
-            //legend1.Name = "Legend1";
-            //this.chart1.Legends.Add(legend1);
-            //this.chart1.Location = new System.Drawing.Point(58, 47);
-            //this.chart1.Name = "chart1";
-            //series1.ChartArea = "ChartArea1";
-            //series1.IsValueShownAsLabel = true;
-            //series1.Legend = "Legend1";
-            //series1.Name = "고기만두";
-            //series2.ChartArea = "ChartArea1";
-            //series2.IsValueShownAsLabel = true;
-            //series2.Legend = "Legend1";
-            //series2.Name = "김치만두";
-            //series3.ChartArea = "ChartArea1";
-            //series3.IsValueShownAsLabel = true;
-            //series3.Legend = "Legend1";
-            //series3.Name = "갈비만두";
-            //series4.ChartArea = "ChartArea1";
-            //series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            //series4.IsValueShownAsLabel = true;
-            //series4.Legend = "Legend1";
-            //series4.Name = "예측치";
-            //this.chart1.Series.Add(series1);
-            //this.chart1.Series.Add(series2);
-            //this.chart1.Series.Add(series3);
-            //this.chart1.Series.Add(series4);
-            //this.chart1.Size = new System.Drawing.Size(775, 203);
-            //this.chart1.TabIndex = 36;
-            //this.chart1.Text = "chart1";
-
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(58, 47);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "고기만두";
-            series6.ChartArea = "ChartArea1";
-            series6.IsValueShownAsLabel = true;
-            series6.Legend = "Legend1";
-            series6.Name = "김치만두";
-            series7.ChartArea = "ChartArea1";
-            series7.IsValueShownAsLabel = true;
-            series7.Legend = "Legend1";
-            series7.Name = "갈비만두";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.IsValueShownAsLabel = true;
-            series8.Legend = "Legend1";
-            series8.Name = "예측치";
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "고기만두";
+            series2.ChartArea = "ChartArea1";
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "김치만두";
+            series3.ChartArea = "ChartArea1";
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "갈비만두";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "예측치";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(775, 203);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
@@ -1148,48 +1133,6 @@
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(6, 373);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 25);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "원재료1 :";
-
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.BackColor = System.Drawing.SystemColors.Menu;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(328, 13);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(56, 37);
-            this.iconButton2.TabIndex = 28;
-            this.iconButton2.Tag = "Button6";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-            // 
-            // label6
-            // 
-            //this.label6.AutoSize = true;
-            //this.label6.Location = new System.Drawing.Point(0, 0);
-            //this.label6.Name = "label6";
-            //this.label6.Size = new System.Drawing.Size(38, 12);
-            //this.label6.TabIndex = 10;
-            //this.label6.Text = "label6";
             // 
             // mainform
             // 
@@ -1299,5 +1242,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

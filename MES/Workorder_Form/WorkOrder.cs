@@ -132,6 +132,8 @@ namespace MES.Workorder_Form
         {
             string stat = string.Empty;
 
+
+
             if (WoStat.Text == "가동")
             {
                 stat = "S";
@@ -154,6 +156,9 @@ namespace MES.Workorder_Form
 
             // 조회 함수
             view_workorder(main_query, col_name, col_value);
+
+            WoStat.SelectedIndex = -1;
+            PMName.SelectedIndex = -1;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

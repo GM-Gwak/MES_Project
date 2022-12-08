@@ -34,8 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.ST_Rec_Label = new System.Windows.Forms.Label();
@@ -44,8 +45,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,12 +52,13 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(142, 172);
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.textBox1.Location = new System.Drawing.Point(142, 171);
             this.textBox1.MaxLength = 5;
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 28);
+            this.textBox1.Size = new System.Drawing.Size(241, 30);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // comboBox1
             // 
@@ -104,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔고딕코딩", 18F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(44, 172);
+            this.label2.Location = new System.Drawing.Point(73, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 24);
             this.label2.TabIndex = 4;
@@ -133,17 +133,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(241, 30);
             this.dateTimePicker1.TabIndex = 6;
             this.dateTimePicker1.Value = new System.DateTime(2022, 12, 1, 0, 0, 0, 0);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔고딕코딩", 18F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(97, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 24);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Kg";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.dateTimePicker1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePicker1_KeyDown);
             // 
             // panel1
             // 
@@ -159,6 +149,26 @@
             this.panel1.Size = new System.Drawing.Size(490, 58);
             this.panel1.TabIndex = 54;
             // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Black;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Location = new System.Drawing.Point(0, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(2, 56);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "label10";
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Black;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label9.Location = new System.Drawing.Point(488, 2);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(2, 56);
+            this.label9.TabIndex = 60;
+            this.label9.Text = "label9";
+            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Black;
@@ -172,7 +182,7 @@
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 58;
@@ -186,11 +196,11 @@
             // 
             this.ST_Rec_Label.Font = new System.Drawing.Font("나눔고딕코딩", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ST_Rec_Label.ForeColor = System.Drawing.Color.White;
-            this.ST_Rec_Label.Location = new System.Drawing.Point(162, 10);
+            this.ST_Rec_Label.Location = new System.Drawing.Point(167, 10);
             this.ST_Rec_Label.Name = "ST_Rec_Label";
             this.ST_Rec_Label.Size = new System.Drawing.Size(169, 41);
             this.ST_Rec_Label.TabIndex = 32;
-            this.ST_Rec_Label.Text = "지시서 등록";
+            this.ST_Rec_Label.Text = "입고 등록";
             this.ST_Rec_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ST_Rec_OK
@@ -269,26 +279,6 @@
             this.label8.TabIndex = 60;
             this.label8.Text = "label8";
             // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Black;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Location = new System.Drawing.Point(488, 2);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(2, 56);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "label9";
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Black;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Location = new System.Drawing.Point(0, 2);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(2, 56);
-            this.label10.TabIndex = 61;
-            this.label10.Text = "label10";
-            // 
             // Stock_Receiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -301,7 +291,6 @@
             this.Controls.Add(this.ST_Re_Exit);
             this.Controls.Add(this.ST_Rec_OK);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -327,7 +316,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label ST_Rec_Label;

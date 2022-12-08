@@ -35,13 +35,13 @@
             this.ok = new FontAwesome.Sharp.IconButton();
             this.exit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.WO_CT_Label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -59,18 +59,19 @@
             this.PD.Location = new System.Drawing.Point(142, 102);
             this.PD.Name = "PD";
             this.PD.Size = new System.Drawing.Size(241, 28);
-            this.PD.TabIndex = 30;
+            this.PD.TabIndex = 1;
+            this.PD.SelectedIndexChanged += new System.EventHandler(this.PD_SelectedIndexChanged);
             // 
             // EA
             // 
             this.EA.Font = new System.Drawing.Font("굴림", 15F);
-            this.EA.Location = new System.Drawing.Point(142, 172);
+            this.EA.Location = new System.Drawing.Point(142, 171);
             this.EA.MaxLength = 5;
-            this.EA.Multiline = true;
             this.EA.Name = "EA";
-            this.EA.Size = new System.Drawing.Size(241, 28);
-            this.EA.TabIndex = 29;
+            this.EA.Size = new System.Drawing.Size(241, 30);
+            this.EA.TabIndex = 2;
             this.EA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.EA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EA_KeyDown);
             // 
             // EA_N
             // 
@@ -108,7 +109,7 @@
             this.ok.Name = "ok";
             this.ok.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ok.Size = new System.Drawing.Size(103, 36);
-            this.ok.TabIndex = 51;
+            this.ok.TabIndex = 3;
             this.ok.Tag = "Button4";
             this.ok.Text = "  확인";
             this.ok.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -131,7 +132,7 @@
             this.exit.Name = "exit";
             this.exit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.exit.Size = new System.Drawing.Size(103, 36);
-            this.exit.TabIndex = 52;
+            this.exit.TabIndex = 4;
             this.exit.Tag = "Button4";
             this.exit.Text = " 닫기";
             this.exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -153,10 +154,40 @@
             this.panel1.TabIndex = 53;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(0, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(2, 56);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "label1";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(488, 2);
+            this.label6.TabIndex = 62;
+            this.label6.Text = "label6";
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Black;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label9.Location = new System.Drawing.Point(488, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(2, 58);
+            this.label9.TabIndex = 61;
+            this.label9.Text = "label9";
+            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PencilSquare;
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 58;
@@ -188,26 +219,6 @@
             this.label7.TabIndex = 60;
             this.label7.Text = "label7";
             // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Black;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Location = new System.Drawing.Point(488, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(2, 58);
-            this.label9.TabIndex = 61;
-            this.label9.Text = "label9";
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(488, 2);
-            this.label6.TabIndex = 62;
-            this.label6.Text = "label6";
-            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Black;
@@ -217,16 +228,6 @@
             this.label8.Size = new System.Drawing.Size(2, 249);
             this.label8.TabIndex = 61;
             this.label8.Text = "label8";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(0, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(2, 56);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "label1";
             // 
             // label5
             // 
