@@ -75,19 +75,7 @@ namespace MES
 
             name_label.Text = rdr["mbname"].ToString();
 
-            string[] stqty = new string[3];
-            cmd.CommandText = $"SELECT sum(stqty) FROM stock s join pdmaster pd on s.pmid = pd.pmid WHERE s.pmid like 'p%' group by pmname";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            int i = 0;
-            while (rdr.Read())
-            {
-                stqty[i] = rdr["sum(stqty)"].ToString();
-                i++;
-            }
-            Meat.Text = stqty[0];
-            Kimchi.Text = stqty[1];
-            Galbi.Text = stqty[2];
+            
 
 
             string work_name = rdr["mbname"].ToString();
@@ -352,7 +340,7 @@ namespace MES
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
 
-                leftBorderBtn.BackColor = color;
+                //leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(currentBtn.Location.X, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
