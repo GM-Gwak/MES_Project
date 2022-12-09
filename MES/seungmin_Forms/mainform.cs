@@ -201,7 +201,7 @@ namespace MES
         {
             string[] stock_stqty = new string[16];
             string[] pmname = new string[16];
-            int[] bom = new int[16] { 5,10,85,10,25,100, 25,5,115,50,50,50,50,25,25,50 };
+            int[] bom = new int[16] { 500, 10, 85, 10, 25, 10000, 25, 5, 11500, 50, 50, 50, 50, 25, 2500, 5000 };
             int cnt = 0;
             cmd.CommandText = $"select pd.pmname,sum(stqty) from stock s join pdmaster pd on s.pmid = pd.pmid " +
                               $"where s.pmid like 'm%' group by pd.pmname order by pd.pmname";
@@ -215,22 +215,35 @@ namespace MES
                 n++;
             }
             string[] stock_name = new string[16];
-            for(int i = 0; i < bom.Length; i++)
+            for (int i = 0; i < bom.Length; i++)
             {
                 if (Int32.Parse(stock_stqty[i]) < bom[i])
                 {
                     stock_name[cnt] = pmname[i];
                     cnt++;
                 }
-                else if(cnt == 4)
+                else if (cnt == 4)
                 {
                     break;
                 }
             }
-            Stock_name1.Text = stock_name[0];
-            Stock_name2.Text = stock_name[1];
-            Stock_name3.Text = stock_name[2];
-            Stock_name4.Text = stock_name[3];
+            if (stock_name[0] != null)
+            {
+                Stock_name1.Text = $"{stock_name[0]} : 재고 부족";
+            }
+            if (stock_name[1] != null)
+            {
+                Stock_name2.Text = $"{stock_name[1]} : 재고 부족";
+            }
+            if (stock_name[2] != null)
+            {
+                Stock_name3.Text = $"{stock_name[2]} : 재고 부족";
+            }
+            if (stock_name[3] != null)
+            {
+                Stock_name4.Text = $"{stock_name[3]} : 재고 부족";
+            }
+            
         }
 
         public void main_faulty_chart()
@@ -309,7 +322,7 @@ namespace MES
                 receiveThread.IsBackground = true;
                 receiveThread.Start();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("서버와 연결되지 못하였습니다.");
             }

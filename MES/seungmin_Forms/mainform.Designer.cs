@@ -917,10 +917,10 @@
             // Stock_name4
             // 
             this.Stock_name4.AutoSize = true;
-            this.Stock_name4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Stock_name4.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Stock_name4.Location = new System.Drawing.Point(6, 373);
             this.Stock_name4.Name = "Stock_name4";
-            this.Stock_name4.Size = new System.Drawing.Size(90, 25);
+            this.Stock_name4.Size = new System.Drawing.Size(92, 25);
             this.Stock_name4.TabIndex = 34;
             this.Stock_name4.Text = "원재료1 :";
             // 
@@ -957,30 +957,30 @@
             // Stock_name3
             // 
             this.Stock_name3.AutoSize = true;
-            this.Stock_name3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Stock_name3.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Stock_name3.Location = new System.Drawing.Point(6, 335);
             this.Stock_name3.Name = "Stock_name3";
-            this.Stock_name3.Size = new System.Drawing.Size(90, 25);
+            this.Stock_name3.Size = new System.Drawing.Size(92, 25);
             this.Stock_name3.TabIndex = 30;
             this.Stock_name3.Text = "원재료1 :";
             // 
             // Stock_name2
             // 
             this.Stock_name2.AutoSize = true;
-            this.Stock_name2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Stock_name2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Stock_name2.Location = new System.Drawing.Point(6, 297);
             this.Stock_name2.Name = "Stock_name2";
-            this.Stock_name2.Size = new System.Drawing.Size(90, 25);
+            this.Stock_name2.Size = new System.Drawing.Size(92, 25);
             this.Stock_name2.TabIndex = 29;
             this.Stock_name2.Text = "원재료1 :";
             // 
             // Stock_name1
             // 
             this.Stock_name1.AutoSize = true;
-            this.Stock_name1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Stock_name1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Stock_name1.Location = new System.Drawing.Point(6, 258);
             this.Stock_name1.Name = "Stock_name1";
-            this.Stock_name1.Size = new System.Drawing.Size(90, 25);
+            this.Stock_name1.Size = new System.Drawing.Size(92, 25);
             this.Stock_name1.TabIndex = 28;
             this.Stock_name1.Text = "원재료1 :";
             // 
