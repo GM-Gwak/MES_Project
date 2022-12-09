@@ -95,6 +95,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="seungmin_Forms\Lot2_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\Lot2_form.Designer.cs">
+      <DependentUpon>Lot2_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seungmin_Forms\Lot3_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\Lot3_form.Designer.cs">
+      <DependentUpon>Lot3_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="seungmin_Forms\StockManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,18 @@
     <Compile Include="seungmin_Forms\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="seungmin_Forms\Lot1_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\Lot1_form.Designer.cs">
+      <DependentUpon>Lot1_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seungmin_Forms\work_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\work_form.Designer.cs">
+      <DependentUpon>work_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Workorder_Form\WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +193,12 @@
     <Compile Include="Workorder_Form\WorkOrder_Detail.Designer.cs">
       <DependentUpon>WorkOrder_Detail.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="seungmin_Forms\Lot2_form.resx">
+      <DependentUpon>Lot2_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seungmin_Forms\Lot3_form.resx">
+      <DependentUpon>Lot3_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\StockManagement.resx">
       <DependentUpon>StockManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seungmin_Forms\Lot1_form.resx">
+      <DependentUpon>Lot1_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seungmin_Forms\work_form.resx">
+      <DependentUpon>work_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Workorder_Form\WorkOrder.resx">
       <DependentUpon>WorkOrder.cs</DependentUpon>

@@ -51,12 +51,12 @@ namespace MES.seungmin_Forms
                     mainform mainform = new mainform(id_text);
                     mainform.ShowDialog(); // 폼 전환
                 }
-                //else
-                //{
-                //    this.Visible = false;   // 현재 폼 보이지 않게 하기
-                //    worck worck = new worck(id_text);
-                //    worck.ShowDialog(); // 폼 전환
-                //}
+                else
+                {
+                    this.Visible = false;   // 현재 폼 보이지 않게 하기
+                    work_form work_form = new work_form(id_text);
+                    work_form.ShowDialog(); // 폼 전환
+                }
             }
             catch (Exception)
             {

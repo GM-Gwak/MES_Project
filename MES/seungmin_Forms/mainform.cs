@@ -23,7 +23,6 @@ namespace MES
     {
         OracleCommand cmd = new OracleCommand();
         OracleDataReader rdr;
-        OracleDataReader rdr2;
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
@@ -33,7 +32,6 @@ namespace MES
         private Socket socket;
         private Thread receiveThread;
         private Thread waitThread;
-        private Thread pdThread;
         private Form currentChildForm;
         private int borderSize = 2;
        
@@ -41,7 +39,6 @@ namespace MES
         private Panel leftBorderBtn;
         private string start_time = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
         private string now_time = DateTime.Now.ToString("yyyy-MM-dd");
-        private int WoPlanQty = 0;
 
         public mainform()
         {
@@ -73,8 +70,7 @@ namespace MES
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             rdr.Read();
-            string work_name = rdr["mbname"].ToString();
-            name_label.Text = work_name.ToString();
+            name_label.Text = rdr["mbname"].ToString();
 
             string[] stqty = new string[3];
             cmd.CommandText = $"SELECT sum(stqty) FROM stock s join pdmaster pd on s.pmid = pd.pmid WHERE s.pmid like 'p%' group by pmname";
@@ -250,13 +246,13 @@ namespace MES
             chart1.Series["고기만두"].Points.Clear();
             chart1.Series["김치만두"].Points.Clear();
             chart1.Series["갈비만두"].Points.Clear();
-            chart1.Series["예측치"].Points.Clear();
+            chart1.Series["계획 수량"].Points.Clear();
 
             cmd.CommandText = $"select woendtime, sum(woplanqty), pmname from workorder w join pdmaster pd on(w.pmid = pd.pmid) group by woendtime, pmname";
             OracleDataReader sum1 = cmd.ExecuteReader();
             while (sum1.Read())
             {
-                chart1.Series["예측치"].Points.AddXY(sum1["woendtime"].ToString(), Int32.Parse(sum1["sum(woplanqty)"].ToString()));
+                chart1.Series["계획 수량"].Points.AddXY(sum1["woendtime"].ToString(), Int32.Parse(sum1["sum(woplanqty)"].ToString()));
             }
             cmd.CommandText = faulty_query + $" '고기%' and woendtime between '{start_time}' and '{now_time}' group by woendtime,pmname";
             OracleDataReader sum2 = cmd.ExecuteReader();
