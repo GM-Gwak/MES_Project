@@ -65,5 +65,10 @@ namespace MES
             Stock_ViewDetail showForm2 = new Stock_ViewDetail();
             showForm2.ShowDialog();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

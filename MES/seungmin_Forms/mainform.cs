@@ -51,6 +51,7 @@ namespace MES
             leftBorderBtn.Size = new Size(7, 45);
             panelMenu.Controls.Add(leftBorderBtn);
         }
+        
         public mainform(string data)
         {
             InitializeComponent();
@@ -74,9 +75,6 @@ namespace MES
             rdr.Read();
 
             name_label.Text = rdr["mbname"].ToString();
-
-            
-
 
             string work_name = rdr["mbname"].ToString();
             name_label.Text = work_name.ToString();
@@ -116,57 +114,95 @@ namespace MES
             
         }
         //생산현황 작업장1 원형 프로그래스바
-        public void work_cd1_start()
+        public void work_cd1()
         {
-            process1.Style = ProgressBarStyle.Marquee;
-            process1.ProgressColor = Color.Green;
-            process1.Text = "가동중";
+            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc001'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_cd = rdr["wcstat"].ToString();
+
+            if (work_cd == "P" || work_cd == "N")
+            {
+                process1.Style = ProgressBarStyle.Blocks;
+                process1.ProgressColor = Color.Red;
+                process1.Text = "정지";
+            }
+            else if (work_cd == "O")
+            {
+                process1.Style = ProgressBarStyle.Marquee;
+                process1.ProgressColor = Color.Green;
+                process1.Text = "가동중";
+            }
         }
-        public void work_cd1_stop()
-        {
-            process1.Style = ProgressBarStyle.Blocks;
-            process1.ProgressColor = Color.Red;
-            process1.Text = "정지";
-        }
+
         //생산현황 작업장2 원형 프로그래스바
-        public void work_cd2_start()
+        public void work_cd2()
         {
-            process2.Style = ProgressBarStyle.Marquee;
-            process2.ProgressColor = Color.Green;
-            process2.Text = "가동중";
-        }
-        public void work_cd2_stop()
-        {
-            process2.Style = ProgressBarStyle.Blocks;
-            process2.ProgressColor = Color.Red;
-            process2.Text = "정지";
+            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc002'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_cd2 = rdr["wcstat"].ToString();
+
+            if (work_cd2 == "P" || work_cd2 == "N")
+            {
+                process2.Style = ProgressBarStyle.Blocks;
+                process2.ProgressColor = Color.Red;
+                process2.Text = "정지";
+            }
+            else if (work_cd2 == "O")
+            {
+                process2.Style = ProgressBarStyle.Marquee;
+                process2.ProgressColor = Color.Green;
+                process2.Text = "가동중";
+            }
         }
         //생산현황 작업장3 원형 프로그래스바
-        public void work_cd3_start()
+        public void work_cd3()
         {
-            process3.Style = ProgressBarStyle.Marquee;
-            process3.ProgressColor = Color.Green;
-            process3.Text = "가동중";
-        }
-        public void work_cd3_stop()
-        {
-            process3.Style = ProgressBarStyle.Blocks;
-            process3.ProgressColor = Color.Red;
-            process3.Text = "정지";
+            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc003'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_cd3 = rdr["wcstat"].ToString();
+
+            if (work_cd3 == "P" || work_cd3 == "N")
+            {
+                process3.Style = ProgressBarStyle.Blocks;
+                process3.ProgressColor = Color.Red;
+                process3.Text = "정지";
+            }
+            else if (work_cd3 == "O")
+            {
+                process3.Style = ProgressBarStyle.Marquee;
+                process3.ProgressColor = Color.Green;
+                process3.Text = "가동중";
+            }
         }
         //생산현황 작업장4 원형 프로그래스바
-        public void work_cd4_start()
+        public void work_cd4()
         {
-            process4.Style = ProgressBarStyle.Marquee;
-            process4.ProgressColor = Color.Green;
-            process4.Text = "가동중";
+            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc004'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            string work_cd4 = rdr["wcstat"].ToString();
+
+            if (work_cd4 == "P" || work_cd4 == "N")
+            {
+                process4.Style = ProgressBarStyle.Blocks;
+                process4.ProgressColor = Color.Red;
+                process4.Text = "정지";
+            }
+            else if (work_cd4 == "O")
+            {
+                process4.Style = ProgressBarStyle.Marquee;
+                process4.ProgressColor = Color.Green;
+                process4.Text = "가동중";
+            }
         }
-        public void work_cd4_stop()
-        {
-            process4.Style = ProgressBarStyle.Blocks;
-            process4.ProgressColor = Color.Red;
-            process4.Text = "정지";
-        }
+        
         //재고현황 완제품
         public void main_stock_pd()
         {
@@ -340,7 +376,7 @@ namespace MES
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
 
-                //leftBorderBtn.BackColor = color;
+                leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(currentBtn.Location.X, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
@@ -379,7 +415,7 @@ namespace MES
 
         private void QualityManagement_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            //ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new faulty());
         }
 
@@ -406,13 +442,13 @@ namespace MES
 
         private void StockManagement_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            //ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new StockManagement());
         }
 
         private void WorkOrder_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+            //ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new WorkOrder());
         }
 
@@ -427,6 +463,11 @@ namespace MES
             try
             {
                 currentChildForm.Close();
+                work_cd1();
+                work_cd2();
+                work_cd3();
+                work_cd4();
+                
             }
             catch(Exception)
             {
@@ -443,7 +484,7 @@ namespace MES
 
         private void Monitoring_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color4);
+            //ActivateButton(sender, RGBColors.color4);
             OpenChildForm(new Monitoring());
         }
 
@@ -453,6 +494,9 @@ namespace MES
             socket.Send(sendBytes);
         }
 
-        
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new test());
+        }
     }
 }

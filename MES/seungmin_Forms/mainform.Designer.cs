@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -79,7 +79,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.process4 = new CircularProgressBar.CircularProgressBar();
             this.process3 = new CircularProgressBar.CircularProgressBar();
             this.process2 = new CircularProgressBar.CircularProgressBar();
@@ -178,6 +177,7 @@
             this.iconButton6.Text = "   iconButton2";
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // Monitoring
             // 
@@ -694,7 +694,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.process4);
             this.groupBox3.Controls.Add(this.process3);
             this.groupBox3.Controls.Add(this.process2);
@@ -710,15 +709,6 @@
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "생산현황";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 357);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 30);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "label6";
             // 
             // process4
             // 
@@ -736,12 +726,11 @@
             this.process4.OuterColor = System.Drawing.Color.Gray;
             this.process4.OuterMargin = -25;
             this.process4.OuterWidth = 26;
-            this.process4.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process4.ProgressColor = System.Drawing.Color.Red;
             this.process4.ProgressWidth = 15;
             this.process4.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.process4.Size = new System.Drawing.Size(116, 143);
             this.process4.StartAngle = 270;
-            this.process4.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.process4.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.process4.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.process4.SubscriptText = "";
@@ -749,7 +738,7 @@
             this.process4.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.process4.SuperscriptText = "";
             this.process4.TabIndex = 37;
-            this.process4.Text = "가동중";
+            this.process4.Text = "정지";
             this.process4.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
             this.process4.Value = 80;
             // 
@@ -769,12 +758,11 @@
             this.process3.OuterColor = System.Drawing.Color.Gray;
             this.process3.OuterMargin = -25;
             this.process3.OuterWidth = 26;
-            this.process3.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process3.ProgressColor = System.Drawing.Color.Red;
             this.process3.ProgressWidth = 15;
             this.process3.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.process3.Size = new System.Drawing.Size(116, 143);
             this.process3.StartAngle = 270;
-            this.process3.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.process3.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.process3.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.process3.SubscriptText = "";
@@ -782,7 +770,7 @@
             this.process3.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.process3.SuperscriptText = "";
             this.process3.TabIndex = 36;
-            this.process3.Text = "가동중";
+            this.process3.Text = "정지";
             this.process3.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
             this.process3.Value = 80;
             // 
@@ -802,12 +790,11 @@
             this.process2.OuterColor = System.Drawing.Color.Gray;
             this.process2.OuterMargin = -25;
             this.process2.OuterWidth = 26;
-            this.process2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process2.ProgressColor = System.Drawing.Color.Red;
             this.process2.ProgressWidth = 15;
             this.process2.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.process2.Size = new System.Drawing.Size(116, 143);
             this.process2.StartAngle = 270;
-            this.process2.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.process2.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.process2.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.process2.SubscriptText = "";
@@ -815,7 +802,7 @@
             this.process2.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.process2.SuperscriptText = "";
             this.process2.TabIndex = 35;
-            this.process2.Text = "가동중";
+            this.process2.Text = "정지";
             this.process2.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
             this.process2.Value = 80;
             // 
@@ -835,12 +822,11 @@
             this.process1.OuterColor = System.Drawing.Color.Gray;
             this.process1.OuterMargin = -25;
             this.process1.OuterWidth = 26;
-            this.process1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.process1.ProgressColor = System.Drawing.Color.Red;
             this.process1.ProgressWidth = 15;
             this.process1.SecondaryFont = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.process1.Size = new System.Drawing.Size(116, 143);
             this.process1.StartAngle = 270;
-            this.process1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.process1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.process1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.process1.SubscriptText = "";
@@ -848,7 +834,7 @@
             this.process1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.process1.SuperscriptText = "";
             this.process1.TabIndex = 34;
-            this.process1.Text = "가동중";
+            this.process1.Text = "정지";
             this.process1.TextMargin = new System.Windows.Forms.Padding(1, 4, 0, 0);
             this.process1.Value = 80;
             // 
@@ -1063,33 +1049,33 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(58, 47);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "고기만두";
-            series2.ChartArea = "ChartArea1";
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "김치만두";
-            series3.ChartArea = "ChartArea1";
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "갈비만두";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.IsValueShownAsLabel = true;
-            series4.Legend = "Legend1";
-            series4.Name = "계획 수량";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series17.ChartArea = "ChartArea1";
+            series17.IsValueShownAsLabel = true;
+            series17.Legend = "Legend1";
+            series17.Name = "고기만두";
+            series18.ChartArea = "ChartArea1";
+            series18.IsValueShownAsLabel = true;
+            series18.Legend = "Legend1";
+            series18.Name = "김치만두";
+            series19.ChartArea = "ChartArea1";
+            series19.IsValueShownAsLabel = true;
+            series19.Legend = "Legend1";
+            series19.Name = "갈비만두";
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series20.IsValueShownAsLabel = true;
+            series20.Legend = "Legend1";
+            series20.Name = "계획 수량";
+            this.chart1.Series.Add(series17);
+            this.chart1.Series.Add(series18);
+            this.chart1.Series.Add(series19);
+            this.chart1.Series.Add(series20);
             this.chart1.Size = new System.Drawing.Size(775, 203);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
@@ -1213,7 +1199,6 @@
         private CircularProgressBar.CircularProgressBar process4;
         private CircularProgressBar.CircularProgressBar process3;
         private CircularProgressBar.CircularProgressBar process2;
-        private CircularProgressBar.CircularProgressBar process1;
 
         private System.Windows.Forms.Label weight_label;
         private System.Windows.Forms.Label metal_label;
@@ -1223,6 +1208,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label Stock_name4;
-        private System.Windows.Forms.Label label6;
+        public CircularProgressBar.CircularProgressBar process1;
     }
 }
