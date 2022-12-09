@@ -145,25 +145,11 @@
     <Compile Include="seungmin_Forms\Monitoring.Designer.cs">
       <DependentUpon>Monitoring.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     <Compile Include="seungmin_Forms\test.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="seungmin_Forms\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
-=======
->>>>>>> Stashed changes
-    <Compile Include="seungmin_Forms\work.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="seungmin_Forms\work.Designer.cs">
-      <DependentUpon>work.cs</DependentUpon>
-<<<<<<< Updated upstream
-=======
->>>>>>> 3ab149e87cbef7fe9abfbbb11600200ba4ce6a4a
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="Workorder_Form\WorkOrder.cs">
       <SubType>Form</SubType>
@@ -217,18 +203,8 @@
     <EmbeddedResource Include="seungmin_Forms\Monitoring.resx">
       <DependentUpon>Monitoring.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
-    <EmbeddedResource Include="seungmin_Forms\work.resx">
-      <DependentUpon>work.cs</DependentUpon>
-=======
-<<<<<<< HEAD
     <EmbeddedResource Include="seungmin_Forms\test.resx">
       <DependentUpon>test.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="seungmin_Forms\work.resx">
-      <DependentUpon>work.cs</DependentUpon>
->>>>>>> 3ab149e87cbef7fe9abfbbb11600200ba4ce6a4a
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Workorder_Form\WorkOrder.resx">
       <DependentUpon>WorkOrder.cs</DependentUpon>
