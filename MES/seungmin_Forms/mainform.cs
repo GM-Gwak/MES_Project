@@ -32,6 +32,7 @@ namespace MES
         private Socket socket;
         private Thread receiveThread;
         private Thread waitThread;
+
         private Form currentChildForm;
         private int borderSize = 2;
        
@@ -39,6 +40,7 @@ namespace MES
         private Panel leftBorderBtn;
         private string start_time = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
         private string now_time = DateTime.Now.ToString("yyyy-MM-dd");
+
 
         public mainform()
         {
@@ -70,6 +72,7 @@ namespace MES
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             rdr.Read();
+
             name_label.Text = rdr["mbname"].ToString();
 
             string[] stqty = new string[3];
@@ -85,6 +88,10 @@ namespace MES
             Meat.Text = stqty[0];
             Kimchi.Text = stqty[1];
             Galbi.Text = stqty[2];
+
+
+            string work_name = rdr["mbname"].ToString();
+            name_label.Text = work_name.ToString();
 
 
             // 불량수량 라벨
@@ -116,127 +123,114 @@ namespace MES
             waitThread.Start();
 
             main_faulty_chart();
-            main_stock();
-           
+            main_stock_pd();
+            main_stock_m();
             
         }
-        public void work_cd1()
+        //생산현황 작업장1 원형 프로그래스바
+        public void work_cd1_start()
         {
-            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc001'";
+            process1.Style = ProgressBarStyle.Marquee;
+            process1.ProgressColor = Color.Green;
+            process1.Text = "가동중";
+        }
+        public void work_cd1_stop()
+        {
+            process1.Style = ProgressBarStyle.Blocks;
+            process1.ProgressColor = Color.Red;
+            process1.Text = "정지";
+        }
+        //생산현황 작업장2 원형 프로그래스바
+        public void work_cd2_start()
+        {
+            process2.Style = ProgressBarStyle.Marquee;
+            process2.ProgressColor = Color.Green;
+            process2.Text = "가동중";
+        }
+        public void work_cd2_stop()
+        {
+            process2.Style = ProgressBarStyle.Blocks;
+            process2.ProgressColor = Color.Red;
+            process2.Text = "정지";
+        }
+        //생산현황 작업장3 원형 프로그래스바
+        public void work_cd3_start()
+        {
+            process3.Style = ProgressBarStyle.Marquee;
+            process3.ProgressColor = Color.Green;
+            process3.Text = "가동중";
+        }
+        public void work_cd3_stop()
+        {
+            process3.Style = ProgressBarStyle.Blocks;
+            process3.ProgressColor = Color.Red;
+            process3.Text = "정지";
+        }
+        //생산현황 작업장4 원형 프로그래스바
+        public void work_cd4_start()
+        {
+            process4.Style = ProgressBarStyle.Marquee;
+            process4.ProgressColor = Color.Green;
+            process4.Text = "가동중";
+        }
+        public void work_cd4_stop()
+        {
+            process4.Style = ProgressBarStyle.Blocks;
+            process4.ProgressColor = Color.Red;
+            process4.Text = "정지";
+        }
+        //재고현황 완제품
+        public void main_stock_pd()
+        {
+            string[] stqty = new string[3];
+            cmd.CommandText = $"SELECT sum(stqty) FROM stock s join pdmaster pd on s.pmid = pd.pmid WHERE s.pmid like 'p%' group by pmname";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
-            rdr.Read();
-            string work_cd = rdr["wcstat"].ToString();
-
-            if (work_cd == "P" || work_cd == "N")
+            int i = 0;
+            while (rdr.Read())
             {
-                process1.Style = ProgressBarStyle.Blocks;
-                process1.ProgressColor = Color.Red;
-                process1.Text = "정지";
+                stqty[i] = rdr["sum(stqty)"].ToString();
+                i++;
             }
-            else if (work_cd == "O")
-            {
-                process1.Style = ProgressBarStyle.Marquee;
-                process1.ProgressColor = Color.Green;
-                process1.Text = "가동중";
-            }
+            Meat.Text = stqty[0];
+            Kimchi.Text = stqty[1];
+            Galbi.Text = stqty[2];
         }
-        public void work_cd2()
-        {
-            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc002'";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            string work_cd2 = rdr["wcstat"].ToString();
-
-            if (work_cd2 == "P" || work_cd2 == "N")
-            {
-                process2.Style = ProgressBarStyle.Blocks;
-                process2.ProgressColor = Color.Red;
-                process2.Text = "정지";
-            }
-            else if (work_cd2 == "O")
-            {
-                process2.Style = ProgressBarStyle.Marquee;
-                process2.ProgressColor = Color.Green;
-                process2.Text = "가동중";
-            }
-        }
-        public void work_cd3()
-        {
-            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc003'";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            string work_cd3 = rdr["wcstat"].ToString();
-
-            if (work_cd3 == "P" || work_cd3 == "N")
-            {
-                process3.Style = ProgressBarStyle.Blocks;
-                process3.ProgressColor = Color.Red;
-                process3.Text = "정지";
-            }
-            else if (work_cd3 == "O")
-            {
-                process3.Style = ProgressBarStyle.Marquee;
-                process3.ProgressColor = Color.Green;
-                process3.Text = "가동중";
-            }
-        }
-        public void work_cd4()
-        {
-            cmd.CommandText = $"SELECT wcstat FROM workcd where wcid = 'wc004'";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            string work_cd4 = rdr["wcstat"].ToString();
-
-            if (work_cd4 == "P" || work_cd4 == "N")
-            {
-                process4.Style = ProgressBarStyle.Blocks;
-                process4.ProgressColor = Color.Red;
-                process4.Text = "정지";
-            }
-            else if (work_cd4 == "O")
-            {
-                process4.Style = ProgressBarStyle.Marquee;
-                process4.ProgressColor = Color.Green;
-                process4.Text = "가동중";
-            }
-        }
-        public void main_stock()
+        //재고현황 원재료
+        public void main_stock_m()
         {
             string[] stock_stqty = new string[16];
-            cmd.CommandText = $"select pd.pmname,sum(stqty) from stock s join pdmaster pd on s.pmid = pd.pmid where s.pmid like 'm%' group by pd.pmname order by pd.pmname";
+            string[] pmname = new string[16];
+            int[] bom = new int[16] { 5,10,85,10,25,100, 25,5,115,50,50,50,50,25,25,50 };
+            int cnt = 0;
+            cmd.CommandText = $"select pd.pmname,sum(stqty) from stock s join pdmaster pd on s.pmid = pd.pmid " +
+                              $"where s.pmid like 'm%' group by pd.pmname order by pd.pmname";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             int n = 0;
             while (rdr.Read())
             {
-                stock_stqty[n++] = rdr["sum(stqty)"].ToString();
+                stock_stqty[n] = rdr["sum(stqty)"].ToString();
+                pmname[n] = rdr["pmname"].ToString();
+                n++;
             }
-
-            string[] pmname = new string[16];
-            string[] bomqty = new string[16];
-            cmd.CommandText = $"select distinct pmname, bomqty from bom b join pdmaster pd on b.pmid = pd.pmid order by bomqty";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-
-            int k = 0;
-            while (rdr.Read())
+            string[] stock_name = new string[16];
+            for(int i = 0; i < bom.Length; i++)
             {
-                pmname[k] = rdr["pmname"].ToString();
-                bomqty[k] = rdr["bomqty"].ToString();
-                //MessageBox.Show(pmname[k], bomqty[k]);
-                k++;    
+                if (Int32.Parse(stock_stqty[i]) < bom[i])
+                {
+                    stock_name[cnt] = pmname[i];
+                    cnt++;
+                }
+                else if(cnt == 4)
+                {
+                    break;
+                }
             }
-            
-            for(int i = 0; i < 16; i++)
-            {
-                
-            }
-            
+            Stock_name1.Text = stock_name[0];
+            Stock_name2.Text = stock_name[1];
+            Stock_name3.Text = stock_name[2];
+            Stock_name4.Text = stock_name[3];
         }
 
         public void main_faulty_chart()
@@ -284,6 +278,7 @@ namespace MES
                 socket.Receive(recvBytes);
                 string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
                 string[] str = txt.Split(',');
+                //온습도 센서 값
                 if (Temp.InvokeRequired == true)
                 {
                     Temp.Invoke(new MethodInvoker(delegate { Temp.Text = str[0]; }));
@@ -294,8 +289,6 @@ namespace MES
                     Temp.Text = str[0];
                     Hum.Text = str[1];
                 }
-                
-
             }
         }
         private void wait()
@@ -339,7 +332,7 @@ namespace MES
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(51, 71, 80);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = color;
@@ -380,13 +373,12 @@ namespace MES
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            //lblTitleChildForm.Text = childForm.Text;
         }
         
 
-        private void 품질관리_Click(object sender, EventArgs e)
+        private void QualityManagement_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color1);
+            ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new faulty());
         }
 
@@ -411,21 +403,16 @@ namespace MES
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void StockManagement_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color2);
+            ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new StockManagement());
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        private void WorkOrder_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color3);
+            ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new WorkOrder());
-        }
-
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new test());
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -433,7 +420,7 @@ namespace MES
             byte[] sendBytes = Encoding.UTF8.GetBytes("1");
             socket.Send(sendBytes);
         }
-        //11111
+        
         private void iconButton1_Click(object sender, EventArgs e)
         {
             try
@@ -446,19 +433,20 @@ namespace MES
             }
         }
 
-        private void iconButton8_Click(object sender, EventArgs e)
+        private void LogOut_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             login.Show();
             this.Close();
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
+        private void Monitoring_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color4);
             OpenChildForm(new Monitoring());
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void Refresh_Click(object sender, EventArgs e)
         {
             byte[] sendBytes = Encoding.UTF8.GetBytes("1");
             socket.Send(sendBytes);
