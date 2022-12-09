@@ -46,7 +46,7 @@ namespace MES.Workorder_Form
             WoStartTime.Text = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
             WoEndTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
-            adapt.SelectCommand = new OracleCommand(main_query, conn);
+            adapt.SelectCommand = new OracleCommand(main_query + " order by w.woid", conn);
             DataSet ds = new DataSet();
             adapt.Fill(ds);
             WO_GRID.DataSource = ds.Tables[0].DefaultView;
@@ -60,7 +60,7 @@ namespace MES.Workorder_Form
             {
                 if (col_value[1] == "")
                 {
-                    query += $" and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
+                    query += $" and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59' order by w.Woid";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
@@ -68,7 +68,7 @@ namespace MES.Workorder_Form
                 }
                 else
                 {
-                    query += $" and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
+                    query += $" and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59' order by w.Woid";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
@@ -79,7 +79,7 @@ namespace MES.Workorder_Form
             {
                 if (col_value[1] == "")
                 {
-                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
+                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59' order by w.Woid";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
@@ -87,7 +87,7 @@ namespace MES.Workorder_Form
                 }
                 else
                 {
-                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59'";
+                    query += $" and {col_name[0]} = '{col_value[0]}' and {col_name[1]} = '{col_value[1]}' and {col_name[2]} >= '{col_value[2]}' and  {col_name[2]} <= '{col_value[3]} 23:59:59' order by w.Woid";
                     adapt.SelectCommand = new OracleCommand(query, conn);
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);

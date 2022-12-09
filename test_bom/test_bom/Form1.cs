@@ -18,19 +18,38 @@ namespace test_bom
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
         OracleDataReader rdr;
+
+        string main_query = "select distinct(w.WoId) 작업지시ID," +
+            "PMName 제품명," +
+            "LotCreateTime 지시일," +
+            "WoStat 작업상태," +
+            "WoStartTime 시작시간," +
+            "WoEndTime 종료시간," +
+            "WoPlanQty 계획수량," +
+            "WoProdQty 실적," +
+            "WcNowTem 현재온도," +
+            "WcNowHum 현재습도" +
+            " from workorder w, PdMaster m, LOT l where w.PMId = m.PMId and w.WoId = l.WoId order by w.WoId";
+
+
+
         int test_int = 1000;
         static string[] test_str = new string[3] { "pme01", "pki01", "pri01" };
         static string next_order_woid;
         static string next_order_pmid;
         static int next_order_planqty;
         string[] next_lotid = new string[4];
+
         // 재고 13개
         string[] pme_bom = {"mds01", "mon01", "mch01", "mca01", "mgo01", "mpo01", "mss01", "msu01", 
                             "mpe01", "msa01", "mga01", "mbc01", "mcn01"};
+
         string[] pki_bom = {"mds01", "mon01", "mch01", "mca01", "mgo01", "mpo01", "mss01", "msu01",
                             "mpe01", "msa01", "mga01", "mbc01", "mki01"};
+
         string[] pri_bom = {"mds01", "mon01", "mch01", "mca01", "mgo01", "mpo01", "mss01", "msu01",
                             "mpe01", "msa01", "mga01", "mgs01", "mpu01"};
+
         static double stock_qty;
         static double stock_qty_in;
 
@@ -39,72 +58,124 @@ namespace test_bom
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    // 다음 작업지시 저장
+        //    cmd.CommandText = $"select * from workorder " +
+        //        $" where woid = (select min(woid) from workorder where wostarttime is null)";
+        //    cmd.ExecuteNonQuery();
+
+        //    rdr = cmd.ExecuteReader();
+        //    rdr.Read();
+        //    next_order_woid = rdr["woid"].ToString();
+        //    next_order_pmid = rdr["pmid"].ToString();
+        //    next_order_planqty = Int32.Parse(rdr["woplanqty"].ToString());
+        //    MessageBox.Show(next_order_woid);
+        //    MessageBox.Show(next_order_pmid);
+        //    MessageBox.Show(next_order_planqty.ToString());
+
+        //    // 다음 작업지시 랏 번호 저장
+        //    int i = 0;
+        //    cmd.CommandText = $"select* from lot " +
+        //        $"where woid = (select min(woid) from workorder where wostarttime is null) " +
+        //        $"order by lotid";
+        //    cmd.ExecuteNonQuery();
+        //    rdr = cmd.ExecuteReader();
+        //    while (rdr.Read())
+        //    {
+        //        next_lotid[i] = rdr["lotid"].ToString();
+        //        i++;
+        //    }
+        //    MessageBox.Show(next_lotid[0]);
+        //    MessageBox.Show(next_lotid[1]);
+        //    MessageBox.Show(next_lotid[2]);
+        //    MessageBox.Show(next_lotid[3]);
+        //}
+
+        public void load()
         {
-            for (int i = 0; i < pme_bom.Length; i++)
-            {
-                cmd.CommandText = $"select bomqty from bom where pmid = '{pme_bom[i]}' and bomname = '고기만두'";
-                cmd.ExecuteNonQuery();
-                rdr = cmd.ExecuteReader();
-                rdr.Read();
-                Double id = rdr.GetDouble(0) * 10;
-                MessageBox.Show(pme_bom[i] + " = " + id);
-            }
+            // 작업지시 뷰
+            adapt.SelectCommand = new OracleCommand(main_query, conn);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            WO_GRID.DataSource = ds.Tables[0].DefaultView;
+            WO_GRID.Columns[2].Width = 130;
+
+
+            // 각 작업장별 뷰
+            string query = $"select L.LOTID, L.WOID, L.LOTCREATETIME 생성시간, L.LOTSTARTTIME 시작시간, L.LOTENDTIME 종료시간, L.LOTSTAT 상태, W.WOPLANQTY 수량, L.LOTQTY 실적, L.WCID 작업장명, L.MBNO 담당자명, P.PMNAME 제품명 " +
+                $"from lot L, Workorder W, PDMASTER P where SUBSTR(LOTID, 8, 1) = '1' and L.WOID = W.WOID and W.PMID = P.PMID order by WOID";
+            adapt.SelectCommand = new OracleCommand(query, conn);
+            DataSet ds1 = new DataSet();
+            adapt.Fill(ds1);
+            WC001.DataSource = ds1.Tables[0].DefaultView;
+            WC001.Columns[1].Width = 130;
+            WC001.Columns[2].Width = 130;
+            WC001.Columns[10].Width = 130;
+
+            string query2 = $"select L.LOTID, L.WOID, L.LOTCREATETIME 생성시간, L.LOTSTARTTIME 시작시간, L.LOTENDTIME 종료시간, L.LOTSTAT 상태, W.WOPLANQTY 수량, L.LOTQTY 실적, L.WCID 작업장명, L.MBNO 담당자명, P.PMNAME 제품명 " +
+                $"from lot L, Workorder W, PDMASTER P where SUBSTR(LOTID, 8, 1) = '2' and L.WOID = W.WOID and W.PMID = P.PMID order by WOID";
+            adapt.SelectCommand = new OracleCommand(query2, conn);
+            DataSet ds2 = new DataSet();
+            adapt.Fill(ds2);
+            WC002.DataSource = ds2.Tables[0].DefaultView;
+            WC002.Columns[1].Width = 130;
+            WC002.Columns[2].Width = 130;
+            WC002.Columns[10].Width = 130;
+
+            string query3 = $"select L.LOTID, L.WOID, L.LOTCREATETIME 생성시간, L.LOTSTARTTIME 시작시간, L.LOTENDTIME 종료시간, L.LOTSTAT 상태, W.WOPLANQTY 수량, L.LOTQTY 실적, L.WCID 작업장명, L.MBNO 담당자명, P.PMNAME 제품명 " +
+                $"from lot L, Workorder W, PDMASTER P where SUBSTR(LOTID, 8, 1) = '3' and L.WOID = W.WOID and W.PMID = P.PMID order by WOID";
+            adapt.SelectCommand = new OracleCommand(query3, conn);
+            DataSet ds3 = new DataSet();
+            adapt.Fill(ds3);
+            WC003.DataSource = ds3.Tables[0].DefaultView;
+            WC003.Columns[1].Width = 130;
+            WC003.Columns[2].Width = 130;
+            WC003.Columns[10].Width = 130;
+
+            string query4 = $"select L.LOTID, L.WOID, L.LOTCREATETIME 생성시간, L.LOTSTARTTIME 시작시간, L.LOTENDTIME 종료시간, L.LOTSTAT 상태, W.WOPLANQTY 수량, L.LOTQTY 실적, L.WCID 작업장명, L.MBNO 담당자명, P.PMNAME 제품명 " +
+                $"from lot L, Workorder W, PDMASTER P where SUBSTR(LOTID, 8, 1) = '4' and L.WOID = W.WOID and W.PMID = P.PMID order by WOID";
+            adapt.SelectCommand = new OracleCommand(query4, conn);
+            DataSet ds4 = new DataSet();
+            adapt.Fill(ds4);
+            WC004.DataSource = ds4.Tables[0].DefaultView;
+            WC004.Columns[1].Width = 130;
+            WC004.Columns[2].Width = 130;
+            WC004.Columns[10].Width = 130;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // 다음 작업지시 저장
-            cmd.CommandText = $"select * from workorder " +
-                $" where woid = (select min(woid) from workorder where wostarttime is null)";
-            cmd.ExecuteNonQuery();
 
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            next_order_woid = rdr["woid"].ToString();
-            next_order_pmid = rdr["pmid"].ToString();
-            next_order_planqty = Int32.Parse(rdr["woplanqty"].ToString());
-            MessageBox.Show(next_order_woid);
-            MessageBox.Show(next_order_pmid);
-            MessageBox.Show(next_order_planqty.ToString());
-
-            // 다음 작업지시 랏 번호 저장
-            int i = 0;
-            cmd.CommandText = $"select* from lot " +
-                $"where woid = (select min(woid) from workorder where wostarttime is null) " +
-                $"order by lotid";
-            cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                next_lotid[i] = rdr["lotid"].ToString();
-                i++;
-            }
-            MessageBox.Show(next_lotid[0]);
-            MessageBox.Show(next_lotid[1]);
-            MessageBox.Show(next_lotid[2]);
-            MessageBox.Show(next_lotid[3]);
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             conn.Open();
             cmd.Connection = conn;
+            load();
+  
         }
 
-        // 작업지시와 랏1에 시작시간 넣기
+        // #작업장1# 현재 작업지시와 현재 작지 랏1 업데이트
         private void start_1_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = $"update workorder " +
-                $"set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss') " +
-                $"where woid = '{next_order_woid}'";
+            // 선택한 행의 WOID를 읽고, 그에 해당하는 워크오더의 시작시간 추가
+            cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss') where woid = '{WC001.SelectedRows[0].Cells[1].Value.ToString()}'";
             cmd.ExecuteNonQuery();
 
-            cmd.CommandText = $"update lot " +
-                $"set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001' " +
-                $"where lotid = '{next_lotid[0]}'";
+            // 선택한 행 업데이트
+            cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001' where lotid = '{WC001.SelectedRows[0].Cells[0].Value.ToString()}'";
             cmd.ExecuteNonQuery();
-            MessageBox.Show("작업1이 시작되었습니다.");
+
+            // 선택한 행의 계획수량, PMID, WOID를 저장
+            cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{WC001.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            next_order_pmid = rdr["PMID"] as string;
+            next_order_woid = WC001.SelectedRows[0].Cells[1].Value.ToString();
+            next_order_planqty = Int32.Parse(WC001.SelectedRows[0].Cells[6].Value.ToString());
+            MessageBox.Show("작업장1이 가동 시작되었습니다.");
+
+            WC001_N.Text = $"{WC001.SelectedRows[0].Cells[1].Value.ToString()} 진행중..";
 
 
             // 고기만두
@@ -177,25 +248,25 @@ namespace test_bom
             }
         }
 
-
         private void end_1_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = $"update lot " +
-                $"set lotendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), lotqty = {next_order_planqty} " +
-                $"where lotid = '{next_lotid[0]}'";
+            cmd.CommandText = $"update lot set lotendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), lotqty = {next_order_planqty} where lotid = '{next_lotid[0]}'";
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("작업1이 종료되었습니다.");
+            MessageBox.Show("작업이 종료되었습니다.");
         }
 
 
+        // #작업장2# 현재 작업지시와 현재 작지 랏2 업데이트
         private void start_2_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = $"update lot " +
-                $"set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc002' " +
-                $"where lotid = '{next_lotid[1]}'";
+            // 선택한 행 업데이트
+            cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc002' where lotid = '{WC002.SelectedRows[0].Cells[0].Value.ToString()}'";
             cmd.ExecuteNonQuery();
-            MessageBox.Show("작업2이 시작되었습니다.");
+
+            MessageBox.Show("작업2이 가동 시작되었습니다.");
+
+            WC002_N.Text = $"{WC002.SelectedRows[0].Cells[1].Value.ToString()} 진행중..";
         }
 
         private void end_2_Click(object sender, EventArgs e)
@@ -207,13 +278,15 @@ namespace test_bom
             MessageBox.Show("작업2이 종료되었습니다.");
         }
 
+        // #작업장3# 현재 작업지시와 현재 작지 랏3 업데이트
         private void start_3_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = $"update lot " +
-                $"set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc003' " +
-                $"where lotid = '{next_lotid[2]}'";
+            // 선택한 행 업데이트
+            cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc003' where lotid = '{WC003.SelectedRows[0].Cells[0].Value.ToString()}'";
             cmd.ExecuteNonQuery();
-            MessageBox.Show("작업3이 시작되었습니다.");
+            MessageBox.Show("작업장3이 가동 시작되었습니다.");
+
+            WC003_N.Text = $"{WC003.SelectedRows[0].Cells[1].Value.ToString()} 진행중..";
         }
 
         private void end_3_Click(object sender, EventArgs e)
@@ -225,13 +298,16 @@ namespace test_bom
             MessageBox.Show("작업3이 종료되었습니다.");
         }
 
+        // #작업장4# 현재 작업지시와 현재 작지 랏4 업데이트
         private void start_4_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = $"update lot " +
-                $"set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc004' " +
-                $"where lotid = '{next_lotid[3]}'";
+            // 선택한 행 업데이트
+            cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001' where lotid = '{WC004.SelectedRows[0].Cells[0].Value.ToString()}'";
             cmd.ExecuteNonQuery();
-            MessageBox.Show("작업4이 시작되었습니다.");
+
+            MessageBox.Show("작업장4이 가동 시작되었습니다.");
+
+            WC004_N.Text = $"{WC004.SelectedRows[0].Cells[1].Value.ToString()} 진행중..";
         }
 
         private void end_4_Click(object sender, EventArgs e)
@@ -246,7 +322,38 @@ namespace test_bom
                 $"set woendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss') " +
                 $"where woid = '{next_order_woid}'";
             cmd.ExecuteNonQuery();
-        }    
+        }
+
+        private void WC001_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{WC001.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            next_order_pmid = rdr["PMID"] as string;
+
+            textBox1.Text = $" [ 선택한 LOT = {WC001.SelectedRows[0].Cells[0].Value.ToString()} ] [ 선택한 WOID = {WC001.SelectedRows[0].Cells[1].Value.ToString()} ] [ 선택한 수량 = {Int32.Parse(WC001.SelectedRows[0].Cells[6].Value.ToString())} ] [ 선택한 PMID = {next_order_pmid} ]";
+
+        }
+
+        private void WC002_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox2.Text = $" [ 선택한 LOT = {WC002.SelectedRows[0].Cells[0].Value.ToString()} ] [ 선택한 WOID = {WC002.SelectedRows[0].Cells[1].Value.ToString()} ] [ 선택한 수량 = {Int32.Parse(WC002.SelectedRows[0].Cells[6].Value.ToString())} ]";
+        }
+
+        private void WC003_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox3.Text = $" [ 선택한 LOT = {WC003.SelectedRows[0].Cells[0].Value.ToString()} ] [ 선택한 WOID = {WC003.SelectedRows[0].Cells[1].Value.ToString()} ] [ 선택한 수량 = {Int32.Parse(WC003.SelectedRows[0].Cells[6].Value.ToString())} ]";
+        }
+
+        private void WC004_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox4.Text = $" [ 선택한 LOT = {WC004.SelectedRows[0].Cells[0].Value.ToString()} ] [ 선택한 WOID = {WC004.SelectedRows[0].Cells[1].Value.ToString()} ] [ 선택한 수량 = {Int32.Parse(WC004.SelectedRows[0].Cells[6].Value.ToString())} ]";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            load();
+        }
     }
 }
 
