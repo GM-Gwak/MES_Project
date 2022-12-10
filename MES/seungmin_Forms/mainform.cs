@@ -108,7 +108,7 @@ namespace MES
             waitThread.IsBackground = true;
             waitThread.Start();
 
-            main_faulty_chart();
+            //main_faulty_chart();
             main_stock_pd();
             main_stock_m();
             
