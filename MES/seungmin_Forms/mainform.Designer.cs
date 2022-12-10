@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -104,6 +104,12 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Refresh = new FontAwesome.Sharp.IconButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -436,6 +442,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label33);
+            this.groupBox1.Controls.Add(this.label28);
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.Hum);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
@@ -462,11 +474,11 @@
             // 
             this.Hum.AutoSize = true;
             this.Hum.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Hum.Location = new System.Drawing.Point(245, 87);
+            this.Hum.Location = new System.Drawing.Point(245, 93);
             this.Hum.Name = "Hum";
-            this.Hum.Size = new System.Drawing.Size(46, 25);
+            this.Hum.Size = new System.Drawing.Size(58, 25);
             this.Hum.TabIndex = 36;
-            this.Hum.Text = "null";
+            this.Hum.Text = "47 %";
             // 
             // label5
             // 
@@ -492,11 +504,11 @@
             // 
             this.Temp.AutoSize = true;
             this.Temp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Temp.Location = new System.Drawing.Point(73, 88);
+            this.Temp.Location = new System.Drawing.Point(73, 92);
             this.Temp.Name = "Temp";
-            this.Temp.Size = new System.Drawing.Size(46, 25);
+            this.Temp.Size = new System.Drawing.Size(76, 25);
             this.Temp.TabIndex = 35;
-            this.Temp.Text = "null";
+            this.Temp.Text = "23.8 °C";
             // 
             // label16
             // 
@@ -621,36 +633,36 @@
             this.weight_label.AutoSize = true;
             this.weight_label.Location = new System.Drawing.Point(178, 220);
             this.weight_label.Name = "weight_label";
-            this.weight_label.Size = new System.Drawing.Size(51, 30);
+            this.weight_label.Size = new System.Drawing.Size(25, 30);
             this.weight_label.TabIndex = 35;
-            this.weight_label.Text = "null";
+            this.weight_label.Text = "4";
             // 
             // metal_label
             // 
             this.metal_label.AutoSize = true;
             this.metal_label.Location = new System.Drawing.Point(178, 165);
             this.metal_label.Name = "metal_label";
-            this.metal_label.Size = new System.Drawing.Size(51, 30);
+            this.metal_label.Size = new System.Drawing.Size(37, 30);
             this.metal_label.TabIndex = 35;
-            this.metal_label.Text = "null";
+            this.metal_label.Text = "35";
             // 
             // cook_label
             // 
             this.cook_label.AutoSize = true;
             this.cook_label.Location = new System.Drawing.Point(178, 115);
             this.cook_label.Name = "cook_label";
-            this.cook_label.Size = new System.Drawing.Size(51, 30);
+            this.cook_label.Size = new System.Drawing.Size(37, 30);
             this.cook_label.TabIndex = 35;
-            this.cook_label.Text = "null";
+            this.cook_label.Text = "10";
             // 
             // foundation_label
             // 
             this.foundation_label.AutoSize = true;
             this.foundation_label.Location = new System.Drawing.Point(178, 60);
             this.foundation_label.Name = "foundation_label";
-            this.foundation_label.Size = new System.Drawing.Size(51, 30);
+            this.foundation_label.Size = new System.Drawing.Size(37, 30);
             this.foundation_label.TabIndex = 35;
-            this.foundation_label.Text = "null";
+            this.foundation_label.Text = "13";
             // 
             // label32
             // 
@@ -1049,33 +1061,33 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(58, 47);
             this.chart1.Name = "chart1";
-            series17.ChartArea = "ChartArea1";
-            series17.IsValueShownAsLabel = true;
-            series17.Legend = "Legend1";
-            series17.Name = "고기만두";
-            series18.ChartArea = "ChartArea1";
-            series18.IsValueShownAsLabel = true;
-            series18.Legend = "Legend1";
-            series18.Name = "김치만두";
-            series19.ChartArea = "ChartArea1";
-            series19.IsValueShownAsLabel = true;
-            series19.Legend = "Legend1";
-            series19.Name = "갈비만두";
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series20.IsValueShownAsLabel = true;
-            series20.Legend = "Legend1";
-            series20.Name = "계획 수량";
-            this.chart1.Series.Add(series17);
-            this.chart1.Series.Add(series18);
-            this.chart1.Series.Add(series19);
-            this.chart1.Series.Add(series20);
+            series5.ChartArea = "ChartArea1";
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "고기만두";
+            series6.ChartArea = "ChartArea1";
+            series6.IsValueShownAsLabel = true;
+            series6.Legend = "Legend1";
+            series6.Name = "김치만두";
+            series7.ChartArea = "ChartArea1";
+            series7.IsValueShownAsLabel = true;
+            series7.Legend = "Legend1";
+            series7.Name = "갈비만두";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.IsValueShownAsLabel = true;
+            series8.Legend = "Legend1";
+            series8.Name = "계획 수량";
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(775, 203);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
@@ -1101,6 +1113,66 @@
             this.Refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Refresh.UseVisualStyleBackColor = false;
             this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(73, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 25);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "27.6 °C";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(73, 269);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 25);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "29.4 °C";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label22.Location = new System.Drawing.Point(73, 360);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(76, 25);
+            this.label22.TabIndex = 39;
+            this.label22.Text = "24.0 °C";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label27.Location = new System.Drawing.Point(245, 180);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(58, 25);
+            this.label27.TabIndex = 40;
+            this.label27.Text = "30 %";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label28.Location = new System.Drawing.Point(245, 269);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(58, 25);
+            this.label28.TabIndex = 41;
+            this.label28.Text = "54 %";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label33.Location = new System.Drawing.Point(245, 360);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 25);
+            this.label33.TabIndex = 42;
+            this.label33.Text = "28 %";
             // 
             // mainform
             // 
@@ -1209,5 +1281,11 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label Stock_name4;
         public CircularProgressBar.CircularProgressBar process1;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
