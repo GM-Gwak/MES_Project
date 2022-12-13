@@ -79,7 +79,7 @@ namespace MES
             string work_name = rdr["mbname"].ToString();
             name_label.Text = work_name.ToString();
 
-            //11
+            
             // 불량수량 라벨
             cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";
             cmd.ExecuteNonQuery();
@@ -315,6 +315,10 @@ namespace MES
                 socket.Receive(recvBytes);
                 string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
                 string[] str = txt.Split(',');
+                string test = str[2];
+                cmd.CommandText = $"update workcd set WCOPTIMALTEM = '{str[0]}', WCOPTIMALHUM = '{str[1]}' where wcid = 'wc001'";
+                //cmd.CommandText = "commit";
+                cmd.ExecuteNonQuery();
                 //온습도 센서 값
                 if (Temp.InvokeRequired == true)
                 {
@@ -325,7 +329,11 @@ namespace MES
                 {
                     Temp.Text = str[0];
                     Hum.Text = str[1];
+                    
                 }
+                
+                
+
             }
         }
         private void wait()
@@ -336,7 +344,7 @@ namespace MES
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 //2.연결
-                IPAddress address = IPAddress.Parse("192.168.0.4");
+                IPAddress address = IPAddress.Parse("192.168.0.8");
                 EndPoint serverEP = new IPEndPoint(address, 9001);
 
                 socket.Connect(serverEP);
@@ -352,48 +360,8 @@ namespace MES
             }
 
         }
-        private struct RGBColors
-        {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249, 118, 176);
-            public static Color color3 = Color.FromArgb(253, 138, 114);
-            public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
-            public static Color color6 = Color.FromArgb(24, 161, 251);
-        }
+        
 
-        private void ActivateButton(object senderBtn, Color color)
-        {
-
-            if (senderBtn != null)
-            {
-                DisableButton();
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(51, 71, 80);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(currentBtn.Location.X, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
-            }
-        }
-        private void DisableButton()
-        {
-            if (currentBtn != null)
-            {
-                currentBtn.BackColor = Color.FromArgb(51, 71, 80);
-                currentBtn.ForeColor = Color.Gainsboro;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.Gainsboro;
-                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            }
-        }
         public void OpenChildForm(Form childForm)
         {
             //open only form
@@ -415,7 +383,7 @@ namespace MES
 
         private void QualityManagement_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color1);
+            
             OpenChildForm(new faulty());
         }
 
@@ -442,13 +410,13 @@ namespace MES
 
         private void StockManagement_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color2);
+           ;
             OpenChildForm(new StockManagement());
         }
 
         private void WorkOrder_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color3);
+           
             OpenChildForm(new WorkOrder());
         }
 
@@ -484,7 +452,7 @@ namespace MES
 
         private void Monitoring_Click(object sender, EventArgs e)
         {
-            //ActivateButton(sender, RGBColors.color4);
+            
             OpenChildForm(new Monitoring());
         }
 
@@ -492,11 +460,14 @@ namespace MES
         {
             byte[] sendBytes = Encoding.UTF8.GetBytes("1");
             socket.Send(sendBytes);
+           
         }
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
             OpenChildForm(new test());
         }
+
+       
     }
 }
