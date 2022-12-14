@@ -121,17 +121,26 @@
   <data name="Untitled-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled-11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chart-diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chart-diagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="화살" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\화살.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="냉각" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\냉각2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="냉각1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\냉각11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="혼합1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\혼합11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="바탕5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\바탕51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="혼합10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\혼합101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="자숙" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\자숙2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="틀01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\틀012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (2)2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="분쇄" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\분쇄2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,32 +148,80 @@
   <data name="분쇄1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\분쇄11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="자숙" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\자숙2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="냉각1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\냉각11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="자숙1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\자숙11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="-2--unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-2--unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="재료1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\재료11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="제목 없는 디자인 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (3).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="틀0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\틀02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="틀01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\틀012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="틀1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\틀11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="green-animated_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green-animated_arrow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="틀10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\틀101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="포장1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\포장11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chart-diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chart-diagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif.com-gif-maker (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif.com-gif-maker (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (3).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="틀1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\틀11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif.com-gif-maker (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (5).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif.com-gif-maker (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (4).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (7).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (4).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="com-gif-maker-1--unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\com-gif-maker-1--unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (2)1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif.com-gif-maker (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (6).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="포장2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\포장21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (8).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="화11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\화11.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (6).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="냉각" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\냉각2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="포장1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\포장11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="화살1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\화살1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif.com-gif-maker (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (8).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="혼합0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\혼합02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,13 +229,52 @@
   <data name="혼합01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\혼합011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="혼합1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\혼합11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ezgif.com-gif-maker (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="혼합10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\혼합101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="--unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\--unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="자숙1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\자숙11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="그림8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\그림8.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="-1--unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-1--unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="재료" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\재료2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (1).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (3)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (3)1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="제목 없는 디자인 (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\제목 없는 디자인 (5).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezgif.com-gif-maker (9)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ezgif.com-gif-maker (9).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="-6--unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-6--unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="틀0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\틀02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="재료1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\재료11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="그림7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\그림7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="-8--unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-8--unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

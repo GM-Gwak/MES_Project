@@ -14,8 +14,9 @@ namespace MES.UI
     {
         private void UI_Load(object sender, EventArgs e)
         {
-
+            
         }
+        
         // 배경 투명
         public Monitoring()
         {
@@ -66,7 +67,20 @@ namespace MES.UI
             pictureBox20.Parent = pictureMain;
             pictureBox22.BackColor = Color.Transparent;
             pictureBox22.Parent = pictureMain;
-
+            pictureBox23.BackColor = Color.Transparent;
+            pictureBox23.Parent = pictureMain;
+            pictureBox24.BackColor = Color.Transparent;
+            pictureBox24.Parent = pictureMain;
+            pictureBox25.BackColor = Color.Transparent;
+            pictureBox25.Parent = pictureMain;
+            pictureBox26.BackColor = Color.Transparent;
+            pictureBox26.Parent = pictureMain;
+            pictureBox27.BackColor = Color.Transparent;
+            pictureBox27.Parent = pictureMain;
+            pictureBox28.BackColor = Color.Transparent;
+            pictureBox28.Parent = pictureMain;
+            pictureBox29.BackColor = Color.Transparent;
+            pictureBox29.Parent = pictureMain;
             // 이미지 숨기기
             pictureBox10.Visible = false;
             pictureBox11.Visible = false;
