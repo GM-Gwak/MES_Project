@@ -95,6 +95,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="seungmin_Forms\Lot2_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,14 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="seungmin_Forms\faulty.resx">
       <DependentUpon>faulty.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +333,102 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\재료2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green-animated_arrow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\화살.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\com-gif-maker-1--unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %283%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %284%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %282%291.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\화11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\화살1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %283%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %282%292.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %285%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %286%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %288%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker %289%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %284%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\그림7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\그림8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-1--unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\--unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2--unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %283%291.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %285%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %286%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-6--unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %287%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\제목 없는 디자인 %288%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-8--unscreen.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
