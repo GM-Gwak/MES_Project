@@ -52,13 +52,13 @@ namespace MES.seungmin_Forms
             rdr.Read();
             name_label.Text = rdr["mbname"].ToString();
 
-            adapt.SelectCommand = new OracleCommand("select * from workorder where wostat = 'P' order by woid", conn);
+            adapt.SelectCommand = new OracleCommand("select * from workorder order by woid", conn);
             DataSet ds = new DataSet();
             adapt.Fill(ds);
             work_grid.DataSource = ds.Tables[0].DefaultView;
             work_grid.Columns[2].Width = 130;
 
-            cmd.CommandText = "select sum(woplanqty) from workorder where wostat ='P'";
+            cmd.CommandText = "select sum(woplanqty) from workorder";
             rdr = cmd.ExecuteReader();
             rdr.Read();
             woplanqty_value.Text = rdr["sum(woplanqty)"].ToString();
@@ -68,6 +68,12 @@ namespace MES.seungmin_Forms
             rdr.Read();
             if (rdr["sum(woplanqty)"].ToString() == "") { woprodqty_value.Text = "null";}
             else { woprodqty_value.Text = rdr["sum(woplanqty)"].ToString();}
+
+
+
+            //test
+            woprodqty_value.Text = "13980";
+            wofaulty_value.Text = "40";
         }
 
         public void OpenChildForm(Form childForm)
@@ -143,6 +149,11 @@ namespace MES.seungmin_Forms
         private void iconButton2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Lot3_form());
+        }
+
+        private void work_main_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
