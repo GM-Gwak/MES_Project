@@ -151,12 +151,14 @@ namespace test_bom
                 for (int i = 0; i < pme_bom.Length; i++)
                 {
                     // 재고확인 (제일 오래된 재고)
-                    cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}'";
+                    cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}' and rownum = 1 order by stid;'";
                     cmd.ExecuteNonQuery();
                     rdr = cmd.ExecuteReader();
                     rdr.Read();
                     stock_qty = rdr.GetDouble(0);
+
                     MessageBox.Show(stock_qty.ToString());
+                    textBox5.AppendText(stock_qty.ToString() + "\r\n");
 
                     // 들어가는 재료 확인
                     cmd.CommandText = $"select bomqty from bom where pmid = '{pme_bom[i]}' and bomname = '고기만두'";
@@ -165,6 +167,8 @@ namespace test_bom
                     rdr.Read();
                     stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
                     MessageBox.Show(stock_qty_in.ToString());
+
+                    textBox5.AppendText(stock_qty_in.ToString() + "\r\n");
 
                     // 제일 오래된 재고가 들어가는 재고보다 많을 시
                     if (stock_qty > stock_qty_in)
@@ -210,6 +214,7 @@ namespace test_bom
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show(pme_bom[i]);
+                    textBox5.AppendText(pme_bom[i]);
                 }
             }
         }

@@ -55,6 +55,7 @@
             this.WC002_N = new System.Windows.Forms.Label();
             this.WC004_N = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.WC001)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WC002)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WC003)).BeginInit();
@@ -242,20 +243,20 @@
             // 
             this.WO_GRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.WO_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.WO_GRID.Location = new System.Drawing.Point(238, 12);
+            this.WO_GRID.Location = new System.Drawing.Point(83, 12);
             this.WO_GRID.MultiSelect = false;
             this.WO_GRID.Name = "WO_GRID";
             this.WO_GRID.ReadOnly = true;
             this.WO_GRID.RowHeadersVisible = false;
             this.WO_GRID.RowTemplate.Height = 23;
             this.WO_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.WO_GRID.Size = new System.Drawing.Size(990, 134);
+            this.WO_GRID.Size = new System.Drawing.Size(848, 134);
             this.WO_GRID.TabIndex = 18;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(148, 50);
+            this.label5.Location = new System.Drawing.Point(12, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 19;
@@ -331,7 +332,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1274, 63);
+            this.button1.Location = new System.Drawing.Point(961, 98);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 48);
             this.button1.TabIndex = 28;
@@ -339,11 +340,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(1152, 12);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(401, 134);
+            this.textBox5.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 705);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.WC004_N);
             this.Controls.Add(this.WC002_N);
@@ -412,6 +422,7 @@
         private System.Windows.Forms.Label WC002_N;
         private System.Windows.Forms.Label WC004_N;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
 
