@@ -93,6 +93,13 @@ namespace MES.UI
             pictureBox18.Visible = false;
             pictureBox20.Visible = false;
             pictureBox22.Visible = false;
+            pictureBox23.Visible = false;
+            pictureBox24.Visible = false;
+            pictureBox25.Visible = false;
+            pictureBox26.Visible = false;
+            pictureBox27.Visible = false;
+            pictureBox28.Visible = false;
+            pictureBox29.Visible = false;
 
             /*
             for(int i=1; i<=10; i++)
@@ -101,7 +108,7 @@ namespace MES.UI
             }
              */
         }
-
+        
 
         // 프로그레스바
         public void btn1()
@@ -235,12 +242,20 @@ namespace MES.UI
                 timer1.Stop();
                 MessageBox.Show("제1공정 완료");
                 progressBar1.Value = 0;
+                pictureBox23.Visible = false;
+                pictureBox24.Visible = false;
+                pictureBox25.Visible = false;
+                
                 btn2();
             }
             else
             {
                 progressBar1.Value += 2;
                 ps_2.Text = progressBar1.Value.ToString() + " %";
+                pictureBox23.Visible = true;
+                pictureBox24.Visible = true;
+                pictureBox25.Visible = true;
+                
                 if (progressBar1.Value == 100)
                 {
                     //ps_2.Text ="0%";
@@ -255,12 +270,17 @@ namespace MES.UI
                 timer2.Stop();
                 MessageBox.Show("제2공정 완료");
                 progressBar2.Value = 0;
+                pictureBox26.Visible = false;
+                pictureBox27.Visible = false;
+                
                 btn3();
             }
             else
             {
                 progressBar2.Value += 2;
                 ps_4.Text = progressBar2.Value.ToString() + " %";
+                pictureBox26.Visible = true;
+                pictureBox27.Visible = true;
             }
         }
 
@@ -271,12 +291,15 @@ namespace MES.UI
                 timer3.Stop();
                 MessageBox.Show("제3공정 완료");
                 progressBar3.Value = 0;
+                pictureBox28.Visible = false;
+                
                 btn4();
             }
             else
             {
                 progressBar3.Value += 2;
                 ps_6.Text = progressBar3.Value.ToString() + " %";
+                pictureBox28.Visible = true;
             }
         }
 
@@ -287,11 +310,13 @@ namespace MES.UI
                 timer4.Stop();
                 MessageBox.Show("제4공정 완료");
                 progressBar4.Value = 0;
+                pictureBox29.Visible = false;
             }
             else
             {
                 progressBar4.Value += 2;
                 ps_8.Text = progressBar4.Value.ToString() + " %";
+                pictureBox29.Visible = true;
             }
         }
 
