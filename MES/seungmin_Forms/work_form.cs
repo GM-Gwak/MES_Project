@@ -22,6 +22,18 @@ namespace MES.seungmin_Forms
         static string mes_id;
         private Form currentChildForm;
 
+        string main_query = "select distinct(w.WoId) 작업지시ID," +
+            "PMName 제품명," +
+            "LotCreateTime 지시일," +
+            "WoStat 작업상태," +
+            "WoStartTime 시작시간," +
+            "WoEndTime 종료시간," +
+            "WoPlanQty 계획수량," +
+            "WoProdQty 실적," +
+            "WcNowTem 현재온도," +
+            "WcNowHum 현재습도" +
+            " from workorder w, PdMaster m, LOT l where w.PMId = m.PMId and w.WoId = l.WoId";
+
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -52,7 +64,7 @@ namespace MES.seungmin_Forms
             rdr.Read();
             name_label.Text = rdr["mbname"].ToString();
 
-            adapt.SelectCommand = new OracleCommand("select * from workorder order by woid", conn);
+            adapt.SelectCommand = new OracleCommand(main_query, conn);
             DataSet ds = new DataSet();
             adapt.Fill(ds);
             work_grid.DataSource = ds.Tables[0].DefaultView;
@@ -68,7 +80,6 @@ namespace MES.seungmin_Forms
             rdr.Read();
             if (rdr["sum(woplanqty)"].ToString() == "") { woprodqty_value.Text = "null";}
             else { woprodqty_value.Text = rdr["sum(woplanqty)"].ToString();}
-
 
 
             //test
