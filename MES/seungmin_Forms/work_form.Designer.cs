@@ -85,9 +85,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.wofaulty_value = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            
-           
-            
+
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();

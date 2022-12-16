@@ -98,7 +98,7 @@ namespace MES.seungmin_Forms
             rdr = cmd.ExecuteReader();
             rdr.Read();
             woplanqty_value.Text = rdr["sum(woplanqty)"].ToString();
-            
+
 
             work_chart();
         }
