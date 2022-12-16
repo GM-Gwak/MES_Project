@@ -63,9 +63,29 @@ namespace MES.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap @__unscreen {
+            get {
+                object obj = ResourceManager.GetObject("--unscreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap _2__unscreen {
             get {
                 object obj = ResourceManager.GetObject("-2--unscreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2__unscreen__1_ {
+            get {
+                object obj = ResourceManager.GetObject("-2--unscreen (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

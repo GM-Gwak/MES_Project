@@ -62,10 +62,14 @@ namespace MES.seungmin_Forms
             conn.Open();
             cmd.Connection = conn;
             grid_view();
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+
             Start_password password = new Start_password();
             password.ShowDialog();
 
@@ -317,6 +321,9 @@ namespace MES.seungmin_Forms
                     //textBox1.AppendText(pri_bom[i] + "\r\n");
                 }
             }
+            pictureBox5.Visible = true;
+            pictureBox6.Visible = true;
+            pictureBox7.Visible = true;
         }
 
         private void LINE_VIEW1_Click(object sender, EventArgs e)
