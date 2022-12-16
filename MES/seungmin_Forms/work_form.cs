@@ -85,11 +85,11 @@ namespace MES.seungmin_Forms
             rdr.Read();
             woplanqty_value.Text = rdr["sum(woplanqty)"].ToString();
 
-            cmd.CommandText = $"select sum(woplanqty) from workorder where wostat='E' and woendtime = '{DateTime.Now.ToString("yyyy-MM-dd")}'";
+            cmd.CommandText = $"select sum(woplanqty) from workorder where wostat='E' and woendtime = to_char(sysdate)";
             rdr = cmd.ExecuteReader();
             rdr.Read();
-            if (rdr["sum(woplanqty)"].ToString() == "") { woprodqty_value.Text = "null";}
-            else { woprodqty_value.Text = rdr["sum(woplanqty)"].ToString();}
+            if (rdr["sum(woplanqty)"].ToString() == "") { woprodqty_value.Text = "0"; }
+            else { woprodqty_value.Text = rdr["sum(woplanqty)"].ToString(); }
 
             Start_password.mbname = name_label.Text;
 
@@ -98,9 +98,20 @@ namespace MES.seungmin_Forms
             rdr = cmd.ExecuteReader();
             rdr.Read();
             woplanqty_value.Text = rdr["sum(woplanqty)"].ToString();
-           
+
+            cmd.CommandText = $"select sum(faqty) from faulty F, lot L where L.LOTID = F.LOTID and substr(L.LOTENDTIME, 0, 10) = to_char(sysdate, 'yyyy-mm-dd')";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            
+            wofaulty_value.Text = rdr["sum(faqty)"].ToString();
+
 
             work_chart();
+
+
+
+
         }
 
         public void work_chart() {

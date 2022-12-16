@@ -36,7 +36,6 @@ namespace MES
         private Form currentChildForm;
         private int borderSize = 2;
        
-        private IconButton currentBtn;
         private Panel leftBorderBtn;
         private string start_time = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
         private string now_time = DateTime.Now.ToString("yyyy-MM-dd");
@@ -87,19 +86,23 @@ namespace MES
             {
                 if (rdr["faname"].ToString() == "재단 상태 불량")
                 {
-                    foundation_label.Text = rdr["sum(faqty)"].ToString();
+                    if (rdr["sum(faqty)"].ToString() == "") { foundation_label.Text = "0"; }
+                    else { foundation_label.Text = rdr["sum(faqty)"].ToString(); }
                 }
                 else if (rdr["faname"].ToString() == "익힘 상태 불량")
                 {
-                    cook_label.Text = rdr["sum(faqty)"].ToString();
+                    if (rdr["sum(faqty)"].ToString() == "") { cook_label.Text = "0"; }
+                    else { cook_label.Text = rdr["sum(faqty)"].ToString(); }
                 }
-                else if (rdr["faname"].ToString() == "중금속 불량")
+                else if (rdr["faname"].ToString() == "중금속 함유 불량")
                 {
-                    metal_label.Text = rdr["sum(faqty)"].ToString();
+                    if (rdr["sum(faqty)"].ToString() == "") { metal_label.Text = "0"; }
+                    else { metal_label.Text = rdr["sum(faqty)"].ToString(); }
                 }
                 else if (rdr["faname"].ToString() == "무게 불량")
                 {
-                    weight_label.Text = rdr["sum(faqty)"].ToString();
+                    if (rdr["sum(faqty)"].ToString() == "") { weight_label.Text = "0"; }
+                    else { weight_label.Text = rdr["sum(faqty)"].ToString(); }
                 }
             }
 
