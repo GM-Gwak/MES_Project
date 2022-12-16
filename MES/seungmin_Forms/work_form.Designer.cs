@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,7 +44,7 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
-=======
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -56,7 +56,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
->>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
+
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -327,7 +327,7 @@
             // work_grid
             // 
             this.work_grid.AllowUserToAddRows = false;
-<<<<<<< HEAD
+
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -353,7 +353,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.work_grid.DefaultCellStyle = dataGridViewCellStyle3;
-=======
+
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -379,7 +379,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.work_grid.DefaultCellStyle = dataGridViewCellStyle13;
->>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
+
             this.work_grid.EnableHeadersVisualStyles = false;
             this.work_grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
             this.work_grid.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -387,7 +387,7 @@
             this.work_grid.MultiSelect = false;
             this.work_grid.Name = "work_grid";
             this.work_grid.ReadOnly = true;
-<<<<<<< HEAD
+
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -401,7 +401,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.work_grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
-=======
+
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle14.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -415,7 +415,7 @@
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
             this.work_grid.RowsDefaultCellStyle = dataGridViewCellStyle15;
->>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
+
             this.work_grid.RowTemplate.Height = 23;
             this.work_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.work_grid.Size = new System.Drawing.Size(1247, 386);
@@ -531,7 +531,7 @@
             // 
             // chart1
             // 
-<<<<<<< HEAD
+
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -559,7 +559,6 @@
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
             this.chart1.Series.Add(series4);
-=======
             chartArea3.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
@@ -587,7 +586,7 @@
             this.chart1.Series.Add(series10);
             this.chart1.Series.Add(series11);
             this.chart1.Series.Add(series12);
->>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
+
             this.chart1.Size = new System.Drawing.Size(743, 169);
             this.chart1.TabIndex = 37;
             this.chart1.Text = "chart1";

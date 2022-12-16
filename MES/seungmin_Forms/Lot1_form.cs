@@ -360,15 +360,14 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
                 move1 = false;
                 MessageBox.Show("공정이 중단되었습니다.");
-<<<<<<< HEAD
+
                 pictureBox5.Visible = false;
                 pictureBox6.Visible = false;
                 pictureBox7.Visible = false;
-=======
+
                 cmd.CommandText = $"update workcd set wcstat = 'P' where wcid = 'wc001'";
                 cmd.ExecuteNonQuery();
                 grid_view();
->>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
             }
             else
             {
@@ -385,15 +384,12 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
                 move1 = false;
                 MessageBox.Show("작업이 종료되었습니다.");
-<<<<<<< HEAD
                 pictureBox5.Visible = false;
                 pictureBox6.Visible = false;
                 pictureBox7.Visible = false;
-=======
                 cmd.CommandText = $"update workcd set wcstat = 'P' where wcid = 'wc001'";
                 cmd.ExecuteNonQuery();
                 grid_view();
->>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
             }
             else
             {

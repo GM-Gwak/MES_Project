@@ -460,14 +460,10 @@ namespace MES
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
             work_cd1();
             work_cd2();
             work_cd3();
             work_cd4();
->>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
         }
     }
 }
