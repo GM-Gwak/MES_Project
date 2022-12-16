@@ -79,8 +79,6 @@ namespace MES.seungmin_Forms
                 return;
             }
 
-
-
             Start_password password = new Start_password();
             password.ShowDialog();
 
@@ -115,7 +113,6 @@ namespace MES.seungmin_Forms
 
             if (move1 == "E")
             {
-                move1 = "S";
 
                 // 선택한 행의 WOID를 읽고, 그에 해당하는 워크오더의 시작시간 추가
                 cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'S' where woid = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}'";
@@ -125,7 +122,7 @@ namespace MES.seungmin_Forms
                 cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001', lotstat = 'S', MBNO = '{MB_ID}' where lotid = '{LOT1_grid.SelectedRows[0].Cells[0].Value.ToString()}'";
                 cmd.ExecuteNonQuery();
 
-                // 선택한 행의 계획수량, PMID, WOID를 저장
+                //// 선택한 행의 계획수량, PMID, WOID를 저장
                 cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
                 rdr = cmd.ExecuteReader();
                 rdr.Read();
@@ -345,10 +342,12 @@ namespace MES.seungmin_Forms
                         //textBox1.AppendText(pri_bom[i] + "\r\n");
                     }
                 }
+
+                move1 = "S";
+                pictureBox5.Visible = true;
+                pictureBox6.Visible = true;
+                pictureBox7.Visible = true;
             }
-            pictureBox5.Visible = true;
-            pictureBox6.Visible = true;
-            pictureBox7.Visible = true;
         }
 
         private void LINE_VIEW1_Click(object sender, EventArgs e)
@@ -375,11 +374,6 @@ namespace MES.seungmin_Forms
 
         private void work_grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
-            next_order_pmid = rdr["PMID"] as string;
-
             textBox1.Text = $" [ 선택한 LOT = {LOT1_grid.SelectedRows[0].Cells[0].Value.ToString()} ] [ 선택한 WOID = {LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()} ] [ 선택한 수량 = {Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString())} ] [ 선택한 PMID = {next_order_pmid} ]";
         }
     }
