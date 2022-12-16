@@ -36,6 +36,28 @@ namespace MES.seungmin_Forms
             adapt.Fill(ds);
             work_grid.DataSource = ds.Tables[0].DefaultView;
             work_grid.Columns[2].Width = 130;
+
+            pictureBox5.Visible = false;
+            pictureBox3.Visible = false;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            pictureBox5.Visible = true;
+            pictureBox3.Visible = true;
+            
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            pictureBox5.Visible = false;
+            pictureBox3.Visible = false;
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            pictureBox5.Visible = false;
+            pictureBox3.Visible = false;
         }
     }
 }

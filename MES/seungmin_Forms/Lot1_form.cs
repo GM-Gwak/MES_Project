@@ -64,10 +64,14 @@ namespace MES.seungmin_Forms
             conn.Open();
             cmd.Connection = conn;
             grid_view();
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             // 작동중인지 검사
             if (move1 == "S")
             {
@@ -75,6 +79,8 @@ namespace MES.seungmin_Forms
                 return;
             }
 
+=======
+>>>>>>> 2f5816de68dc0ffdc523d0c9fd0814bcefa8d8d3
 
             Start_password password = new Start_password();
             password.ShowDialog();
@@ -341,6 +347,9 @@ namespace MES.seungmin_Forms
                     }
                 }
             }
+            pictureBox5.Visible = true;
+            pictureBox6.Visible = true;
+            pictureBox7.Visible = true;
         }
 
         private void LINE_VIEW1_Click(object sender, EventArgs e)

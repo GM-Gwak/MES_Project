@@ -33,11 +33,6 @@ namespace MES
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //cmd.CommandText = $"select PMUnit from PdMaster where PMName = '{comboBox1.SelectedItem}'";
-            //rdr = cmd.ExecuteReader();
-            //rdr.Read();
-            //string unit = rdr["PMUnit"].ToString();
-            //label4.Text = unit;
 
             textBox1.Focus();
 

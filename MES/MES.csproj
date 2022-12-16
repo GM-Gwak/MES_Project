@@ -216,6 +216,9 @@
     <EmbeddedResource Include="seungmin_Forms\Lot3_form.resx">
       <DependentUpon>Lot3_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="seungmin_Forms\Lot_End.resx">
+      <DependentUpon>Lot_End.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\Start_password.resx">
       <DependentUpon>Start_password.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,6 +447,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\-8--unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2--unscreen %281%29.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
