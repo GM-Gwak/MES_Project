@@ -431,10 +431,7 @@ namespace MES
             try
             {
                 currentChildForm.Close();
-                work_cd1();
-                work_cd2();
-                work_cd3();
-                work_cd4();
+               
                 
             }
             catch(Exception)
@@ -468,6 +465,12 @@ namespace MES
             OpenChildForm(new test());
         }
 
-       
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            work_cd1();
+            work_cd2();
+            work_cd3();
+            work_cd4();
+        }
     }
 }

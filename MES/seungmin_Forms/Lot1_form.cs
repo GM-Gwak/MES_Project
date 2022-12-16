@@ -125,6 +125,7 @@ namespace MES.seungmin_Forms
                 MessageBox.Show("작업장1이 가동 시작되었습니다!");
                 cmd.CommandText = $"update workcd set wcstat = 'O' where wcid = 'wc001'";
                 cmd.ExecuteNonQuery();
+                grid_view();
 
                 //고기만두
                 if (next_order_pmid == "pme01")
@@ -337,6 +338,7 @@ namespace MES.seungmin_Forms
                 MessageBox.Show("재 가동 되었습니다.");
                 cmd.CommandText = $"update workcd set wcstat = 'O' where wcid = 'wc001'";
                 cmd.ExecuteNonQuery();
+                grid_view();
                 move1 = true;
                 pictureBox5.Visible = true;
                 pictureBox6.Visible = true;
@@ -360,6 +362,7 @@ namespace MES.seungmin_Forms
                 MessageBox.Show("공정이 중단되었습니다.");
                 cmd.CommandText = $"update workcd set wcstat = 'P' where wcid = 'wc001'";
                 cmd.ExecuteNonQuery();
+                grid_view();
             }
             else
             {
@@ -378,6 +381,7 @@ namespace MES.seungmin_Forms
                 MessageBox.Show("작업이 종료되었습니다.");
                 cmd.CommandText = $"update workcd set wcstat = 'P' where wcid = 'wc001'";
                 cmd.ExecuteNonQuery();
+                grid_view();
             }
             else
             {
