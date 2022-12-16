@@ -131,7 +131,7 @@ namespace MES
             {
                 process1.Style = ProgressBarStyle.Marquee;
                 process1.ProgressColor = Color.Green;
-                process1.Text = "가동중";
+                process1.Text = "가동 중..";
             }
         }
 
@@ -154,7 +154,7 @@ namespace MES
             {
                 process2.Style = ProgressBarStyle.Marquee;
                 process2.ProgressColor = Color.Green;
-                process2.Text = "가동중";
+                process2.Text = "가동 중..";
             }
         }
         //생산현황 작업장3 원형 프로그래스바
@@ -176,7 +176,7 @@ namespace MES
             {
                 process3.Style = ProgressBarStyle.Marquee;
                 process3.ProgressColor = Color.Green;
-                process3.Text = "가동중";
+                process3.Text = "가동 중..";
             }
         }
         //생산현황 작업장4 원형 프로그래스바
@@ -198,7 +198,7 @@ namespace MES
             {
                 process4.Style = ProgressBarStyle.Marquee;
                 process4.ProgressColor = Color.Green;
-                process4.Text = "가동중";
+                process4.Text = "가동 중..";
             }
         }
         
