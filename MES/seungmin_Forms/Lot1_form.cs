@@ -129,7 +129,7 @@ namespace MES.seungmin_Forms
                     next_order_planqty = Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString());
                     next_lotid = LOT1_grid.SelectedRows[0].Cells[0].Value.ToString();
 
-                    MessageBox.Show("작업장1이 가동 시작되었습니다.");
+                    MessageBox.Show("작업장1이 가동 시작되었습니다!");
 
                     //고기만두
                     if (next_order_pmid == "pme01")
