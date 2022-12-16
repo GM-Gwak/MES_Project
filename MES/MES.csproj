@@ -452,6 +452,12 @@
   <ItemGroup>
     <None Include="Resources\-2--unscreen %281%29.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2--unscreen %281%291.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2--unscreen %281%292.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

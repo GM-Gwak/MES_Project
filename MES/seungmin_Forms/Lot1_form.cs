@@ -109,8 +109,48 @@ namespace MES.seungmin_Forms
                 {
                     return;
                 }
+<<<<<<< Updated upstream
 
                 if (move1 == false)
+=======
+            }
+
+            if (FT == "F")
+            {
+                MessageBox.Show("비밀번호가 정확하지 않습니다.");
+                return;
+            }
+            else if (FT == "N")
+            {
+                return;
+            }
+
+
+            if (move1 == "E")
+            {
+
+                // 선택한 행의 WOID를 읽고, 그에 해당하는 워크오더의 시작시간 추가
+                cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'S' where woid = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}'";
+                cmd.ExecuteNonQuery();
+
+                // 선택한 행 업데이트
+                cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001', lotstat = 'S', MBNO = '{MB_ID}' where lotid = '{LOT1_grid.SelectedRows[0].Cells[0].Value.ToString()}'";
+                cmd.ExecuteNonQuery();
+
+                //// 선택한 행의 계획수량, PMID, WOID를 저장
+                cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
+                rdr = cmd.ExecuteReader();
+                rdr.Read();
+                next_order_pmid = rdr["PMID"] as string;
+                next_order_woid = LOT1_grid.SelectedRows[0].Cells[1].Value.ToString();
+                next_order_planqty = Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString());
+                next_lotid = LOT1_grid.SelectedRows[0].Cells[0].Value.ToString();
+
+                MessageBox.Show("작업장1이 가동 시작되었습니다.");
+                
+                //고기만두
+                if (next_order_pmid == "pme01")
+>>>>>>> Stashed changes
                 {
                     // 선택한 행의 WOID를 읽고, 그에 해당하는 워크오더의 시작시간 추가
                     cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'S' where woid = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}'";
