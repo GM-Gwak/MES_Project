@@ -315,6 +315,7 @@ namespace MES
                 string txt = Encoding.UTF8.GetString(recvBytes, 0, recvBytes.Length);
                 string[] str = txt.Split(',');
                 string test = str[2];
+
                 cmd.CommandText = $"update workcd set WCOPTIMALTEM = '{str[0]}', WCOPTIMALHUM = '{str[1]}' where wcid = 'wc001'";
                 //cmd.CommandText = "commit";
                 cmd.ExecuteNonQuery();

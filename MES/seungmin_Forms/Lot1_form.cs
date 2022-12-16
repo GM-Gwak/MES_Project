@@ -32,6 +32,8 @@ namespace MES.seungmin_Forms
         static string next_order_pmid;
         static string stat;
         static string day;
+        static string tem;
+        static string hum;
         static int next_order_planqty;
         string next_lotid;
 
@@ -68,7 +70,6 @@ namespace MES.seungmin_Forms
             conn.Open();
             cmd.Connection = conn;
             grid_view();
-
             pictureBox5.Visible = false;
             pictureBox6.Visible = false;
             pictureBox7.Visible = false;
@@ -113,18 +114,11 @@ namespace MES.seungmin_Forms
                     return;
                 }
 
-                //cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
-                //rdr = cmd.ExecuteReader();
-                //rdr.Read();
-
-                //next_order_pmid = rdr["PMID"] as string;
-
-
                 // 선택한 행의 WOID를 읽고, 그에 해당하는 워크오더의 시작시간 추가
-                cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'S' where woid = '{next_order_woid}'";
+                cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'S', WCNOWTEM = '{tem}', WCNOWHUM = '{hum}' where woid = '{next_order_woid}'";
                 cmd.ExecuteNonQuery();
 
-                // 선택한 행 업데이트
+                // 선택한 행 업데이트 (LOT 업데이트)
                 cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001', lotstat = 'S', MBNO = '{MB_ID}' where lotid = '{next_lotid}'";
                 cmd.ExecuteNonQuery();
 
@@ -391,20 +385,30 @@ namespace MES.seungmin_Forms
             cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
             rdr = cmd.ExecuteReader();
             rdr.Read();
-
             next_order_pmid = rdr["PMID"] as string;
+
             next_order_woid = LOT1_grid.SelectedRows[0].Cells[1].Value.ToString();
             next_order_planqty = Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString());
             next_lotid = LOT1_grid.SelectedRows[0].Cells[0].Value.ToString();
             stat = LOT1_grid.SelectedRows[0].Cells[5].Value.ToString();
             day = LOT1_grid.SelectedRows[0].Cells[3].Value.ToString();
 
+            cmd.CommandText = $"select WCOPTIMALTEM, WCOPTIMALHUM from workcd where wcid = 'wc001'";
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+
+            tem = rdr["WCOPTIMALTEM"] as string;
+            hum = rdr["WCOPTIMALHUM"] as string;
+
+
             textBox1.Text = $" [ 선택한 LOT = {next_lotid} ] " +
                 $"[ 선택한 WOID = {next_order_woid} ] " +
                 $"[ 선택한 수량 = {next_order_planqty} ] " +
                 $"[ 선택한 pmid = {next_order_pmid} ]" +
                 $"[ 선택한 상태 = {stat} ] " +
-                $"[ 선택한 날짜 = {day} ]";
+                $"[ 선택한 날짜 = {day} ] " +
+                $"[ 선택한 온도 = {tem} ] " +
+                $"[ 선택한 습도 = {hum} ]";
         }
     }
 }
