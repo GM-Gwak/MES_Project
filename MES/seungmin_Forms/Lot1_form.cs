@@ -127,204 +127,200 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
                 grid_view();
 
-                //고기만두
-                if (next_order_pmid == "pme01")
-                {
-                    for (int i = 0; i < pme_bom.Length; i++)
-                    {
-                        // 재고확인 (제일 오래된 재고)
-                        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}' and rownum = 1 order by stid";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty = rdr.GetDouble(0);
+                ////고기만두
+                //if (next_order_pmid == "pme01")
+                //{
+                //    for (int i = 0; i < pme_bom.Length; i++)
+                //    {
+                //        // 재고확인 (제일 오래된 재고)
+                //        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}' and rownum = 1 order by stid";
+                //        cmd.ExecuteNonQuery();
+                //        rdr = cmd.ExecuteReader();
+                //        rdr.Read();
+                //        stock_qty = rdr.GetDouble(0);
 
-                        // 들어가는 재료 확인
-                        cmd.CommandText = $"select bomqty from bom where pmid = '{pme_bom[i]}' and bomname = '고기만두'";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
+                //        // 들어가는 재료 확인
+                //        cmd.CommandText = $"select bomqty from bom where pmid = '{pme_bom[i]}' and bomname = '고기만두'";
+                //        cmd.ExecuteNonQuery();
+                //        rdr = cmd.ExecuteReader();
+                //        rdr.Read();
+                //        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
 
-                        // 제일 오래된 재고가 들어가는 재고보다 많을 시
-                        if (stock_qty > stock_qty_in)
-                        {
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {stock_qty_in} " +
-                                $"where pmid = '{pme_bom[i]}' and stdate = " +
-                                $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-                        else if (stock_qty == stock_qty_in)
-                        {
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
+                //        // 제일 오래된 재고가 들어가는 재고보다 많을 시
+                //        if (stock_qty > stock_qty_in)
+                //        {
+                //            cmd.CommandText = $"update stock " +
+                //                $"set stqty = stqty - {stock_qty_in} " +
+                //                $"where pmid = '{pme_bom[i]}' and stdate = " +
+                //                $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
+                //            cmd.ExecuteNonQuery();
+                //        }
+                //        else if (stock_qty == stock_qty_in)
+                //        {
+                //            cmd.CommandText = $"delete stock where stid = " +
+                //                $"(select stid from stock where stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
+                //            cmd.ExecuteNonQuery();
+                //        }
 
-                        // 제일 오래된 재고가 들어가는 재고보다 적을 시
-                        else
-                        {
-                            // 오래된 재고를 쓰고 남은 수
-                            double re_stock_qty = stock_qty_in - stock_qty;
+                //        // 제일 오래된 재고가 들어가는 재고보다 적을 시
+                //        else
+                //        {
+                //            // 오래된 재고를 쓰고 남은 수
+                //            double re_stock_qty = stock_qty_in - stock_qty;
 
-                            // 오래된 재고삭제
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}')";
-                            cmd.ExecuteNonQuery();
+                //            // 오래된 재고삭제
+                //            cmd.CommandText = $"delete stock where stid = " +
+                //                $"(select stid from stock where stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}')";
+                //            cmd.ExecuteNonQuery();
 
-                            cmd.CommandText = $"commit";
-                            cmd.ExecuteNonQuery();
+                //            cmd.CommandText = $"commit";
+                //            cmd.ExecuteNonQuery();
 
-                            // 남은 수를 재고에서 빼기
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {re_stock_qty} " +
-                                $"where stdate = " +
-                                $"(select stdate from stock where stdate = " +
-                                $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))) " +
-                                $"and pmid = '{pme_bom[i]}'";
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                }
+                //            // 남은 수를 재고에서 빼기
+                //            cmd.CommandText = $"update stock " +
+                //                $"set stqty = stqty - {re_stock_qty} " +
+                //                $"where stdate = " +
+                //                $"(select stdate from stock where stdate = " +
+                //                $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))) " +
+                //                $"and pmid = '{pme_bom[i]}'";
+                //            cmd.ExecuteNonQuery();
+                //        }
+                //    }
+                //}
 
-                //김치만두
-                if (next_order_pmid == "pki01")
-                {
-                    for (int i = 0; i < pme_bom.Length; i++)
-                    {
-                        // 재고확인 (제일 오래된 재고)
-                        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}' and rownum = 1 order by stid";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty = rdr.GetDouble(0);
+                ////김치만두
+                //if (next_order_pmid == "pki01")
+                //{
+                //    for (int i = 0; i < pme_bom.Length; i++)
+                //    {
+                //        // 재고확인 (제일 오래된 재고)
+                //        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}' and rownum = 1 order by stid";
+                //        cmd.ExecuteNonQuery();
+                //        rdr = cmd.ExecuteReader();
+                //        rdr.Read();
+                //        stock_qty = rdr.GetDouble(0);
 
-                        // 들어가는 재료 확인
-                        cmd.CommandText = $"select bomqty from bom where pmid = '{pki_bom[i]}' and bomname = '고기만두'";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
+                //        // 들어가는 재료 확인
+                //        cmd.CommandText = $"select bomqty from bom where pmid = '{pki_bom[i]}' and bomname = '고기만두'";
+                //        cmd.ExecuteNonQuery();
+                //        rdr = cmd.ExecuteReader();
+                //        rdr.Read();
+                //        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
 
-                        // 제일 오래된 재고가 들어가는 재고보다 많을 시
-                        if (stock_qty > stock_qty_in)
-                        {
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {stock_qty_in} " +
-                                $"where pmid = '{pki_bom[i]}' and stdate = " +
-                                $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-                        else if (stock_qty == stock_qty_in)
-                        {
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
+                //        // 제일 오래된 재고가 들어가는 재고보다 많을 시
+                //        if (stock_qty > stock_qty_in)
+                //        {
+                //            cmd.CommandText = $"update stock " +
+                //                $"set stqty = stqty - {stock_qty_in} " +
+                //                $"where pmid = '{pki_bom[i]}' and stdate = " +
+                //                $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
+                //            cmd.ExecuteNonQuery();
+                //        }
+                //        else if (stock_qty == stock_qty_in)
+                //        {
+                //            cmd.CommandText = $"delete stock where stid = " +
+                //                $"(select stid from stock where stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
+                //            cmd.ExecuteNonQuery();
+                //        }
 
-                        // 제일 오래된 재고가 들어가는 재고보다 적을 시
-                        else
-                        {
-                            // 오래된 재고를 쓰고 남은 수
-                            double re_stock_qty = stock_qty_in - stock_qty;
+                //        // 제일 오래된 재고가 들어가는 재고보다 적을 시
+                //        else
+                //        {
+                //            // 오래된 재고를 쓰고 남은 수
+                //            double re_stock_qty = stock_qty_in - stock_qty;
 
-                            // 오래된 재고삭제
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}')";
-                            cmd.ExecuteNonQuery();
+                //            // 오래된 재고삭제
+                //            cmd.CommandText = $"delete stock where stid = " +
+                //                $"(select stid from stock where stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}')";
+                //            cmd.ExecuteNonQuery();
 
-                            cmd.CommandText = $"commit";
-                            cmd.ExecuteNonQuery();
+                //            cmd.CommandText = $"commit";
+                //            cmd.ExecuteNonQuery();
 
-                            // 남은 수를 재고에서 빼기
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {re_stock_qty} " +
-                                $"where stdate = " +
-                                $"(select stdate from stock where stdate = " +
-                                $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))) " +
-                                $"and pmid = '{pki_bom[i]}'";
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                }
+                //            // 남은 수를 재고에서 빼기
+                //            cmd.CommandText = $"update stock " +
+                //                $"set stqty = stqty - {re_stock_qty} " +
+                //                $"where stdate = " +
+                //                $"(select stdate from stock where stdate = " +
+                //                $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))) " +
+                //                $"and pmid = '{pki_bom[i]}'";
+                //            cmd.ExecuteNonQuery();
+                //        }
+                //    }
+                //}
 
-                //갈비만두
-                if (next_order_pmid == "pri01")
-                {
-                    for (int i = 0; i < pme_bom.Length; i++)
-                    {
-                        // 재고확인 (제일 오래된 재고)
-                        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}' and rownum = 1 order by stid";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty = rdr.GetDouble(0);
+                ////갈비만두
+                //if (next_order_pmid == "pri01")
+                //{
+                //    for (int i = 0; i < pme_bom.Length; i++)
+                //    {
+                //        // 재고확인 (제일 오래된 재고)
+                //        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}' and rownum = 1 order by stid";
+                //        cmd.ExecuteNonQuery();
+                //        rdr = cmd.ExecuteReader();
+                //        rdr.Read();
+                //        stock_qty = rdr.GetDouble(0);
 
-                        //textBox1.AppendText(stock_qty.ToString() + "\r\n");
+                //        // 들어가는 재료 확인
+                //        cmd.CommandText = $"select bomqty from bom where pmid = '{pri_bom[i]}' and bomname = '갈비만두'";
+                //        cmd.ExecuteNonQuery();
+                //        rdr = cmd.ExecuteReader();
+                //        rdr.Read();
+                //        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
 
-                        // 들어가는 재료 확인
-                        cmd.CommandText = $"select bomqty from bom where pmid = '{pri_bom[i]}' and bomname = '갈비만두'";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
+                //        // 제일 오래된 재고가 들어가는 재고보다 많을 시
+                //        if (stock_qty > stock_qty_in)
+                //        {
+                //            cmd.CommandText = $"update stock " +
+                //                $"set stqty = stqty - {stock_qty_in} " +
+                //                $"where pmid = '{pri_bom[i]}' and stdate = " +
+                //                $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
+                //            cmd.ExecuteNonQuery();
+                //        }
+                //        else if (stock_qty == stock_qty_in)
+                //        {
+                //            cmd.CommandText = $"delete stock where stid = " +
+                //                $"(select stid from stock where stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
+                //            cmd.ExecuteNonQuery();
+                //        }
 
-                        //textBox1.AppendText(stock_qty_in.ToString() + "\r\n");
+                //        // 제일 오래된 재고가 들어가는 재고보다 적을 시
+                //        else
+                //        {
+                //            // 오래된 재고를 쓰고 남은 수
+                //            double re_stock_qty = stock_qty_in - stock_qty;
 
-                        // 제일 오래된 재고가 들어가는 재고보다 많을 시
-                        if (stock_qty > stock_qty_in)
-                        {
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {stock_qty_in} " +
-                                $"where pmid = '{pri_bom[i]}' and stdate = " +
-                                $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-                        else if (stock_qty == stock_qty_in)
-                        {
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
+                //            // 오래된 재고삭제
+                //            cmd.CommandText = $"delete stock where stid = " +
+                //                $"(select stid from stock where stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}')";
+                //            cmd.ExecuteNonQuery();
 
-                        // 제일 오래된 재고가 들어가는 재고보다 적을 시
-                        else
-                        {
-                            // 오래된 재고를 쓰고 남은 수
-                            double re_stock_qty = stock_qty_in - stock_qty;
+                //            cmd.CommandText = $"commit";
+                //            cmd.ExecuteNonQuery();
 
-                            // 오래된 재고삭제
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}')";
-                            cmd.ExecuteNonQuery();
-
-                            cmd.CommandText = $"commit";
-                            cmd.ExecuteNonQuery();
-
-                            // 남은 수를 재고에서 빼기
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {re_stock_qty} " +
-                                $"where stdate = " +
-                                $"(select stdate from stock where stdate = " +
-                                $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))) " +
-                                $"and pmid = '{pri_bom[i]}'";
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                }
+                //            // 남은 수를 재고에서 빼기
+                //            cmd.CommandText = $"update stock " +
+                //                $"set stqty = stqty - {re_stock_qty} " +
+                //                $"where stdate = " +
+                //                $"(select stdate from stock where stdate = " +
+                //                $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
+                //                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))) " +
+                //                $"and pmid = '{pri_bom[i]}'";
+                //            cmd.ExecuteNonQuery();
+                //        }
+                //    }
+                //}
                 move1 = true;
                 pictureBox5.Visible = true;
                 pictureBox6.Visible = true;
@@ -418,16 +414,6 @@ namespace MES.seungmin_Forms
 
             tem = rdr["WCOPTIMALTEM"] as string;
             hum = rdr["WCOPTIMALHUM"] as string;
-
-
-            textBox1.Text = $" [ 선택한 LOT = {next_lotid} ] " +
-                $"[ 선택한 WOID = {next_order_woid} ] " +
-                $"[ 선택한 수량 = {next_order_planqty} ] " +
-                $"[ 선택한 pmid = {next_order_pmid} ]" +
-                $"[ 선택한 상태 = {stat} ] " +
-                $"[ 선택한 날짜 = {day} ] " +
-                $"[ 선택한 온도 = {tem} ] " +
-                $"[ 선택한 습도 = {hum} ]";
         }
     }
 }

@@ -141,7 +141,6 @@ namespace MES.seungmin_Forms
             if (move1 == true || stat == "S")
             {
                 faulty = rand.Next(1, 5);
-                MessageBox.Show(faulty.ToString());
 
                 cmd.CommandText = $"update lot set lotendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), lotqty = '{next_order_planqty - faulty}', lotstat = 'E' where lotid = '{next_lotid}'";
                 cmd.ExecuteNonQuery();
@@ -191,16 +190,6 @@ namespace MES.seungmin_Forms
 
             tem = rdr["WCOPTIMALTEM"] as string;
             hum = rdr["WCOPTIMALHUM"] as string;
-
-
-            textBox1.Text = $" [ 선택한 LOT = {next_lotid} ] " +
-                $"[ 선택한 WOID = {next_order_woid} ] " +
-                $"[ 선택한 수량 = {next_order_planqty} ] " +
-                $"[ 선택한 pmid = {next_order_pmid} ]" +
-                $"[ 선택한 상태 = {stat} ] " +
-                $"[ 선택한 날짜 = {day} ] " +
-                $"[ 선택한 온도 = {tem} ] " +
-                $"[ 선택한 습도 = {hum} ]";
         }
     }
 }

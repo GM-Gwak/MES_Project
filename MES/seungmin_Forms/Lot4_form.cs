@@ -152,9 +152,6 @@ namespace MES.seungmin_Forms
                 cmd.CommandText = $"update workorder set woendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'E', WOPRODQTY = {(next_order_planqty - sum_faulty)} where woid = '{next_order_woid}'";
                 cmd.ExecuteNonQuery();
 
-
-
-                textBox1.Text = $" [ 실적 : {(next_order_planqty - sum_faulty)} 봉 ]     [ 자투리 : {(next_order_planqty - sum_faulty) % 10} 개]";
             }
             else
             {
@@ -189,15 +186,6 @@ namespace MES.seungmin_Forms
             tem = rdr["WCOPTIMALTEM"] as string;
             hum = rdr["WCOPTIMALHUM"] as string;
 
-
-            textBox1.Text = $" [ 선택한 LOT = {next_lotid} ] " +
-                $"[ 선택한 WOID = {next_order_woid} ] " +
-                $"[ 선택한 수량 = {next_order_planqty} ] " +
-                $"[ 선택한 pmid = {next_order_pmid} ]" +
-                $"[ 선택한 상태 = {stat} ] " +
-                $"[ 선택한 날짜 = {day} ] " +
-                $"[ 선택한 온도 = {tem} ] " +
-                $"[ 선택한 습도 = {hum} ]";
         }
     }
 }

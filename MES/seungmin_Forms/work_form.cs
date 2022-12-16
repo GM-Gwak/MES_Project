@@ -93,11 +93,11 @@ namespace MES.seungmin_Forms
 
             Start_password.mbname = name_label.Text;
 
-            cmd.CommandText = $"SELECT sum(woplanqty) FROM workorder where wostarttime like '{now_time}%'";
+            cmd.CommandText = $"SELECT sum(woprodqty) FROM workorder where wostarttime like '{now_time}%'";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             rdr.Read();
-            woplanqty_value.Text = rdr["sum(woplanqty)"].ToString();
+            woprodqty_value.Text = rdr["sum(woprodqty)"].ToString();
 
             cmd.CommandText = $"select sum(faqty) from faulty F, lot L where L.LOTID = F.LOTID and substr(L.LOTENDTIME, 0, 10) = to_char(sysdate, 'yyyy-mm-dd')";
             cmd.ExecuteNonQuery();
