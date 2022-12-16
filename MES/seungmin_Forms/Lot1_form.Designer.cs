@@ -33,12 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-<<<<<<< HEAD
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lot1_form));
             this.LOT1_grid = new System.Windows.Forms.DataGridView();
-=======
-            this.work_grid = new System.Windows.Forms.DataGridView();
->>>>>>> 2f5816de68dc0ffdc523d0c9fd0814bcefa8d8d3
+
             this.panel2 = new System.Windows.Forms.Panel();
             this.LABEL = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -50,21 +48,16 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
+
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.LOT1_grid)).BeginInit();
-=======
+
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.LINE_VIEW1 = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.work_grid)).BeginInit();
->>>>>>> 2f5816de68dc0ffdc523d0c9fd0814bcefa8d8d3
+
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -358,7 +351,7 @@
             this.LINE_VIEW1.UseVisualStyleBackColor = false;
             this.LINE_VIEW1.Click += new System.EventHandler(this.LINE_VIEW1_Click);
             // 
-<<<<<<< HEAD
+
             // LABEL
             // 
             this.LABEL.Font = new System.Drawing.Font("나눔고딕코딩", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -544,8 +537,6 @@
             this.textBox1.Size = new System.Drawing.Size(1168, 84);
             this.textBox1.TabIndex = 62;
             // 
-=======
->>>>>>> 2f5816de68dc0ffdc523d0c9fd0814bcefa8d8d3
             // Lot1_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -596,11 +587,9 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
-<<<<<<< HEAD
         private System.Windows.Forms.TextBox textBox1;
-=======
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
->>>>>>> 2f5816de68dc0ffdc523d0c9fd0814bcefa8d8d3
+
     }
 }

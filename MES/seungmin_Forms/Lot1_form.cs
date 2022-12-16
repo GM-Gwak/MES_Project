@@ -71,7 +71,7 @@ namespace MES.seungmin_Forms
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             // 작동중인지 검사
             if (move1 == "S")
             {
@@ -79,8 +79,7 @@ namespace MES.seungmin_Forms
                 return;
             }
 
-=======
->>>>>>> 2f5816de68dc0ffdc523d0c9fd0814bcefa8d8d3
+
 
             Start_password password = new Start_password();
             password.ShowDialog();
