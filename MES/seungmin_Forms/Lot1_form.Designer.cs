@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lot1_form));
-            this.work_grid = new System.Windows.Forms.DataGridView();
+            this.LOT1_grid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.LINE_VIEW1 = new FontAwesome.Sharp.IconButton();
@@ -51,7 +51,8 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.work_grid)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.LOT1_grid)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,17 +65,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // work_grid
+            // LOT1_grid
             // 
-            this.work_grid.AllowUserToAddRows = false;
+            this.LOT1_grid.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.work_grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.work_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.work_grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.LOT1_grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.LOT1_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LOT1_grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -82,8 +83,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.work_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.work_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LOT1_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.LOT1_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -91,14 +92,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.work_grid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.work_grid.EnableHeadersVisualStyles = false;
-            this.work_grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.work_grid.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.work_grid.Location = new System.Drawing.Point(33, 104);
-            this.work_grid.MultiSelect = false;
-            this.work_grid.Name = "work_grid";
-            this.work_grid.ReadOnly = true;
+            this.LOT1_grid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.LOT1_grid.EnableHeadersVisualStyles = false;
+            this.LOT1_grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.LOT1_grid.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.LOT1_grid.Location = new System.Drawing.Point(33, 104);
+            this.LOT1_grid.MultiSelect = false;
+            this.LOT1_grid.Name = "LOT1_grid";
+            this.LOT1_grid.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -106,17 +107,17 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.work_grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.LOT1_grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.work_grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.work_grid.RowTemplate.Height = 23;
-            this.work_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.work_grid.Size = new System.Drawing.Size(1288, 352);
-            this.work_grid.TabIndex = 31;
-            this.work_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.work_grid_CellClick);
+            this.LOT1_grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.LOT1_grid.RowTemplate.Height = 23;
+            this.LOT1_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LOT1_grid.Size = new System.Drawing.Size(1288, 352);
+            this.LOT1_grid.TabIndex = 31;
+            this.LOT1_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.work_grid_CellClick);
             // 
             // panel2
             // 
@@ -344,23 +345,32 @@
             this.label1.TabIndex = 61;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(62, 313);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1168, 84);
+            this.textBox1.TabIndex = 62;
+            // 
             // Lot1_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1353, 755);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.work_grid);
+            this.Controls.Add(this.LOT1_grid);
             this.Name = "Lot1_form";
             this.Text = "workorder";
             this.Load += new System.EventHandler(this.workorder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.work_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LOT1_grid)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -372,12 +382,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView work_grid;
+        private System.Windows.Forms.DataGridView LOT1_grid;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton LINE_VIEW1;
         private System.Windows.Forms.Label LABEL;
@@ -394,5 +405,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

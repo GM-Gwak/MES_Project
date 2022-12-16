@@ -119,6 +119,7 @@ namespace MES.Workorder_Form
                 MessageBox.Show("완료");
                 cmd.CommandText = "Commit";
                 cmd.ExecuteNonQuery();
+
                 this.Close();
 
                 conn.Close();

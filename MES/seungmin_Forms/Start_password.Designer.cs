@@ -64,7 +64,7 @@
             this.Password_box.Name = "Password_box";
             this.Password_box.Size = new System.Drawing.Size(387, 22);
             this.Password_box.TabIndex = 23;
-            this.Password_box.Text = "UserPassworld";
+            this.Password_box.Text = "password";
             // 
             // btnlogin
             // 

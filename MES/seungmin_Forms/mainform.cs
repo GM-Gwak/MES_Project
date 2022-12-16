@@ -29,7 +29,6 @@ namespace MES
 
         static string mes;
 
-        string name;
         private Socket socket;
         private Thread receiveThread;
         private Thread waitThread;
@@ -76,13 +75,9 @@ namespace MES
             rdr.Read();
 
             name_label.Text = rdr["mbname"].ToString();
-
             string work_name = rdr["mbname"].ToString();
+
             name_label.Text = work_name.ToString();
-            name = name_label.Text;
-
-            name = Lot1_form.LOT1_name;
-
 
             // 불량수량 라벨
             cmd.CommandText = $"select sum(faqty), faname from faulty f join faultymaster m on(f.faid = m.faid) group by faname";

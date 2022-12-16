@@ -18,9 +18,11 @@ namespace MES.seungmin_Forms
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";
         OracleDataAdapter adapt = new OracleDataAdapter();
-        static public bool password_FT;
-        static public string ID = Lot1_form.ID;
         string password;
+
+        static public string password_FT;
+        static public string mbname;
+        static public string ID;
 
         public Start_password()
         {
@@ -28,18 +30,21 @@ namespace MES.seungmin_Forms
         }
         private void Start_password_Load(object sender, EventArgs e)
         {
+            Password_box.UseSystemPasswordChar = true;
+
             conn.Open();
             cmd.Connection = conn;
-            Password_box.Text = ID;
-            cmd.CommandText = $"select MBPW from Member where Mbname = '{ID}'";
+            cmd.CommandText = $"select MBID, MBPW from Member where Mbname = '{mbname}'";
             rdr = cmd.ExecuteReader();
             rdr.Read();
+            ID = rdr["MBID"] as string;
             password = rdr["MBPW"] as string;
-            MessageBox.Show(password);
+
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
             conn.Close();
+            password_FT = "N";
             this.Close();
         }
 
@@ -48,12 +53,14 @@ namespace MES.seungmin_Forms
             if (Password_box.Text == password)
             {
                 MessageBox.Show("확인되었습니다.");
-                password_FT = true;
+                password_FT = "T";
+                conn.Close();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("비밀번호가 틀렸습니다. 다시 입력해주세요.");
-                password_FT = false;
+                password_FT = "F";
                 return;
             }
         }

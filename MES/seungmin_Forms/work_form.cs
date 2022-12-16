@@ -32,7 +32,7 @@ namespace MES.seungmin_Forms
             "WoProdQty 실적," +
             "WcNowTem 현재온도," +
             "WcNowHum 현재습도" +
-            " from workorder w, PdMaster m, LOT l where w.PMId = m.PMId and w.WoId = l.WoId";
+            " from workorder w, PdMaster m, LOT l where w.PMId = m.PMId and w.WoId = l.WoId order by w.WoId";
 
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -52,6 +52,17 @@ namespace MES.seungmin_Forms
             mes_id = data;
         }
 
+        public void grid_view()
+        {
+            adapt.SelectCommand = new OracleCommand(main_query, conn);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            work_grid.DataSource = ds.Tables[0].DefaultView;
+            work_grid.Columns[2].Width = 130;
+            work_grid.Columns[4].Width = 130;
+            work_grid.Columns[5].Width = 130;
+        }
+
         private void work_form_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -64,11 +75,7 @@ namespace MES.seungmin_Forms
             rdr.Read();
             name_label.Text = rdr["mbname"].ToString();
 
-            adapt.SelectCommand = new OracleCommand(main_query, conn);
-            DataSet ds = new DataSet();
-            adapt.Fill(ds);
-            work_grid.DataSource = ds.Tables[0].DefaultView;
-            work_grid.Columns[2].Width = 130;
+            grid_view();
 
             cmd.CommandText = "select sum(woplanqty) from workorder";
             rdr = cmd.ExecuteReader();
@@ -80,6 +87,9 @@ namespace MES.seungmin_Forms
             rdr.Read();
             if (rdr["sum(woplanqty)"].ToString() == "") { woprodqty_value.Text = "null";}
             else { woprodqty_value.Text = rdr["sum(woplanqty)"].ToString();}
+
+            Start_password.mbname = name_label.Text;
+            
 
 
             //test
@@ -165,6 +175,11 @@ namespace MES.seungmin_Forms
         private void work_main_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void VIEW_Click(object sender, EventArgs e)
+        {
+            grid_view();
         }
     }
 }

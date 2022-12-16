@@ -51,6 +51,8 @@ namespace MES.Workorder_Form
             WO_GRID.DataSource = ds.Tables[0].DefaultView;
 
             WO_GRID.Columns[2].Width = 130;
+            WO_GRID.Columns[4].Width = 130;
+            WO_GRID.Columns[5].Width = 130;
         }
 
         public void view_workorder(string query, string[] col_name, string[] col_value)
@@ -64,6 +66,10 @@ namespace MES.Workorder_Form
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
                     WO_GRID.DataSource = ds.Tables[0].DefaultView;
+
+                    WO_GRID.Columns[2].Width = 130;
+                    WO_GRID.Columns[4].Width = 130;
+                    WO_GRID.Columns[5].Width = 130;
                 }
                 else
                 {
@@ -72,6 +78,10 @@ namespace MES.Workorder_Form
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
                     WO_GRID.DataSource = ds.Tables[0].DefaultView;
+
+                    WO_GRID.Columns[2].Width = 130;
+                    WO_GRID.Columns[4].Width = 130;
+                    WO_GRID.Columns[5].Width = 130;
                 }
             }
             else
@@ -83,6 +93,10 @@ namespace MES.Workorder_Form
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
                     WO_GRID.DataSource = ds.Tables[0].DefaultView;
+
+                    WO_GRID.Columns[2].Width = 130;
+                    WO_GRID.Columns[4].Width = 130;
+                    WO_GRID.Columns[5].Width = 130;
                 }
                 else
                 {
@@ -91,6 +105,10 @@ namespace MES.Workorder_Form
                     DataSet ds = new DataSet();
                     adapt.Fill(ds);
                     WO_GRID.DataSource = ds.Tables[0].DefaultView;
+
+                    WO_GRID.Columns[2].Width = 130;
+                    WO_GRID.Columns[4].Width = 130;
+                    WO_GRID.Columns[5].Width = 130;
                 }
             }
         }
