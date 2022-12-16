@@ -85,9 +85,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.wofaulty_value = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
+            
+           
+            
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -559,33 +559,7 @@
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
             this.chart1.Series.Add(series4);
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(20, 38);
-            this.chart1.Name = "chart1";
-            series9.ChartArea = "ChartArea1";
-            series9.IsValueShownAsLabel = true;
-            series9.Legend = "Legend1";
-            series9.Name = "고기만두";
-            series10.ChartArea = "ChartArea1";
-            series10.IsValueShownAsLabel = true;
-            series10.Legend = "Legend1";
-            series10.Name = "김치만두";
-            series11.ChartArea = "ChartArea1";
-            series11.IsValueShownAsLabel = true;
-            series11.Legend = "Legend1";
-            series11.Name = "갈비만두";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.IsValueShownAsLabel = true;
-            series12.Legend = "Legend1";
-            series12.Name = "계획 수량";
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
+            
 
             this.chart1.Size = new System.Drawing.Size(743, 169);
             this.chart1.TabIndex = 37;
