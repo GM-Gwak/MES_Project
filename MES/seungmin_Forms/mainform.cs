@@ -240,7 +240,7 @@ namespace MES
             string[] stock_name = new string[16];
             for (int i = 0; i < bom.Length; i++)
             {
-                if (Int32.Parse(stock_stqty[i]) < bom[i])
+                if (Double.Parse(stock_stqty[i]) < bom[i])
                 {
                     stock_name[cnt] = pmname[i];
                     cnt++;
@@ -344,7 +344,7 @@ namespace MES
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 //2.연결
-                IPAddress address = IPAddress.Parse("192.168.0.8");
+                IPAddress address = IPAddress.Parse("192.168.0.2");
                 EndPoint serverEP = new IPEndPoint(address, 9001);
 
                 socket.Connect(serverEP);
