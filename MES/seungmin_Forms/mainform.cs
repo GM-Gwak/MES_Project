@@ -240,7 +240,7 @@ namespace MES
             string[] stock_name = new string[16];
             for (int i = 0; i < bom.Length; i++)
             {
-                if (Int32.Parse(stock_stqty[i]) < bom[i])
+                if (Double.Parse(stock_stqty[i]) < bom[i])
                 {
                     stock_name[cnt] = pmname[i];
                     cnt++;
@@ -465,9 +465,7 @@ namespace MES
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new test());
-        }
 
-       
+        }
     }
 }

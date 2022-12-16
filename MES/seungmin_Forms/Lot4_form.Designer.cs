@@ -1,6 +1,6 @@
 ﻿namespace MES.seungmin_Forms
 {
-    partial class Lot3_form
+    partial class Lot4_form
     {
         /// <summary>
         /// Required designer variable.
@@ -38,11 +38,10 @@
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.LOT3_grid = new System.Windows.Forms.DataGridView();
+            this.LOT_END_grid = new System.Windows.Forms.DataGridView();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -50,11 +49,10 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LOT3_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LOT_END_grid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,7 +65,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1353, 66);
-            this.panel1.TabIndex = 55;
+            this.panel1.TabIndex = 56;
             // 
             // iconPictureBox2
             // 
@@ -114,38 +112,37 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(301, 41);
             this.label2.TabIndex = 31;
-            this.label2.Text = "제 3 공정";
+            this.label2.Text = "제 4 공정";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.pictureBox5);
-            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(33, 521);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1288, 199);
-            this.groupBox1.TabIndex = 68;
+            this.groupBox1.TabIndex = 73;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "공정 진행도";
             // 
-            // pictureBox3
+            // pictureBox2
             // 
-            this.pictureBox3.Image = global::MES.Properties.Resources._2__unscreen__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(686, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(268, 199);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 60;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox2.Image = global::MES.Properties.Resources.냉각1;
+            this.pictureBox2.Location = new System.Drawing.Point(332, 26);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(170, 149);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 60;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MES.Properties.Resources.자숙1;
-            this.pictureBox1.Location = new System.Drawing.Point(267, 28);
+            this.pictureBox1.Image = global::MES.Properties.Resources.포장1;
+            this.pictureBox1.Location = new System.Drawing.Point(734, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,34 +152,24 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::MES.Properties.Resources._2__unscreen__1_;
-            this.pictureBox5.Location = new System.Drawing.Point(460, 0);
+            this.pictureBox5.Location = new System.Drawing.Point(483, 0);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(268, 199);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 58;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox2
+            // LOT_END_grid
             // 
-            this.pictureBox2.Image = global::MES.Properties.Resources.냉각1;
-            this.pictureBox2.Location = new System.Drawing.Point(978, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(170, 149);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 55;
-            this.pictureBox2.TabStop = false;
-            // 
-            // LOT3_grid
-            // 
-            this.LOT3_grid.AllowUserToAddRows = false;
+            this.LOT_END_grid.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LOT3_grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.LOT3_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.LOT3_grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.LOT_END_grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.LOT_END_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LOT_END_grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -190,8 +177,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LOT3_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.LOT3_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LOT_END_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.LOT_END_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -199,14 +186,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LOT3_grid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.LOT3_grid.EnableHeadersVisualStyles = false;
-            this.LOT3_grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
-            this.LOT3_grid.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.LOT3_grid.Location = new System.Drawing.Point(33, 104);
-            this.LOT3_grid.MultiSelect = false;
-            this.LOT3_grid.Name = "LOT3_grid";
-            this.LOT3_grid.ReadOnly = true;
+            this.LOT_END_grid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.LOT_END_grid.EnableHeadersVisualStyles = false;
+            this.LOT_END_grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(80)))));
+            this.LOT_END_grid.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.LOT_END_grid.Location = new System.Drawing.Point(33, 104);
+            this.LOT_END_grid.MultiSelect = false;
+            this.LOT_END_grid.Name = "LOT_END_grid";
+            this.LOT_END_grid.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -214,17 +201,17 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LOT3_grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.LOT_END_grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.LOT3_grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.LOT3_grid.RowTemplate.Height = 23;
-            this.LOT3_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.LOT3_grid.Size = new System.Drawing.Size(1288, 352);
-            this.LOT3_grid.TabIndex = 66;
-            this.LOT3_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LOT3_grid_CellClick);
+            this.LOT_END_grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.LOT_END_grid.RowTemplate.Height = 23;
+            this.LOT_END_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LOT_END_grid.Size = new System.Drawing.Size(1288, 352);
+            this.LOT_END_grid.TabIndex = 71;
+            this.LOT_END_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LOT_END_grid_CellClick);
             // 
             // iconButton3
             // 
@@ -242,7 +229,7 @@
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton3.Size = new System.Drawing.Size(201, 44);
-            this.iconButton3.TabIndex = 70;
+            this.iconButton3.TabIndex = 75;
             this.iconButton3.Tag = "Button4";
             this.iconButton3.Text = "   공정 종료";
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -265,7 +252,7 @@
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton2.Size = new System.Drawing.Size(201, 44);
-            this.iconButton2.TabIndex = 69;
+            this.iconButton2.TabIndex = 74;
             this.iconButton2.Tag = "Button4";
             this.iconButton2.Text = "   공정 중단";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -288,7 +275,7 @@
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton1.Size = new System.Drawing.Size(201, 44);
-            this.iconButton1.TabIndex = 67;
+            this.iconButton1.TabIndex = 72;
             this.iconButton1.Tag = "Button4";
             this.iconButton1.Text = "   공정 시작";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -301,32 +288,30 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1168, 84);
-            this.textBox1.TabIndex = 71;
+            this.textBox1.TabIndex = 76;
             // 
-            // Lot3_form
+            // Lot4_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1353, 755);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.LOT3_grid);
+            this.Controls.Add(this.LOT_END_grid);
             this.Controls.Add(this.panel1);
-            this.Name = "Lot3_form";
-            this.Text = "Lot3_form";
-            this.Load += new System.EventHandler(this.Lot3_form_Load);
+            this.Name = "Lot4_form";
+            this.Text = "Lot_End";
+            this.Load += new System.EventHandler(this.Lot_End_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LOT3_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LOT_END_grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,11 +327,10 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView LOT3_grid;
+        private System.Windows.Forms.DataGridView LOT_END_grid;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

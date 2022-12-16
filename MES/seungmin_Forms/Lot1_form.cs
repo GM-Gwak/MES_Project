@@ -355,6 +355,9 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
                 move1 = false;
                 MessageBox.Show("공정이 중단되었습니다.");
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+                pictureBox7.Visible = false;
             }
             else
             {
@@ -371,6 +374,9 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
                 move1 = false;
                 MessageBox.Show("작업이 종료되었습니다.");
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+                pictureBox7.Visible = false;
             }
             else
             {

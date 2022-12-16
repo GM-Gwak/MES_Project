@@ -221,5 +221,10 @@ namespace MES.seungmin_Forms
         {
             grid_view();
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Lot4_form());
+        }
     }
 }

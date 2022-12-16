@@ -81,8 +81,8 @@ namespace MES.Workorder_Form
                 $"null, " +
                 $"{EA.Text}, " +
                 $"null, " +
-                $"25, " +
-                $"10)";
+                $"null, " +
+                $"null)";
                 cmd.ExecuteNonQuery();
 
                 cmd.CommandText = "Commit";

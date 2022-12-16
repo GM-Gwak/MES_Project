@@ -112,11 +112,11 @@
     <Compile Include="seungmin_Forms\Lot3_form.Designer.cs">
       <DependentUpon>Lot3_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="seungmin_Forms\Lot_End.cs">
+    <Compile Include="seungmin_Forms\Lot4_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="seungmin_Forms\Lot_End.Designer.cs">
-      <DependentUpon>Lot_End.cs</DependentUpon>
+    <Compile Include="seungmin_Forms\Lot4_form.Designer.cs">
+      <DependentUpon>Lot4_form.cs</DependentUpon>
     </Compile>
     <Compile Include="seungmin_Forms\Start_password.cs">
       <SubType>Form</SubType>
@@ -174,12 +174,6 @@
     <Compile Include="seungmin_Forms\Monitoring.Designer.cs">
       <DependentUpon>Monitoring.cs</DependentUpon>
     </Compile>
-    <Compile Include="seungmin_Forms\test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="seungmin_Forms\test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
     <Compile Include="seungmin_Forms\Lot1_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,8 +210,8 @@
     <EmbeddedResource Include="seungmin_Forms\Lot3_form.resx">
       <DependentUpon>Lot3_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="seungmin_Forms\Lot_End.resx">
-      <DependentUpon>Lot_End.cs</DependentUpon>
+    <EmbeddedResource Include="seungmin_Forms\Lot4_form.resx">
+      <DependentUpon>Lot4_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\Start_password.resx">
       <DependentUpon>Start_password.cs</DependentUpon>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\Monitoring.resx">
       <DependentUpon>Monitoring.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="seungmin_Forms\test.resx">
-      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\Lot1_form.resx">
       <DependentUpon>Lot1_form.cs</DependentUpon>
