@@ -202,7 +202,7 @@
             this.Monitoring.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Monitoring.Size = new System.Drawing.Size(230, 45);
             this.Monitoring.TabIndex = 18;
-            this.Monitoring.Tag = "Button4";
+            this.Monitoring.Tag = "모니터링";
             this.Monitoring.Text = "모니터링";
             this.Monitoring.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Monitoring.UseVisualStyleBackColor = true;

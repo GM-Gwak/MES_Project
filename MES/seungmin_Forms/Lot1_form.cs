@@ -22,7 +22,7 @@ namespace MES.seungmin_Forms
 
         string FT;
         string MB_ID;
-        static string move1 = "E";
+        static bool move1 = false;
 
         string query = $"select L.LOTID, L.WOID, L.LOTCREATETIME 생성시간, L.LOTSTARTTIME 시작시간, L.LOTENDTIME 종료시간, L.LOTSTAT 상태, W.WOPLANQTY 수량, L.LOTQTY 실적, L.WCID 작업장명, L.MBNO 담당자ID, P.PMNAME 제품명 " +
         $"from lot L, Workorder W, PDMASTER P where SUBSTR(LOTID, 8, 1) = '1' and L.WOID = W.WOID and W.PMID = P.PMID order by WOID";
@@ -64,6 +64,7 @@ namespace MES.seungmin_Forms
             conn.Open();
             cmd.Connection = conn;
             grid_view();
+
             pictureBox5.Visible = false;
             pictureBox6.Visible = false;
             pictureBox7.Visible = false;
@@ -71,283 +72,277 @@ namespace MES.seungmin_Forms
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-
             // 작동중인지 검사
-            if (move1 == "S")
+            if (move1 == true || LOT1_grid.SelectedRows[0].Cells[5].Value.ToString() == "S")
             {
                 MessageBox.Show("현재 다른 작업이 진행중입니다. 다시 확인해주세요.");
                 return;
             }
-
-            Start_password password = new Start_password();
-            password.ShowDialog();
-
-            FT = Start_password.password_FT;
-            MB_ID = Start_password.ID;
-
-
-            // 오류검사
-
-            for (int i = 0; i < pme_bom.Length; i++)
+            else if (move1 == false)
             {
-                cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}' and rownum = 1 order by stid";
-                cmd.ExecuteNonQuery();
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read() == false)
+                Start_password password = new Start_password();
+                password.ShowDialog();
+
+                FT = Start_password.password_FT;
+                MB_ID = Start_password.ID;
+
+
+                // 오류검사
+                for (int i = 0; i < pme_bom.Length; i++)
                 {
-                    MessageBox.Show("재고가 부족합니다.");
+                    cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}' and rownum = 1 order by stid";
+                    cmd.ExecuteNonQuery();
+                    rdr = cmd.ExecuteReader();
+                    if (rdr.Read() == false)
+                    {
+                        MessageBox.Show("재고가 부족합니다.");
+                        return;
+                    }
+                }
+
+                if (FT == "F")
+                {
+                    MessageBox.Show("비밀번호가 정확하지 않습니다.");
                     return;
                 }
+                else if (FT == "N")
+                {
+                    return;
+                }
+
+                if (move1 == false)
+                {
+                    // 선택한 행의 WOID를 읽고, 그에 해당하는 워크오더의 시작시간 추가
+                    cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'S' where woid = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}'";
+                    cmd.ExecuteNonQuery();
+
+                    // 선택한 행 업데이트
+                    cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001', lotstat = 'S', MBNO = '{MB_ID}' where lotid = '{LOT1_grid.SelectedRows[0].Cells[0].Value.ToString()}'";
+                    cmd.ExecuteNonQuery();
+
+                    //// 선택한 행의 계획수량, PMID, WOID를 저장
+                    cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
+                    rdr = cmd.ExecuteReader();
+                    rdr.Read();
+                    next_order_pmid = rdr["PMID"] as string;
+                    next_order_woid = LOT1_grid.SelectedRows[0].Cells[1].Value.ToString();
+                    next_order_planqty = Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString());
+                    next_lotid = LOT1_grid.SelectedRows[0].Cells[0].Value.ToString();
+
+                    MessageBox.Show("작업장1이 가동 시작되었습니다.");
+
+                    //고기만두
+                    if (next_order_pmid == "pme01")
+                    {
+                        for (int i = 0; i < pme_bom.Length; i++)
+                        {
+                            // 재고확인 (제일 오래된 재고)
+                            cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}' and rownum = 1 order by stid";
+                            cmd.ExecuteNonQuery();
+                            rdr = cmd.ExecuteReader();
+                            rdr.Read();
+                            stock_qty = rdr.GetDouble(0);
+
+                            // 들어가는 재료 확인
+                            cmd.CommandText = $"select bomqty from bom where pmid = '{pme_bom[i]}' and bomname = '고기만두'";
+                            cmd.ExecuteNonQuery();
+                            rdr = cmd.ExecuteReader();
+                            rdr.Read();
+                            stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
+
+                            // 제일 오래된 재고가 들어가는 재고보다 많을 시
+                            if (stock_qty > stock_qty_in)
+                            {
+                                cmd.CommandText = $"update stock " +
+                                    $"set stqty = stqty - {stock_qty_in} " +
+                                    $"where pmid = '{pme_bom[i]}' and stdate = " +
+                                    $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
+                                cmd.ExecuteNonQuery();
+                            }
+                            else if (stock_qty == stock_qty_in)
+                            {
+                                cmd.CommandText = $"delete stock where stid = " +
+                                    $"(select stid from stock where stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 제일 오래된 재고가 들어가는 재고보다 적을 시
+                            else
+                            {
+                                // 오래된 재고를 쓰고 남은 수
+                                double re_stock_qty = stock_qty_in - stock_qty;
+
+                                // 오래된 재고삭제
+                                cmd.CommandText = $"delete stock where stid = " +
+                                    $"(select stid from stock where stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}')";
+                                cmd.ExecuteNonQuery();
+
+                                cmd.CommandText = $"commit";
+                                cmd.ExecuteNonQuery();
+
+                                // 남은 수를 재고에서 빼기
+                                cmd.CommandText = $"update stock " +
+                                    $"set stqty = stqty - {re_stock_qty} " +
+                                    $"where stdate = " +
+                                    $"(select stdate from stock where stdate = " +
+                                    $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))) " +
+                                    $"and pmid = '{pme_bom[i]}'";
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+
+                    //김치만두
+                    if (next_order_pmid == "pki01")
+                    {
+                        for (int i = 0; i < pme_bom.Length; i++)
+                        {
+                            // 재고확인 (제일 오래된 재고)
+                            cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}' and rownum = 1 order by stid";
+                            cmd.ExecuteNonQuery();
+                            rdr = cmd.ExecuteReader();
+                            rdr.Read();
+                            stock_qty = rdr.GetDouble(0);
+
+                            // 들어가는 재료 확인
+                            cmd.CommandText = $"select bomqty from bom where pmid = '{pki_bom[i]}' and bomname = '고기만두'";
+                            cmd.ExecuteNonQuery();
+                            rdr = cmd.ExecuteReader();
+                            rdr.Read();
+                            stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
+
+                            // 제일 오래된 재고가 들어가는 재고보다 많을 시
+                            if (stock_qty > stock_qty_in)
+                            {
+                                cmd.CommandText = $"update stock " +
+                                    $"set stqty = stqty - {stock_qty_in} " +
+                                    $"where pmid = '{pki_bom[i]}' and stdate = " +
+                                    $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
+                                cmd.ExecuteNonQuery();
+                            }
+                            else if (stock_qty == stock_qty_in)
+                            {
+                                cmd.CommandText = $"delete stock where stid = " +
+                                    $"(select stid from stock where stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 제일 오래된 재고가 들어가는 재고보다 적을 시
+                            else
+                            {
+                                // 오래된 재고를 쓰고 남은 수
+                                double re_stock_qty = stock_qty_in - stock_qty;
+
+                                // 오래된 재고삭제
+                                cmd.CommandText = $"delete stock where stid = " +
+                                    $"(select stid from stock where stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}')";
+                                cmd.ExecuteNonQuery();
+
+                                cmd.CommandText = $"commit";
+                                cmd.ExecuteNonQuery();
+
+                                // 남은 수를 재고에서 빼기
+                                cmd.CommandText = $"update stock " +
+                                    $"set stqty = stqty - {re_stock_qty} " +
+                                    $"where stdate = " +
+                                    $"(select stdate from stock where stdate = " +
+                                    $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))) " +
+                                    $"and pmid = '{pki_bom[i]}'";
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+
+                    //갈비만두
+                    if (next_order_pmid == "pri01")
+                    {
+                        for (int i = 0; i < pme_bom.Length; i++)
+                        {
+                            // 재고확인 (제일 오래된 재고)
+                            cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}' and rownum = 1 order by stid";
+                            cmd.ExecuteNonQuery();
+                            rdr = cmd.ExecuteReader();
+                            rdr.Read();
+                            stock_qty = rdr.GetDouble(0);
+
+                            //textBox1.AppendText(stock_qty.ToString() + "\r\n");
+
+                            // 들어가는 재료 확인
+                            cmd.CommandText = $"select bomqty from bom where pmid = '{pri_bom[i]}' and bomname = '갈비만두'";
+                            cmd.ExecuteNonQuery();
+                            rdr = cmd.ExecuteReader();
+                            rdr.Read();
+                            stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
+
+                            //textBox1.AppendText(stock_qty_in.ToString() + "\r\n");
+
+                            // 제일 오래된 재고가 들어가는 재고보다 많을 시
+                            if (stock_qty > stock_qty_in)
+                            {
+                                cmd.CommandText = $"update stock " +
+                                    $"set stqty = stqty - {stock_qty_in} " +
+                                    $"where pmid = '{pri_bom[i]}' and stdate = " +
+                                    $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
+                                cmd.ExecuteNonQuery();
+                            }
+                            else if (stock_qty == stock_qty_in)
+                            {
+                                cmd.CommandText = $"delete stock where stid = " +
+                                    $"(select stid from stock where stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 제일 오래된 재고가 들어가는 재고보다 적을 시
+                            else
+                            {
+                                // 오래된 재고를 쓰고 남은 수
+                                double re_stock_qty = stock_qty_in - stock_qty;
+
+                                // 오래된 재고삭제
+                                cmd.CommandText = $"delete stock where stid = " +
+                                    $"(select stid from stock where stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}')";
+                                cmd.ExecuteNonQuery();
+
+                                cmd.CommandText = $"commit";
+                                cmd.ExecuteNonQuery();
+
+                                // 남은 수를 재고에서 빼기
+                                cmd.CommandText = $"update stock " +
+                                    $"set stqty = stqty - {re_stock_qty} " +
+                                    $"where stdate = " +
+                                    $"(select stdate from stock where stdate = " +
+                                    $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
+                                    $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))) " +
+                                    $"and pmid = '{pri_bom[i]}'";
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    move1 = true;
+                    pictureBox5.Visible = true;
+                    pictureBox6.Visible = true;
+                    pictureBox7.Visible = true;
+                }
             }
-
-            if (FT == "F")
+            else if (move1 = false && LOT1_grid.SelectedRows[0].Cells[5].Value.ToString() == "P")
             {
-                MessageBox.Show("비밀번호가 정확하지 않습니다.");
-                return;
-            }
-            else if (FT == "N")
-            {
-                return;
-            }
-
-
-            if (move1 == "E")
-            {
-
-                // 선택한 행의 WOID를 읽고, 그에 해당하는 워크오더의 시작시간 추가
-                cmd.CommandText = $"update workorder set wostarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wostat = 'S' where woid = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}'";
+                cmd.CommandText = $"update lot set lotstat = 'S' where lotid = '{next_lotid}'";
                 cmd.ExecuteNonQuery();
-
-                // 선택한 행 업데이트
-                cmd.CommandText = $"update lot set lotstarttime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), wcid = 'wc001', lotstat = 'S', MBNO = '{MB_ID}' where lotid = '{LOT1_grid.SelectedRows[0].Cells[0].Value.ToString()}'";
-                cmd.ExecuteNonQuery();
-
-                //// 선택한 행의 계획수량, PMID, WOID를 저장
-                cmd.CommandText = $"select W.PMID from Workorder W, LOT L where W.WOID = L.WOID and W.WOID = '{LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()}' and rownum = 1";
-                rdr = cmd.ExecuteReader();
-                rdr.Read();
-                next_order_pmid = rdr["PMID"] as string;
-                next_order_woid = LOT1_grid.SelectedRows[0].Cells[1].Value.ToString();
-                next_order_planqty = Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString());
-                next_lotid = LOT1_grid.SelectedRows[0].Cells[0].Value.ToString();
-
-                MessageBox.Show("작업장1이 가동 시작되었습니다.");
-
-                //고기만두
-                if (next_order_pmid == "pme01")
-                {
-                    for (int i = 0; i < pme_bom.Length; i++)
-                    {
-                        // 재고확인 (제일 오래된 재고)
-                        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}' and rownum = 1 order by stid";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty = rdr.GetDouble(0);
-
-                        //textBox1.AppendText(stock_qty.ToString() + "\r\n");
-
-                        // 들어가는 재료 확인
-                        cmd.CommandText = $"select bomqty from bom where pmid = '{pme_bom[i]}' and bomname = '고기만두'";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
-
-                        //textBox1.AppendText(stock_qty_in.ToString() + "\r\n");
-
-                        // 제일 오래된 재고가 들어가는 재고보다 많을 시
-                        if (stock_qty > stock_qty_in)
-                        {
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {stock_qty_in} " +
-                                $"where pmid = '{pme_bom[i]}' and stdate = " +
-                                $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-                        else if (stock_qty == stock_qty_in)
-                        {
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        // 제일 오래된 재고가 들어가는 재고보다 적을 시
-                        else
-                        {
-                            // 오래된 재고를 쓰고 남은 수
-                            double re_stock_qty = stock_qty_in - stock_qty;
-
-                            // 오래된 재고삭제
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}') and pmid = '{pme_bom[i]}')";
-                            cmd.ExecuteNonQuery();
-
-                            cmd.CommandText = $"commit";
-                            cmd.ExecuteNonQuery();
-
-                            // 남은 수를 재고에서 빼기
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {re_stock_qty} " +
-                                $"where stdate = " +
-                                $"(select stdate from stock where stdate = " +
-                                $"(select stdate from stock where pmid = '{pme_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pme_bom[i]}'))) " +
-                                $"and pmid = '{pme_bom[i]}'";
-                            cmd.ExecuteNonQuery();
-                        }
-                        //textBox1.AppendText(pme_bom[i] + "\r\n");
-                    }
-                }
-
-                //김치만두
-                if (next_order_pmid == "pki01")
-                {
-                    for (int i = 0; i < pme_bom.Length; i++)
-                    {
-                        // 재고확인 (제일 오래된 재고)
-                        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}' and rownum = 1 order by stid";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty = rdr.GetDouble(0);
-
-                        //textBox1.AppendText(stock_qty.ToString() + "\r\n");
-
-                        // 들어가는 재료 확인
-                        cmd.CommandText = $"select bomqty from bom where pmid = '{pki_bom[i]}' and bomname = '고기만두'";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
-
-                        //textBox1.AppendText(stock_qty_in.ToString() + "\r\n");
-
-                        // 제일 오래된 재고가 들어가는 재고보다 많을 시
-                        if (stock_qty > stock_qty_in)
-                        {
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {stock_qty_in} " +
-                                $"where pmid = '{pki_bom[i]}' and stdate = " +
-                                $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-                        else if (stock_qty == stock_qty_in)
-                        {
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        // 제일 오래된 재고가 들어가는 재고보다 적을 시
-                        else
-                        {
-                            // 오래된 재고를 쓰고 남은 수
-                            double re_stock_qty = stock_qty_in - stock_qty;
-
-                            // 오래된 재고삭제
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}') and pmid = '{pki_bom[i]}')";
-                            cmd.ExecuteNonQuery();
-
-                            cmd.CommandText = $"commit";
-                            cmd.ExecuteNonQuery();
-
-                            // 남은 수를 재고에서 빼기
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {re_stock_qty} " +
-                                $"where stdate = " +
-                                $"(select stdate from stock where stdate = " +
-                                $"(select stdate from stock where pmid = '{pki_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pki_bom[i]}'))) " +
-                                $"and pmid = '{pki_bom[i]}'";
-                            cmd.ExecuteNonQuery();
-                        }
-                        //textBox1.AppendText(pki_bom[i] + "\r\n");
-                    }
-                }
-
-                //갈비만두
-                if (next_order_pmid == "pri01")
-                {
-                    for (int i = 0; i < pme_bom.Length; i++)
-                    {
-                        // 재고확인 (제일 오래된 재고)
-                        cmd.CommandText = $"select stqty from stock where stdate = (select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}' and rownum = 1 order by stid";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty = rdr.GetDouble(0);
-
-                        //textBox1.AppendText(stock_qty.ToString() + "\r\n");
-
-                        // 들어가는 재료 확인
-                        cmd.CommandText = $"select bomqty from bom where pmid = '{pri_bom[i]}' and bomname = '갈비만두'";
-                        cmd.ExecuteNonQuery();
-                        rdr = cmd.ExecuteReader();
-                        rdr.Read();
-                        stock_qty_in = rdr.GetDouble(0) * (next_order_planqty / 100);
-
-                        //textBox1.AppendText(stock_qty_in.ToString() + "\r\n");
-
-                        // 제일 오래된 재고가 들어가는 재고보다 많을 시
-                        if (stock_qty > stock_qty_in)
-                        {
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {stock_qty_in} " +
-                                $"where pmid = '{pri_bom[i]}' and stdate = " +
-                                $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-                        else if (stock_qty == stock_qty_in)
-                        {
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))";
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        // 제일 오래된 재고가 들어가는 재고보다 적을 시
-                        else
-                        {
-                            // 오래된 재고를 쓰고 남은 수
-                            double re_stock_qty = stock_qty_in - stock_qty;
-
-                            // 오래된 재고삭제
-                            cmd.CommandText = $"delete stock where stid = " +
-                                $"(select stid from stock where stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}') and pmid = '{pri_bom[i]}')";
-                            cmd.ExecuteNonQuery();
-
-                            cmd.CommandText = $"commit";
-                            cmd.ExecuteNonQuery();
-
-                            // 남은 수를 재고에서 빼기
-                            cmd.CommandText = $"update stock " +
-                                $"set stqty = stqty - {re_stock_qty} " +
-                                $"where stdate = " +
-                                $"(select stdate from stock where stdate = " +
-                                $"(select stdate from stock where pmid = '{pri_bom[i]}' and stdate = " +
-                                $"(select min(stdate) from stock where pmid = '{pri_bom[i]}'))) " +
-                                $"and pmid = '{pri_bom[i]}'";
-                            cmd.ExecuteNonQuery();
-                        }
-                        //textBox1.AppendText(pri_bom[i] + "\r\n");
-                    }
-                }
-
-                move1 = "S";
-                pictureBox5.Visible = true;
-                pictureBox6.Visible = true;
-                pictureBox7.Visible = true;
+                MessageBox.Show("재 가동 되었습니다.");
+                move1 = true;
             }
+
         }
 
         private void LINE_VIEW1_Click(object sender, EventArgs e)
@@ -357,24 +352,41 @@ namespace MES.seungmin_Forms
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = $"update lot set lotstat = 'P' where lotid = '{next_lotid}'";
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("공정이 중단되었습니다.");
-            move1 = "P";
+            if (move1 == true || LOT1_grid.SelectedRows[0].Cells[5].Value.ToString() == "S")
+            {
+                cmd.CommandText = $"update lot set lotstat = 'P' where lotid = '{next_lotid}'";
+                cmd.ExecuteNonQuery();
+                move1 = false;
+                MessageBox.Show("공정이 중단되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("중단할 수 없거나, 진행중인 작업이 없습니다.");
+                return;
+            }
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = $"update lot set lotendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), lotqty = '{next_order_planqty}', lotstat = 'E' where lotid = '{next_lotid}'";
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("작업이 종료되었습니다.");
-            move1 = "E";
+            if (move1 == true || LOT1_grid.SelectedRows[0].Cells[5].Value.ToString() == "S")
+            {
+                cmd.CommandText = $"update lot set lotendtime = to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), lotqty = '{next_order_planqty}', lotstat = 'E' where lotid = '{next_lotid}'";
+                cmd.ExecuteNonQuery();
+                move1 = false;
+                MessageBox.Show("작업이 종료되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("종료할 수 없거나, 진행중인 작업이 없습니다.");
+                return;
+            }
         }
 
         private void work_grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1.Text = $" [ 선택한 LOT = {LOT1_grid.SelectedRows[0].Cells[0].Value.ToString()} ] [ 선택한 WOID = {LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()} ] [ 선택한 수량 = {Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString())} ] [ 선택한 PMID = {next_order_pmid} ]";
+            textBox1.Text = $" [ 선택한 LOT = {LOT1_grid.SelectedRows[0].Cells[0].Value.ToString()} ] " +
+                $"[ 선택한 WOID = {LOT1_grid.SelectedRows[0].Cells[1].Value.ToString()} ] " +
+                $"[ 선택한 수량 = {Int32.Parse(LOT1_grid.SelectedRows[0].Cells[6].Value.ToString())} ] ";
         }
     }
 }

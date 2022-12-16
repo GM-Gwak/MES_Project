@@ -22,6 +22,9 @@ namespace MES.seungmin_Forms
         static string mes_id;
         private Form currentChildForm;
 
+        private string start_time = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
+        private string now_time = DateTime.Now.ToString("yyyy-MM-dd");
+
         string main_query = "select distinct(w.WoId) 작업지시ID," +
             "PMName 제품명," +
             "LotCreateTime 지시일," +
@@ -95,6 +98,43 @@ namespace MES.seungmin_Forms
             //test
             woprodqty_value.Text = "13980";
             wofaulty_value.Text = "40";
+
+            work_chart();
+        }
+
+        public void work_chart() {
+            string main_query = "select sum(woprodqty), woendtime,pmname from workorder w join pdmaster pd on(w.pmid= pd.pmid) where pmname like";
+            // 차트
+            chart1.Series["고기만두"].Points.Clear();
+            chart1.Series["김치만두"].Points.Clear();
+            chart1.Series["갈비만두"].Points.Clear();
+            chart1.Series["계획 수량"].Points.Clear();
+
+            cmd.CommandText = $"select woendtime, sum(woplanqty), pmname from workorder w join pdmaster pd on(w.pmid = pd.pmid) group by woendtime, pmname";
+            OracleDataReader sum1 = cmd.ExecuteReader();
+            while (sum1.Read())
+            {
+                chart1.Series["계획 수량"].Points.AddXY(sum1["woendtime"].ToString(), Int32.Parse(sum1["sum(woplanqty)"].ToString()));
+            }
+            cmd.CommandText = main_query + $" '고기%' and woendtime between '{start_time}' and '{now_time}' group by woendtime,pmname";
+            OracleDataReader sum2 = cmd.ExecuteReader();
+            while (sum2.Read())
+            {
+                chart1.Series["고기만두"].Points.Add(Int32.Parse(sum2["sum(woprodqty)"].ToString()));
+            }
+            cmd.CommandText = main_query + $" '김치%' and woendtime between '{start_time}' and '{now_time}' group by woendtime,pmname";
+            OracleDataReader sum3 = cmd.ExecuteReader();
+            while (sum3.Read())
+            {
+                chart1.Series["김치만두"].Points.Add(Int32.Parse(sum3["sum(woprodqty)"].ToString()));
+            }
+            cmd.CommandText = main_query + $" '갈비%' and woendtime between '{start_time}' and '{now_time}' group by woendtime,pmname";
+            OracleDataReader sum4 = cmd.ExecuteReader();
+            while (sum4.Read())
+            {
+                chart1.Series["갈비만두"].Points.Add(Int32.Parse(sum4["sum(woprodqty)"].ToString()));
+            }
+            cmd.ExecuteNonQuery();
         }
 
         public void OpenChildForm(Form childForm)
