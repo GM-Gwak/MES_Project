@@ -92,11 +92,14 @@ namespace MES.seungmin_Forms
             else { woprodqty_value.Text = rdr["sum(woplanqty)"].ToString();}
 
             Start_password.mbname = name_label.Text;
-            
 
-
+            cmd.CommandText = $"SELECT sum(woplanqty) FROM workorder where wostarttime like '{now_time}%'";
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            rdr.Read();
+            woplanqty_value.Text = rdr["sum(woplanqty)"].ToString();
             //test
-            woprodqty_value.Text = "13980";
+            woprodqty_value.Text = "13699";
             wofaulty_value.Text = "40";
 
             work_chart();

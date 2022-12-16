@@ -317,7 +317,6 @@ namespace MES
                 string test = str[2];
 
                 cmd.CommandText = $"update workcd set WCOPTIMALTEM = '{str[0]}', WCOPTIMALHUM = '{str[1]}' where wcid = 'wc001'";
-                //cmd.CommandText = "commit";
                 cmd.ExecuteNonQuery();
                 //온습도 센서 값
                 if (Temp.InvokeRequired == true)
@@ -328,12 +327,8 @@ namespace MES
                 else
                 {
                     Temp.Text = str[0];
-                    Hum.Text = str[1];
-                    
-                }
-                
-                
-
+                    Hum.Text = str[1];  
+                }    
             }
         }
         private void wait()
@@ -344,7 +339,7 @@ namespace MES
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 //2.연결
-                IPAddress address = IPAddress.Parse("192.168.0.8");
+                IPAddress address = IPAddress.Parse("192.168.0.2");
                 EndPoint serverEP = new IPEndPoint(address, 9001);
 
                 socket.Connect(serverEP);
@@ -435,7 +430,7 @@ namespace MES
                 work_cd2();
                 work_cd3();
                 work_cd4();
-                
+
             }
             catch(Exception)
             {
@@ -460,12 +455,19 @@ namespace MES
         {
             byte[] sendBytes = Encoding.UTF8.GetBytes("1");
             socket.Send(sendBytes);
-           
         }
 
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
 
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+<<<<<<< HEAD
+
+=======
+            work_cd1();
+            work_cd2();
+            work_cd3();
+            work_cd4();
+>>>>>>> 824e14ebb0fb8529c37c29aff8540cf915a51958
         }
     }
 }
