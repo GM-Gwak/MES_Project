@@ -123,7 +123,8 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("작업장1이 가동 시작되었습니다!");
-
+                cmd.CommandText = $"update workcd set wcstat = 'O' where wcid = 'wc001'";
+                cmd.ExecuteNonQuery();
 
                 //고기만두
                 if (next_order_pmid == "pme01")
@@ -334,6 +335,8 @@ namespace MES.seungmin_Forms
                 cmd.CommandText = $"update lot set lotstat = 'S' where lotid = '{next_lotid}'";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("재 가동 되었습니다.");
+                cmd.CommandText = $"update workcd set wcstat = 'O' where wcid = 'wc001'";
+                cmd.ExecuteNonQuery();
                 move1 = true;
                 pictureBox5.Visible = true;
                 pictureBox6.Visible = true;
@@ -355,6 +358,8 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
                 move1 = false;
                 MessageBox.Show("공정이 중단되었습니다.");
+                cmd.CommandText = $"update workcd set wcstat = 'P' where wcid = 'wc001'";
+                cmd.ExecuteNonQuery();
             }
             else
             {
@@ -371,6 +376,8 @@ namespace MES.seungmin_Forms
                 cmd.ExecuteNonQuery();
                 move1 = false;
                 MessageBox.Show("작업이 종료되었습니다.");
+                cmd.CommandText = $"update workcd set wcstat = 'P' where wcid = 'wc001'";
+                cmd.ExecuteNonQuery();
             }
             else
             {
