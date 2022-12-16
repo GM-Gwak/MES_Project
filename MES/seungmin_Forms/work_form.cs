@@ -93,7 +93,7 @@ namespace MES.seungmin_Forms
 
             Start_password.mbname = name_label.Text;
 
-            cmd.CommandText = $"SELECT sum(woplanqty) FROM workorder";
+            cmd.CommandText = $"SELECT sum(woplanqty) FROM workorder where wostarttime like '{now_time}%'";
             cmd.ExecuteNonQuery();
             rdr = cmd.ExecuteReader();
             rdr.Read();
