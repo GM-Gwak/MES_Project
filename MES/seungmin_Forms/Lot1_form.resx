@@ -120,14 +120,11 @@
   <metadata name="iconPictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="iconPictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAABVCAYAAAArDirrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAEztJREFUeF7tm1lTG1mWx+ub1DvvfAgeuy0vbAKBAIlNAgmBBGIxYGNksxiwjatd
+        vAAADrwBlbxySQAAEztJREFUeF7tm1lTG1mWx+ub1DvvfAgeuy0vbAKBAIlNAgmBBGIxYGNksxiwjatd
         6hkqvKSXtt2V/VRlQHtKSCCTGJdtTM1DOzyf4s75XxKsFfBMxVQEPr+IDC1ccrn3/M//3Jup7xiGYRiG
         YRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiG
         YRiGYRiGYRiGYRiGYf5EAunA98bbP4TFnb+dan9/+/jT//q48/rtCmzGx7LM6/PUbv7Edqfl0e/PK7AZ
@@ -215,7 +212,7 @@
   <data name="pictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAABVCAYAAAArDirrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAEztJREFUeF7tm1lTG1mWx+ub1DvvfAgeuy0vbAKBAIlNAgmBBGIxYGNksxiwjatd
+        vQAADr0BR/uQrQAAEztJREFUeF7tm1lTG1mWx+ub1DvvfAgeuy0vbAKBAIlNAgmBBGIxYGNksxiwjatd
         6hkqvKSXtt2V/VRlQHtKSCCTGJdtTM1DOzyf4s75XxKsFfBMxVQEPr+IDC1ccrn3/M//3Jup7xiGYRiG
         YRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiG
         YRiGYRiGYRiGYRiGYf5EAunA98bbP4TFnb+dan9/+/jT//q48/rtCmzGx7LM6/PUbv7Edqfl0e/PK7AZ
@@ -303,7 +300,7 @@
   <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAABVCAYAAAArDirrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAEztJREFUeF7tm1lTG1mWx+ub1DvvfAgeuy0vbAKBAIlNAgmBBGIxYGNksxiwjatd
+        vgAADr4B6kKxwAAAEztJREFUeF7tm1lTG1mWx+ub1DvvfAgeuy0vbAKBAIlNAgmBBGIxYGNksxiwjatd
         6hkqvKSXtt2V/VRlQHtKSCCTGJdtTM1DOzyf4s75XxKsFfBMxVQEPr+IDC1ccrn3/M//3Jup7xiGYRiG
         YRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiG
         YRiGYRiGYRiGYRiGYf5EAunA98bbP4TFnb+dan9/+/jT//q48/rtCmzGx7LM6/PUbv7Edqfl0e/PK7AZ

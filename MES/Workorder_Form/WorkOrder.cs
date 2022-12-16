@@ -13,7 +13,6 @@ namespace MES.Workorder_Form
 {
     public partial class WorkOrder : Form
     {
-        // 모듈화 시키기
         OracleCommand cmd = new OracleCommand();
         OracleConnection conn = new OracleConnection(strConn);
         static string strConn = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=hr;Password=hr;";

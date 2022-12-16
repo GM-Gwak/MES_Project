@@ -112,6 +112,18 @@
     <Compile Include="seungmin_Forms\Lot3_form.Designer.cs">
       <DependentUpon>Lot3_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="seungmin_Forms\Lot_End.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\Lot_End.Designer.cs">
+      <DependentUpon>Lot_End.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seungmin_Forms\Start_password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seungmin_Forms\Start_password.Designer.cs">
+      <DependentUpon>Start_password.cs</DependentUpon>
+    </Compile>
     <Compile Include="seungmin_Forms\StockManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\Lot3_form.resx">
       <DependentUpon>Lot3_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seungmin_Forms\Start_password.resx">
+      <DependentUpon>Start_password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="seungmin_Forms\StockManagement.resx">
       <DependentUpon>StockManagement.cs</DependentUpon>
