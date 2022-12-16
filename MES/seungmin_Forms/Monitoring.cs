@@ -24,29 +24,36 @@ namespace MES.UI
             conn.Open();
             cmd.Connection = conn;
 
-            cmd.CommandText = $"select wostat from workorder where wostat = 'S' and rownum = 1";
-            rdr = cmd.ExecuteReader();
-            rdr.Read();
+            try
+            {
+                cmd.CommandText = $"select wostat from workorder where wostat = 'S' and rownum = 1";
+                rdr = cmd.ExecuteReader();
+                rdr.Read();
 
-            if (rdr["wostat"].ToString() == "S")
-            {
-                pictureBox23.Visible = true;
-                pictureBox24.Visible = true;
-                pictureBox25.Visible = true;
-                pictureBox26.Visible = true;
-                pictureBox27.Visible = true;
-                pictureBox28.Visible = true;
-                pictureBox29.Visible = true;
+                if (rdr["wostat"].ToString() == "S")
+                {
+                    pictureBox23.Visible = true;
+                    pictureBox24.Visible = true;
+                    pictureBox25.Visible = true;
+                    pictureBox26.Visible = true;
+                    pictureBox27.Visible = true;
+                    pictureBox28.Visible = true;
+                    pictureBox29.Visible = true;
+                }
+                else if(rdr["wostat"].ToString() != "S")
+                {
+                    pictureBox23.Visible = false;
+                    pictureBox24.Visible = false;
+                    pictureBox25.Visible = false;
+                    pictureBox26.Visible = false;
+                    pictureBox27.Visible = false;
+                    pictureBox28.Visible = false;
+                    pictureBox29.Visible = false;
+                }
             }
-            else
+            catch(Exception ex)
             {
-                pictureBox23.Visible = false;
-                pictureBox24.Visible = false;
-                pictureBox25.Visible = false;
-                pictureBox26.Visible = false;
-                pictureBox27.Visible = false;
-                pictureBox28.Visible = false;
-                pictureBox29.Visible = false;
+                MessageBox.Show("진행중인 작업이 없습니다.");
             }
         }
         
