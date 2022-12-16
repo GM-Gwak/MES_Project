@@ -317,7 +317,6 @@ namespace MES
                 string test = str[2];
 
                 cmd.CommandText = $"update workcd set WCOPTIMALTEM = '{str[0]}', WCOPTIMALHUM = '{str[1]}' where wcid = 'wc001'";
-                //cmd.CommandText = "commit";
                 cmd.ExecuteNonQuery();
                 //온습도 센서 값
                 if (Temp.InvokeRequired == true)
@@ -328,12 +327,8 @@ namespace MES
                 else
                 {
                     Temp.Text = str[0];
-                    Hum.Text = str[1];
-                    
-                }
-                
-                
-
+                    Hum.Text = str[1];  
+                }    
             }
         }
         private void wait()
@@ -431,8 +426,11 @@ namespace MES
             try
             {
                 currentChildForm.Close();
-               
-                
+                work_cd1();
+                work_cd2();
+                work_cd3();
+                work_cd4();
+
             }
             catch(Exception)
             {
@@ -457,13 +455,8 @@ namespace MES
         {
             byte[] sendBytes = Encoding.UTF8.GetBytes("1");
             socket.Send(sendBytes);
-           
         }
 
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new test());
-        }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
