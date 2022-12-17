@@ -110,8 +110,6 @@ namespace MES.seungmin_Forms
             work_chart();
 
 
-
-
         }
 
         public void work_chart() {

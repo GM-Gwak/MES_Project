@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.Monitoring = new FontAwesome.Sharp.IconButton();
             this.WorkOrder = new FontAwesome.Sharp.IconButton();
@@ -397,6 +397,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.Refresh);
             this.groupBox1.Controls.Add(this.label34);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label33);
@@ -1074,7 +1075,6 @@
             this.panelDesktop.BackColor = System.Drawing.SystemColors.Menu;
             this.panelDesktop.Controls.Add(this.iconButton2);
             this.panelDesktop.Controls.Add(this.groupBox5);
-            this.panelDesktop.Controls.Add(this.Refresh);
             this.panelDesktop.Controls.Add(this.groupBox4);
             this.panelDesktop.Controls.Add(this.groupBox3);
             this.panelDesktop.Controls.Add(this.groupBox2);
@@ -1120,33 +1120,33 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(58, 47);
             this.chart1.Name = "chart1";
-            series9.ChartArea = "ChartArea1";
-            series9.IsValueShownAsLabel = true;
-            series9.Legend = "Legend1";
-            series9.Name = "고기만두";
-            series10.ChartArea = "ChartArea1";
-            series10.IsValueShownAsLabel = true;
-            series10.Legend = "Legend1";
-            series10.Name = "김치만두";
-            series11.ChartArea = "ChartArea1";
-            series11.IsValueShownAsLabel = true;
-            series11.Legend = "Legend1";
-            series11.Name = "갈비만두";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.IsValueShownAsLabel = true;
-            series12.Legend = "Legend1";
-            series12.Name = "계획 수량";
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "고기만두";
+            series2.ChartArea = "ChartArea1";
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "김치만두";
+            series3.ChartArea = "ChartArea1";
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "갈비만두";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "계획 수량";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(775, 203);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
@@ -1154,16 +1154,17 @@
             // Refresh
             // 
             this.Refresh.BackColor = System.Drawing.SystemColors.Menu;
+            this.Refresh.Enabled = false;
             this.Refresh.FlatAppearance.BorderSize = 0;
             this.Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Refresh.ForeColor = System.Drawing.Color.White;
             this.Refresh.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            this.Refresh.IconColor = System.Drawing.Color.Black;
+            this.Refresh.IconColor = System.Drawing.Color.Transparent;
             this.Refresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Refresh.IconSize = 30;
             this.Refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Refresh.Location = new System.Drawing.Point(328, 13);
+            this.Refresh.Location = new System.Drawing.Point(288, -27);
             this.Refresh.Name = "Refresh";
             this.Refresh.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Refresh.Size = new System.Drawing.Size(56, 37);
